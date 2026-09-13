@@ -16,6 +16,13 @@ test('mobile layout and keyboard invitation entry',async({page})=>{
  await expect(page.getByRole('heading',{level:1})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  const live=page.getByRole('tab',{name:'Invited live access'});await live.focus();await page.keyboard.press('Enter');
+ if(process.env.EXPECT_LIVE_DISABLED==='true'){
+  await expect(page.getByRole('heading',{name:'Live hosting is not enabled yet.'})).toBeVisible();
+  await expect(page.getByLabel('Invitation token')).toHaveCount(0);
+  await page.getByRole('button',{name:'Return to proof catalogue'}).click();
+  await expect(page.getByRole('tab',{name:'Recorded proofs'})).toHaveAttribute('aria-selected','true');
+  return;
+ }
  await expect(page.getByLabel('Invitation token')).toBeVisible();
  await page.getByLabel('Invitation token').fill('deliberately-invalid-demo-token');
  await expect(page.getByLabel('Invitation token')).toHaveAttribute('type','password');
