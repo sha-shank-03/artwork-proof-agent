@@ -2,7 +2,26 @@
 
 An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; Claude Haiku 4.5 selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Model update:** the isolated Railway backend now uses Claude Haiku 4.5. **30/30 genuine Claude workflow cases and 27 hosted browser checks passed**. Six new recordings and proof PDFs are deployed on the [connected agent console](https://artwork-proof-agent.vercel.app). Source remains private pending the separate publication review. See [Claude migration](docs/CLAUDE_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
+[Explore the genuine recorded demo](https://artwork-proof-agent.vercel.app) · [Reviewer brief](https://artwork-proof-agent.vercel.app/#brief) · [Architecture](docs/ARCHITECTURE.md) · [Release status](docs/RELEASE_STATUS.md)
+
+The isolated Railway backend uses Claude Haiku 4.5. **30/30 genuine Claude workflow cases and 27 applicable hosted browser checks passed**. Six recordings and proof PDFs are available without an invitation, backend or API key. See [Claude migration](docs/CLAUDE_MIGRATION.md), [hosted operations](docs/HOSTING.md) and the companion [Commerce Support Agent](https://github.com/sha-shank-03/commerce-support-agent).
+
+## Interface
+
+![Artwork system map showing FastAPI authorization, Claude Haiku 4.5, PostgreSQL, measured inspection tools and isolated decoding](docs/screenshots/system-map.png)
+
+The actual deployed console, not a mockup. Select a component to inspect its inputs, outputs and enforced boundary.
+
+<details>
+<summary>Recorded artwork inspection workspace</summary>
+
+![Artwork recorded proof workspace with the original clean-mark fixture, workflow stages and real Claude model-call events](docs/screenshots/recorded-run.png)
+
+Original synthetic artwork and genuine recorded results; browsing this view makes no model calls. [Capture details](docs/screenshots/README.md).
+
+</details>
+
+The workflow score is **not visual-accuracy certification**. Claude missed clipped text in the low-resolution sample; the UI flags that miss without rewriting the original report. The set covers six designs under five conditions, not thirty unrelated visual tasks.
 
 ## Features
 
@@ -34,7 +53,7 @@ npm ci
 npm run dev
 ```
 
-Open **http://localhost:5174**. Read the invitation from ignored `.local/invite.txt` and share it only with the intended reviewer. OpenAI API usage is billed separately from a ChatGPT subscription. Never commit keys. `docker compose up --build` provides an independent local database/API alternative; live mode defaults off. Do not run a second live budget ledger alongside the hosted instance. Static replay browsing needs only `cd web && npm ci && npm run dev`, with no backend, database or provider credentials.
+Open **http://localhost:5174**. Read the invitation from ignored `.local/invite.txt` and share it only with the intended reviewer. Anthropic API usage is billed separately from a Claude subscription. Never commit keys. `docker compose up --build` provides an independent local database/API alternative; live mode defaults off. Do not run a second live budget ledger alongside the hosted instance. Static replay browsing needs only `cd web && npm ci && npm run dev`, with no backend, database or provider credentials.
 
 ## Tests and generated API contract
 
@@ -52,4 +71,4 @@ For live evaluations, start the keyed API, then run `DATABASE_URL=... uv run pyt
 
 Read [architecture](docs/ARCHITECTURE.md), [security and limitations](docs/SECURITY.md), [operations](docs/OPERATIONS.md), [interview walkthrough](docs/INTERVIEW.md) and [ownership/dependency notices](NOTICE.md).
 
-Demonstration print specifications only; not commercial print certification. No artwork is sent to a printer. Public release is gated on safety tests and real-provider evaluation. No open-source licence has been granted for original project code.
+Demonstration print specifications only; not commercial print certification. No artwork is sent to a printer. Source is available for portfolio review; no permissive open-source licence has been granted for original project code.

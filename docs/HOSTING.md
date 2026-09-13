@@ -30,7 +30,7 @@ Each frontend has a same-origin `/api/:path*` rewrite to its own Railway backend
 npx vercel --prod --yes --scope YOUR_VERCEL_TEAM
 ```
 
-GitHub push-to-deploy integration is not configured: the Vercel GitHub app still lacks access to these private repositories. Direct authenticated CLI deployments work. Do not grant access to unrelated repositories to resolve this.
+GitHub push-to-deploy integration is not configured. Direct authenticated CLI deployments work and remain the release path. Public source visibility does not configure automatic deployment; do not grant access to unrelated repositories.
 
 ## Invitations and live disable
 

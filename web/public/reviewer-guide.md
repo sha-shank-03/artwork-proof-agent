@@ -36,7 +36,11 @@ Download verification.json for actual per-case checks, source commit, latency an
 The current model sets scored 39/40 for Commerce/Luna and 30/30 for Artwork/Claude, with no failed cases retested into a perfect score. All 40 Commerce persisted action-safety audits passed. One Commerce run stopped at application validation with no action; the exact RPC rejection reason was not retained. evaluation-history.json preserves older models and attempts under their original identities. The application ledger remains authoritative for spending reservations.
 These are synthetic bounded evaluations, not production reliability or unrestricted visual-accuracy claims.
 Manual review found a visual miss in the Claude low-resolution recording: text is cut off at the right edge although one finding describes it as properly aligned. The original report is retained, and a separate hash-bound reviewer note is shown in the console. The 30-case grader validates workflow/safety contracts, not perfect visual judgment. An earlier Luna recording had a similar miss and remains in Git history.
-The source repositories remain private pending the separate portfolio release gates.
+Public portfolio source, UI screenshots, setup and test documentation:
+- Commerce: https://github.com/sha-shank-03/commerce-support-agent
+- Artwork: https://github.com/sha-shank-03/artwork-proof-agent
+
+Original code ownership is retained; see each repository's NOTICE.md. These are independent demonstrations, not employer products.
 Infrastructure has a $10/month combined planning target including model allowances, not a guaranteed bill.
 
 ## Useful interview questions

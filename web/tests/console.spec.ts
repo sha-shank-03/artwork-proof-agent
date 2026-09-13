@@ -46,6 +46,12 @@ test(
     await expect(
       page.getByText("defined live evaluation cases passed", { exact: true }),
     ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "View source on GitHub" }),
+    ).toHaveAttribute(
+      "href",
+      "https://github.com/sha-shank-03/artwork-proof-agent",
+    );
     const guide = await page.request.get("/reviewer-guide.md");
     expect(guide.status()).toBe(200);
     expect(await guide.text()).toContain("Independent portfolio");

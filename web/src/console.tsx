@@ -1027,10 +1027,21 @@ export function ReviewerBrief({
           <a className="document-link" href="/reviewer-guide.md" download>
             Architecture & reviewer guide <ArrowUpRight size={14} />
           </a>
+          <a
+            className="document-link"
+            href={`https://github.com/sha-shank-03/${artwork ? "artwork-proof-agent" : "commerce-support-agent"}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View source on GitHub <ArrowUpRight size={14} />
+          </a>
           <p className="quiet">
-            Source repository is private pending the full release review. No
-            public source access is implied.
+            Public portfolio source with setup, tests and UI screenshots.
+            Original code ownership is retained; see repository notices.
           </p>
+          <a className="document-link" href="/third-party-notices.txt">
+            Third-party notices <ArrowUpRight size={14} />
+          </a>
         </section>
       </div>
       <div className="sharing-note">
