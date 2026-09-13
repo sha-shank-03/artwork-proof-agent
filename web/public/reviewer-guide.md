@@ -15,9 +15,9 @@ Playback speed is illustrative, not wall-clock latency. Historical recordings wi
 
 ## Architecture
 
-FastAPI owns uploads, deterministic measurements, decisions and proof versions. A bounded Python Responses loop selects tools and submits a validated report. Pillow and an isolated PDF decoder produce measured evidence. Model-suggested findings are separate from measurements and human-review requirements.
+FastAPI owns uploads, deterministic measurements, decisions and proof versions. A bounded Python Anthropic Messages loop selects tools and submits a validated report. Pillow and an isolated PDF decoder produce measured evidence. Model-suggested findings are separate from measurements and human-review requirements.
 
-Current live model: gpt-5.6-luna. A single bounded agent is used, not a multi-agent swarm.
+Current live model: Claude Haiku 4.5 (claude-haiku-4-5-20251001). A single bounded agent is used, not a multi-agent swarm.
 The React/TypeScript interface and static replays are served by Vercel. The live backend and isolated portfolio PostgreSQL storage are on Railway.
 
 ## Security and human control
@@ -33,9 +33,9 @@ The React/TypeScript interface and static replays are served by Vercel. The live
 ## Evidence and limitations
 
 Download verification.json for actual per-case checks, source commit, latency and token usage.
-The refreshed set passed after one network-failed case per app was rerun. evaluation-history.json retains the initial 39/40 Commerce and 29/30 Artwork attempts; verification.json identifies the exact rerun cases. Per-case usage estimates do not include any unobserved usage from a network-failed attempt. The application ledger remains authoritative for spending reservations.
+The current model sets scored 39/40 for Commerce/Luna and 30/30 for Artwork/Claude, with no failed cases retested into a perfect score. All 40 Commerce persisted action-safety audits passed. One Commerce run stopped at application validation with no action; the exact RPC rejection reason was not retained. evaluation-history.json preserves older models and attempts under their original identities. The application ledger remains authoritative for spending reservations.
 These are synthetic bounded evaluations, not production reliability or unrestricted visual-accuracy claims.
-Manual review found a visual miss in the published low-resolution recording: text is cut off at the right edge although one model finding says no obvious clipping is visible. The original model report is retained, and a separate reviewer note is shown in the console. The 30-case grader validates workflow/safety contracts, not perfect visual judgment.
+Manual review found a visual miss in the Claude low-resolution recording: text is cut off at the right edge although one finding describes it as properly aligned. The original report is retained, and a separate hash-bound reviewer note is shown in the console. The 30-case grader validates workflow/safety contracts, not perfect visual judgment. An earlier Luna recording had a similar miss and remains in Git history.
 The source repositories remain private pending the separate portfolio release gates.
 Infrastructure has a $10/month combined planning target including model allowances, not a guaranteed bill.
 

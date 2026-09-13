@@ -1,15 +1,15 @@
 {
   "version": 1,
   "label": "clean mark",
-  "recordedAt": "2026-09-13T13:20:27.420906+00:00",
-  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "recordedAt": "2026-09-13T14:21:39.856238+00:00",
+  "commit": "47a8a764b63d587dc2d11cb01db1129fe55259ec",
   "providerVerified": true,
   "proofFile": "/replays/clean-mark.pdf",
   "run": {
-    "id": "c0bb89f81d249a8301d089b09ae3164d357d97d36aa3f04b",
+    "id": "71e2d6a7b98b516ff568fc37c4d7a087814a324207feae64",
     "name": "clean-mark.png",
     "state": "completed",
-    "summary": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+    "summary": "Artwork proof review completed for a 3.0 x 3.0 inch single-page PNG artwork. Visual inspection shows a clean design with a dark teal rounded-rectangle shape containing white text reading \"FIELD NOTES / ORIGINAL DEMO\" centered on a cream background. No visual defects, misalignment, or typographical errors are evident. The low-resolution preview cannot certify actual print quality, colour reproduction fidelity, or embedded raster DPI accuracy at production scale. Measured pixel dimensions and DPI compliance are computed separately by the application.",
     "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
     "version": 1,
     "width": 3.0,
@@ -23,19 +23,19 @@
         "kind": "upload",
         "title": "Artwork received",
         "detail": "PNG / 1 page(s)",
-        "at": "2026-09-13T13:20:27.420906+00:00",
+        "at": "2026-09-13T14:21:39.856238+00:00",
         "call": null
       },
       {
         "seq": 2,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:20:28.791599+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:21:40.763297+00:00",
         "call": {
           "id": "model-1",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -46,16 +46,16 @@
         "seq": 3,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:20:29.740336+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:21:41.731102+00:00",
         "call": {
           "id": "model-1",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 800,
-          "inputTokens": 632,
-          "outputTokens": 15,
-          "costMicros": 176
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 721,
+          "inputTokens": 1488,
+          "outputTokens": 12,
+          "costMicros": 1548
         }
       },
       {
@@ -63,19 +63,19 @@
         "kind": "tool",
         "title": "inspect_measurements",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:20:29.740380+00:00",
+        "at": "2026-09-13T14:21:41.731147+00:00",
         "call": null
       },
       {
         "seq": 5,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:20:30.161463+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:21:42.632237+00:00",
         "call": {
           "id": "model-2",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -86,16 +86,16 @@
         "seq": 6,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:20:31.065624+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:21:43.386222+00:00",
         "call": {
           "id": "model-2",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 788,
-          "inputTokens": 703,
-          "outputTokens": 15,
-          "costMicros": 194
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 521,
+          "inputTokens": 1587,
+          "outputTokens": 14,
+          "costMicros": 1657
         }
       },
       {
@@ -103,19 +103,19 @@
         "kind": "tool",
         "title": "read_demo_specs",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:20:31.065679+00:00",
+        "at": "2026-09-13T14:21:43.386265+00:00",
         "call": null
       },
       {
         "seq": 8,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:20:31.454483+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:21:44.061483+00:00",
         "call": {
           "id": "model-3",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -126,16 +126,16 @@
         "seq": 9,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:20:32.435062+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:21:44.978578+00:00",
         "call": {
           "id": "model-3",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 825,
-          "inputTokens": 784,
-          "outputTokens": 18,
-          "costMicros": 218
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 647,
+          "inputTokens": 1695,
+          "outputTokens": 29,
+          "costMicros": 1840
         }
       },
       {
@@ -143,19 +143,19 @@
         "kind": "tool",
         "title": "inspect_preview",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:20:32.435118+00:00",
+        "at": "2026-09-13T14:21:44.978637+00:00",
         "call": null
       },
       {
         "seq": 11,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:20:33.217238+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:21:45.636807+00:00",
         "call": {
           "id": "model-4",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -166,24 +166,24 @@
         "seq": 12,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:20:39.371386+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:21:50.594432+00:00",
         "call": {
           "id": "model-4",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 6012,
-          "inputTokens": 1836,
-          "outputTokens": 251,
-          "costMicros": 761
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 4704,
+          "inputTokens": 2884,
+          "outputTokens": 301,
+          "costMicros": 4389
         }
       },
       {
         "seq": 13,
         "kind": "report",
         "title": "Proof package ready",
-        "detail": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
-        "at": "2026-09-13T13:20:39.371665+00:00",
+        "detail": "Artwork proof review completed for a 3.0 x 3.0 inch single-page PNG artwork. Visual inspection shows a clean design with a dark teal rounded-rectangle shape containing white text reading \"FIELD NOTES / ORIGINAL DEMO\" centered on a cream background. No visual defects, misalignment, or typographical errors are evident. The low-resolution preview cannot certify actual print quality, colour reproduction fidelity, or embedded raster DPI accuracy at production scale. Measured pixel dimensions and DPI compliance are computed separately by the application.",
+        "at": "2026-09-13T14:21:50.594711+00:00",
         "call": null
       },
       {
@@ -191,7 +191,7 @@
         "kind": "tool",
         "title": "submit_report",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:20:39.371672+00:00",
+        "at": "2026-09-13T14:21:50.594717+00:00",
         "call": null
       },
       {
@@ -199,12 +199,12 @@
         "kind": "approval",
         "title": "Proof approved",
         "detail": "Human review recorded. Nothing was sent to a printer.",
-        "at": "2026-09-13T13:20:41.464231+00:00",
+        "at": "2026-09-13T14:21:53.106759+00:00",
         "call": null
       }
     ],
     "report": {
-      "summary": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+      "summary": "Artwork proof review completed for a 3.0 x 3.0 inch single-page PNG artwork. Visual inspection shows a clean design with a dark teal rounded-rectangle shape containing white text reading \"FIELD NOTES / ORIGINAL DEMO\" centered on a cream background. No visual defects, misalignment, or typographical errors are evident. The low-resolution preview cannot certify actual print quality, colour reproduction fidelity, or embedded raster DPI accuracy at production scale. Measured pixel dimensions and DPI compliance are computed separately by the application.",
       "findings": [
         {
           "category": "measured",
@@ -230,22 +230,15 @@
         {
           "category": "model-suggested",
           "severity": "info",
-          "title": "Overall composition appears clean",
-          "detail": "The rounded dark-green square is visually centered within the page, with consistent-looking margins and smooth rounded corners.",
+          "title": "Clean layout and typography",
+          "detail": "Text and shape placement appear centered and well-composed. No obvious alignment issues or visual defects detected in the preview.",
           "evidence_id": "preview:page-1"
         },
         {
           "category": "model-suggested",
-          "severity": "warning",
-          "title": "Text placement merits review",
-          "detail": "The line \u201cFIELD NOTES / ORIGINAL DEMO\u201d sits toward the left side of the green field and appears vertically around the middle; confirm this intentional alignment and hierarchy against the approved design.",
-          "evidence_id": "preview:page-1"
-        },
-        {
-          "category": "requires-human-review",
-          "severity": "warning",
-          "title": "Preview limitations",
-          "detail": "This preview is low resolution and cannot certify final print sharpness, colour reproduction, edge quality, or embedded PDF raster DPI. Review the source/output at production resolution before release.",
+          "severity": "info",
+          "title": "Preview resolution limitation notice",
+          "detail": "Low-resolution preview display cannot certify final print quality, colour accuracy, or embedded raster DPI. Measured findings are applied separately by the system.",
           "evidence_id": "preview:page-1"
         }
       ],
@@ -253,24 +246,24 @@
       "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
       "version": 1
     },
-    "reportDigest": "d492534663d627e86a78ac9d56fbc9cd8db938b8d1d7b56d0d990f7435cd79ce",
+    "reportDigest": "4581167005c03b1464a0011eb581f32e3051dc904acb3d5a8e68e6f7b527baad",
     "receipt": {
-      "id": "dad250b8220b34e38eea918b2e5fffdefd74e9f4a211eb1f",
-      "reportDigest": "d492534663d627e86a78ac9d56fbc9cd8db938b8d1d7b56d0d990f7435cd79ce",
+      "id": "ead1719883e6bc60f55a966caa2b9450a9f2aa58b2d0efbd",
+      "reportDigest": "4581167005c03b1464a0011eb581f32e3051dc904acb3d5a8e68e6f7b527baad",
       "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
       "version": 1,
-      "at": 1789305641,
+      "at": 1789309313,
       "simulated": true
     },
     "turns": 4,
-    "inputTokens": 3955,
-    "outputTokens": 299,
-    "usedMicros": 1349,
+    "inputTokens": 7654,
+    "outputTokens": 356,
+    "usedMicros": 9434,
     "error": "",
-    "model": "gpt-5.6-luna",
-    "promptVersion": "artwork-v2-luna",
-    "created": 1789305627,
-    "expires": 1789910427,
-    "approvalExpires": 1789392039
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": "artwork-v3-claude",
+    "created": 1789309299,
+    "expires": 1789914099,
+    "approvalExpires": 1789395710
   }
 }

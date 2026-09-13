@@ -7,7 +7,7 @@ flowchart LR
   API --> DB[(Portfolio-only PostgreSQL)]
   API --> Decode[Fixed isolated file decoder]
   API --> Loop[Bounded Python tool loop]
-  Loop --> OpenAI[OpenAI Responses / GPT-5.6 Luna]
+  Loop --> Claude[Anthropic Messages / Claude Haiku 4.5]
   Loop --> Tools[Measurements / demo specs / page previews]
   API --> PDF[ReportLab proof package]
 ```

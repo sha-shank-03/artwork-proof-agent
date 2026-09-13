@@ -1,5 +1,8 @@
 # Connected console verification - 13 September 2026
 
+Historical UI-redesign report, before the requested model changes. For current
+Claude validation and limitations, see [Claude migration](CLAUDE_MIGRATION.md).
+
 ## Story
 
 A reviewer opens the system map, inspects integration boundaries, plays a genuine recorded run, and follows measured model calls through evidence and a human decision. An invited reviewer can also start a synthetic live run, refresh its persisted state and approve the exact result. Public browsing never needs a live backend.

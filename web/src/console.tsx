@@ -209,7 +209,12 @@ function nodesFor(app: AppKind, model: string): NodeInfo[] {
     },
     {
       id: "llm",
-      title: model,
+      title:
+        model === "gpt-5.6-luna"
+          ? "GPT-5.6 Luna"
+          : model === "claude-haiku-4-5-20251001"
+            ? "Claude Haiku 4.5"
+            : model,
       tag: "LLM call",
       sub: artwork
         ? "Text + image → typed findings"
@@ -296,7 +301,8 @@ export function SystemMap({
   run?: ConsoleRun | null;
 }) {
   const model =
-      run?.model || (app === "artwork" ? "claude-haiku-4-5-20251001" : "gpt-5.6-luna"),
+      run?.model ||
+      (app === "artwork" ? "claude-haiku-4-5-20251001" : "gpt-5.6-luna"),
     nodes = nodesFor(app, model);
   const [selected, setSelected] = useState("llm"),
     [paths, setPaths] = useState<{ d: string; active: boolean }[]>([]);
@@ -937,8 +943,8 @@ export function ReviewerBrief({
               <>
                 <li>FastAPI, Python, React/TypeScript and PostgreSQL.</li>
                 <li>
-                  Claude Haiku Messages loop with typed tool schemas and
-                  bounded preview input.
+                  Claude Haiku Messages loop with typed tool schemas and bounded
+                  preview input.
                 </li>
                 <li>
                   Isolated PNG/JPEG/PDF processing; code-owned measurements.
@@ -952,8 +958,8 @@ export function ReviewerBrief({
               <>
                 <li>Go/GraphQL, Python, React/TypeScript and PostgreSQL.</li>
                 <li>
-                  GPT-5.6 Luna via OpenAI Agents SDK with typed tools and native approval
-                  interruptions.
+                  GPT-5.6 Luna via OpenAI Agents SDK with typed tools and native
+                  approval interruptions.
                 </li>
                 <li>
                   Read-only MCP catalogue and Playwright fixture navigation.
@@ -974,14 +980,15 @@ export function ReviewerBrief({
           <span className="section-number">03 / VERIFICATION EVIDENCE</span>
           <div className="verified-count">
             <CheckCircle2 size={23} />
-            <strong>{artwork ? "30 / 30" : "40 / 40"}</strong>
+            <strong>{artwork ? "30 / 30" : "39 / 40"}</strong>
             <span>defined live evaluation cases passed</span>
           </div>
           <p>
-            Verified on 13 September 2026 after one network-failed case was
-            rerun in each app. Initial outcomes and reruns remain in the
-            downloadable reports. These are synthetic test results, not a
-            production success-rate claim.
+            Verified on 13 September 2026 with Luna for Commerce and Claude for
+            Artwork. One Commerce investigation stopped safely at application
+            validation; all 40 action-safety audits passed. The failure is
+            included in the reports, not retested into a perfect score. These
+            synthetic results are not a production success-rate claim.
           </p>
           <p>
             {artwork

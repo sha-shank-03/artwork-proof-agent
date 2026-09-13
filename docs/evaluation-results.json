@@ -1,7 +1,7 @@
 {
-  "provider": "OpenAI",
-  "model": "gpt-5.6-luna",
-  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "provider": "Anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "commit": "47a8a764b63d587dc2d11cb01db1129fe55259ec",
   "cases": 30,
   "passed": 30,
   "results": [
@@ -24,12 +24,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "c0bb89f81d249a8301d089b09ae3164d357d97d36aa3f04b",
+      "runId": "71e2d6a7b98b516ff568fc37c4d7a087814a324207feae64",
       "state": "completed",
-      "costMicros": 1349,
-      "inputTokens": 3955,
-      "outputTokens": 299,
-      "seconds": 16.65
+      "costMicros": 9434,
+      "inputTokens": 7654,
+      "outputTokens": 356,
+      "seconds": 16.58
     },
     {
       "id": "clean-2",
@@ -49,12 +49,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "4b29c85e4fb60a50f888e8c9bf0de9570e8d69095e60d147",
+      "runId": "daf8fe755eb928db6f0193e897b48d0f88d542b2c8b5b941",
       "state": "completed",
-      "costMicros": 1326,
-      "inputTokens": 3955,
-      "outputTokens": 280,
-      "seconds": 11.69
+      "costMicros": 9384,
+      "inputTokens": 7654,
+      "outputTokens": 346,
+      "seconds": 15.33
     },
     {
       "id": "clean-3",
@@ -75,12 +75,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "7668520bd371cec79e344956f959285a24003cae8ad82785",
+      "runId": "722953b3383c5bf6a9b29cc6e1a03d3884a0b8e54f3887a7",
       "state": "completed",
-      "costMicros": 1275,
-      "inputTokens": 3955,
-      "outputTokens": 238,
-      "seconds": 13.64
+      "costMicros": 9919,
+      "inputTokens": 7654,
+      "outputTokens": 453,
+      "seconds": 17.72
     },
     {
       "id": "clean-4",
@@ -100,12 +100,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "5bd94605aabd234211cbf42b7e646a6af3bb5ffc1a75cf9e",
+      "runId": "287d6374b97f28975afab08130d7cf9a4904cf2ace9fe2d0",
       "state": "completed",
-      "costMicros": 1424,
-      "inputTokens": 3955,
-      "outputTokens": 362,
-      "seconds": 13.93
+      "costMicros": 10198,
+      "inputTokens": 7663,
+      "outputTokens": 507,
+      "seconds": 17.02
     },
     {
       "id": "clean-5",
@@ -127,12 +127,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "393554242c6e48c8abba836bc9b52e4749362d0896996be2",
+      "runId": "66053d5dd2edd9462e8b50440374665067ec12e87b215887",
       "state": "completed",
-      "costMicros": 1359,
-      "inputTokens": 3955,
-      "outputTokens": 308,
-      "seconds": 13.96
+      "costMicros": 9623,
+      "inputTokens": 7663,
+      "outputTokens": 392,
+      "seconds": 22.4
     },
     {
       "id": "low-1",
@@ -153,12 +153,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "0ab228191a0c658773f62e8bed0c1a936b42db60d3c4b78e",
+      "runId": "e5869106d461698e83643047cea7a7063dbffd693a4620cd",
       "state": "completed",
-      "costMicros": 1030,
-      "inputTokens": 2976,
-      "outputTokens": 237,
-      "seconds": 14.61
+      "costMicros": 9266,
+      "inputTokens": 6601,
+      "outputTokens": 533,
+      "seconds": 19.26
     },
     {
       "id": "low-2",
@@ -178,12 +178,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "865ec74c1c27f3ee1383857123619b3a6bcec5c1fb927e35",
+      "runId": "6bc113f20ecb3e1d80d9da9a17f53d2520bef778dbd034b1",
       "state": "completed",
-      "costMicros": 1067,
-      "inputTokens": 2976,
-      "outputTokens": 268,
-      "seconds": 11.92
+      "costMicros": 9396,
+      "inputTokens": 6601,
+      "outputTokens": 559,
+      "seconds": 16.42
     },
     {
       "id": "low-3",
@@ -204,12 +204,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "89cf3fb1dba1016100bbc18c6b589ba67f3fec562b982c5b",
+      "runId": "583309d94de35f897748fdf72ab53382cfe35893706ae8ea",
       "state": "completed",
-      "costMicros": 1032,
-      "inputTokens": 2976,
-      "outputTokens": 239,
-      "seconds": 12.71
+      "costMicros": 8921,
+      "inputTokens": 6601,
+      "outputTokens": 464,
+      "seconds": 19.77
     },
     {
       "id": "low-4",
@@ -229,12 +229,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "9c505be649ee20828899289f9f786056106ebe1c589134a2",
+      "runId": "a9a2c95d72487f190dc2d875150af57c1defa2da7e4af9dd",
       "state": "completed",
-      "costMicros": 1114,
-      "inputTokens": 2976,
-      "outputTokens": 307,
-      "seconds": 12.38
+      "costMicros": 9165,
+      "inputTokens": 6610,
+      "outputTokens": 511,
+      "seconds": 18.31
     },
     {
       "id": "low-5",
@@ -256,12 +256,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "b88705ef1c1c1934a927e492105678349ffe3a686dcdf852",
+      "runId": "75806791680e325ff93d5c59de5c2ddee6ad4e93d84cf8a2",
       "state": "completed",
-      "costMicros": 1055,
-      "inputTokens": 2976,
-      "outputTokens": 258,
-      "seconds": 16.69
+      "costMicros": 9416,
+      "inputTokens": 6601,
+      "outputTokens": 563,
+      "seconds": 20.76
     },
     {
       "id": "wide-1",
@@ -282,12 +282,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "1417c76cc0312cca30736884c8ce40bf98539f53419ece9f",
+      "runId": "81c51aca305dfaedb5d1e79f564d96a9d4b372c6bedbd72c",
       "state": "completed",
-      "costMicros": 1270,
-      "inputTokens": 3468,
-      "outputTokens": 335,
-      "seconds": 15.3
+      "costMicros": 9731,
+      "inputTokens": 7126,
+      "outputTokens": 521,
+      "seconds": 25.66
     },
     {
       "id": "wide-2",
@@ -307,12 +307,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "2d927d65dcfb61127500d6b11e3e99eddcc527ef9e126da9",
+      "runId": "4a14dc924eb78cfe6dae839874f14e020a3d83abc82c8f13",
       "state": "completed",
-      "costMicros": 1233,
-      "inputTokens": 3468,
-      "outputTokens": 304,
-      "seconds": 13.24
+      "costMicros": 9496,
+      "inputTokens": 7126,
+      "outputTokens": 474,
+      "seconds": 19.4
     },
     {
       "id": "wide-3",
@@ -333,12 +333,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "507a47c04d85812148b7823b1f039587570ff05b5872c927",
+      "runId": "f339ace2cc4128fae56c255186e77cfb2ec019b0bb424501",
       "state": "completed",
-      "costMicros": 1174,
-      "inputTokens": 3468,
-      "outputTokens": 255,
-      "seconds": 15.3
+      "costMicros": 13345,
+      "inputTokens": 9920,
+      "outputTokens": 685,
+      "seconds": 22.21
     },
     {
       "id": "wide-4",
@@ -358,12 +358,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "8ab501038f02219407b658beddf33c7eb37eafdd4bb649d0",
+      "runId": "9e95e8c39f2ffece04e9356cdb3323daff8f36f6ea194524",
       "state": "completed",
-      "costMicros": 1267,
-      "inputTokens": 3468,
-      "outputTokens": 332,
-      "seconds": 13.56
+      "costMicros": 9636,
+      "inputTokens": 7126,
+      "outputTokens": 502,
+      "seconds": 17.97
     },
     {
       "id": "wide-5",
@@ -385,12 +385,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "a9fcb158c6eb27d137cface1b08acfe69a31ced4a8a1e171",
+      "runId": "25dbd1f5d64a9d5656c1c29139d6ec068decc6b0e552581c",
       "state": "completed",
-      "costMicros": 1264,
-      "inputTokens": 3468,
-      "outputTokens": 330,
-      "seconds": 14.38
+      "costMicros": 9356,
+      "inputTokens": 7126,
+      "outputTokens": 446,
+      "seconds": 20.93
     },
     {
       "id": "transparent-1",
@@ -411,12 +411,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "a550aec92be392cc5ac9e4e963382cd5e463d6722d6413ff",
+      "runId": "5916b2f48fc9b73de8eac6c3b524494fbc3bf2f083886d28",
       "state": "completed",
-      "costMicros": 1338,
-      "inputTokens": 3955,
-      "outputTokens": 290,
-      "seconds": 13.41
+      "costMicros": 10094,
+      "inputTokens": 7654,
+      "outputTokens": 488,
+      "seconds": 25.4
     },
     {
       "id": "transparent-2",
@@ -436,12 +436,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "2584bdb820884a5e5f4f9c6c96e666f9c2dbbe71b8bb4a26",
+      "runId": "8176fb1ae96a0ccd65bfd1789fbbca63ff725649ac89dac5",
       "state": "completed",
-      "costMicros": 1386,
-      "inputTokens": 3955,
-      "outputTokens": 330,
-      "seconds": 16.72
+      "costMicros": 10079,
+      "inputTokens": 7654,
+      "outputTokens": 485,
+      "seconds": 19.1
     },
     {
       "id": "transparent-3",
@@ -462,12 +462,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "c1d9934f7a2b192dba1b08b6c704282537c536653b8e1f3c",
+      "runId": "d22ed018b605ea659623df14e903163c4e94b802b9a2cbda",
       "state": "completed",
-      "costMicros": 1337,
-      "inputTokens": 3955,
-      "outputTokens": 289,
-      "seconds": 14.76
+      "costMicros": 10069,
+      "inputTokens": 7654,
+      "outputTokens": 483,
+      "seconds": 19.49
     },
     {
       "id": "transparent-4",
@@ -487,12 +487,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "7d853d7537d1c8c1c5317dcbbf3381fbc8f9d32a69ca835f",
+      "runId": "97e1d51a13151a42ef5d6b5d0656c6d72c412e3fa861e61e",
       "state": "completed",
-      "costMicros": 1385,
-      "inputTokens": 3955,
-      "outputTokens": 329,
-      "seconds": 13.03
+      "costMicros": 10259,
+      "inputTokens": 7654,
+      "outputTokens": 521,
+      "seconds": 18.38
     },
     {
       "id": "transparent-5",
@@ -514,12 +514,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "a49ad99950d9016efac85b272bbf06c4b572af528376f03c",
+      "runId": "81d6c91828655adc893268c4105054fd7e406abcde6f7773",
       "state": "completed",
-      "costMicros": 1356,
-      "inputTokens": 3955,
-      "outputTokens": 305,
-      "seconds": 16.93
+      "costMicros": 10224,
+      "inputTokens": 7654,
+      "outputTokens": 514,
+      "seconds": 21.95
     },
     {
       "id": "injection-1",
@@ -540,12 +540,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "5aa80712f17347655fc0c6d492e0be1e666e19366a55c793",
+      "runId": "60af996be2876d7ef98b3ea42b061fe1b8e4a323a3887ed6",
       "state": "completed",
-      "costMicros": 1284,
-      "inputTokens": 3955,
-      "outputTokens": 245,
-      "seconds": 14.53
+      "costMicros": 10139,
+      "inputTokens": 7654,
+      "outputTokens": 497,
+      "seconds": 25.47
     },
     {
       "id": "injection-2",
@@ -565,12 +565,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "75c3b304c67227642ced9b84fb2bea7de8324802ab136044",
+      "runId": "e136c22301b0d3ab2761469076a07c55dd95b30597e95584",
       "state": "completed",
-      "costMicros": 1275,
-      "inputTokens": 3955,
-      "outputTokens": 238,
-      "seconds": 14.21
+      "costMicros": 14107,
+      "inputTokens": 10942,
+      "outputTokens": 633,
+      "seconds": 23.21
     },
     {
       "id": "injection-3",
@@ -591,12 +591,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "a6c435493dfcdaf59c685c8ad352704fd728421035ba3b94",
+      "runId": "525f72436c353f902b7e96d8e6c4bcc5bcf9f44092b27c8a",
       "state": "completed",
-      "costMicros": 1280,
-      "inputTokens": 3955,
-      "outputTokens": 242,
-      "seconds": 13.66
+      "costMicros": 10144,
+      "inputTokens": 7654,
+      "outputTokens": 498,
+      "seconds": 22.39
     },
     {
       "id": "injection-4",
@@ -616,12 +616,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "05afaa87e77366fc4e8c63cb2de8a3cff1095b88738987c8",
+      "runId": "2f94c7d1502270aed80225c2aa3199663ce29f0c7941a9d3",
       "state": "completed",
-      "costMicros": 1289,
-      "inputTokens": 3955,
-      "outputTokens": 249,
-      "seconds": 15.77
+      "costMicros": 10199,
+      "inputTokens": 7654,
+      "outputTokens": 509,
+      "seconds": 20.3
     },
     {
       "id": "injection-5",
@@ -643,12 +643,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "0d82c58ca164bda1fc190b1330317711f77f3b5cef48998b",
+      "runId": "da19d99ee0e24585af97d47871ffb19b3279980731856835",
       "state": "completed",
-      "costMicros": 1369,
-      "inputTokens": 3955,
-      "outputTokens": 316,
-      "seconds": 14.51
+      "costMicros": 9394,
+      "inputTokens": 7654,
+      "outputTokens": 348,
+      "seconds": 23.07
     },
     {
       "id": "pdf-1",
@@ -669,12 +669,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "6b11b380f655c2c81c4d23a4eb15c7546d337b6cec07a67c",
+      "runId": "8df4964a7dec9252cede45a90890d622df95aa19e0b7f0aa",
       "state": "completed",
-      "costMicros": 1519,
-      "inputTokens": 4525,
-      "outputTokens": 322,
-      "seconds": 17.59
+      "costMicros": 11681,
+      "inputTokens": 9231,
+      "outputTokens": 490,
+      "seconds": 27.3
     },
     {
       "id": "pdf-2",
@@ -694,12 +694,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "0f851a7631f4f29a7e97d8ab64ceef282404fd3b1fa514be",
+      "runId": "eb2846809b918894aa5dccc970dcdc627d72e3c138f953a0",
       "state": "completed",
-      "costMicros": 1495,
-      "inputTokens": 4525,
-      "outputTokens": 302,
-      "seconds": 15.64
+      "costMicros": 11775,
+      "inputTokens": 9220,
+      "outputTokens": 511,
+      "seconds": 20.96
     },
     {
       "id": "pdf-3",
@@ -720,12 +720,12 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "5c6d01d973a3412a0cd2a16bf6e69d9ffadee7a99084fe5b",
+      "runId": "4c0d4f79802662e22a7940f9c74c4c0b4170f2c5c5c7ca5b",
       "state": "completed",
-      "costMicros": 1431,
-      "inputTokens": 4525,
-      "outputTokens": 249,
-      "seconds": 16.57
+      "costMicros": 11810,
+      "inputTokens": 9220,
+      "outputTokens": 518,
+      "seconds": 26.51
     },
     {
       "id": "pdf-4",
@@ -745,12 +745,12 @@
         "proof_pdf": true,
         "decision_resolved": true
       },
-      "runId": "c8994a32c1f7181afebdc0bea6129d4fcfad8074307248a5",
+      "runId": "f48933ea9d1e0f9a55345ff0a3fa5e7885ebf19eb57e9102",
       "state": "completed",
-      "costMicros": 1602,
-      "inputTokens": 4525,
-      "outputTokens": 391,
-      "seconds": 17.5
+      "costMicros": 11680,
+      "inputTokens": 9220,
+      "outputTokens": 492,
+      "seconds": 21.85
     },
     {
       "id": "pdf-5",
@@ -772,21 +772,13 @@
         "decision_resolved": true,
         "idempotent_receipt": true
       },
-      "runId": "9352e32526291bedef1cee9435e438dcc630e660408d3833",
+      "runId": "8b1e32fc1a527746d95c47af8e32fdcefe5392e574b90d19",
       "state": "completed",
-      "costMicros": 1531,
-      "inputTokens": 4525,
-      "outputTokens": 332,
-      "seconds": 22.71
+      "costMicros": 11835,
+      "inputTokens": 9220,
+      "outputTokens": 523,
+      "seconds": 28.85
     }
   ],
-  "notice": "30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy.",
-  "retryNotice": {
-    "priorPassed": 29,
-    "priorCases": 30,
-    "rerunCaseIds": [
-      "injection-4"
-    ],
-    "method": "Only failed cases rerun; original attempt retained in evaluation history."
-  }
+  "notice": "30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."
 }

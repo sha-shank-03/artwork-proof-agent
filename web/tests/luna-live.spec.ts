@@ -60,7 +60,8 @@ test("hosted Claude inspection requires approval and survives refresh", async ({
   expect(spans.length).toBe(approved.turns);
   expect(
     spans.every(
-      (e: any) => e.call.model === "claude-haiku-4-5-20251001" && e.call.durationMs >= 0,
+      (e: any) =>
+        e.call.model === "claude-haiku-4-5-20251001" && e.call.durationMs >= 0,
     ),
   ).toBe(true);
   expect(

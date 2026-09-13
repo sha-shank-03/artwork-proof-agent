@@ -260,9 +260,10 @@ export default function App() {
               <LockKeyhole size={25} />
               <h2 style={{ marginTop: 15 }}>A closer look, by invitation.</h2>
               <p>
-                Use your reviewer invitation to try real Claude-powered analysis.
-                Upload only synthetic or non-confidential artwork you own. Files
-                expire after seven days; no files are sent to a printer.
+                Use your reviewer invitation to try real Claude-powered
+                analysis. Upload only synthetic or non-confidential artwork you
+                own. Files expire after seven days; no files are sent to a
+                printer.
               </p>
               <label htmlFor="invite">Invitation token</label>
               <input
@@ -507,8 +508,10 @@ export default function App() {
                       {current.report && (
                         <>
                           {mode === "replay" &&
-                            current.reportDigest ===
-                              "613b8b8915bfae9d54def8a734dcd5d843ea3e9854a45303813f93b56a318f7e" && (
+                            [
+                              "613b8b8915bfae9d54def8a734dcd5d843ea3e9854a45303813f93b56a318f7e",
+                              "6085e7978b8ffd33b75513f600f1272833312b1b758a52595e17532d1b68560b",
+                            ].includes(current.reportDigest) && (
                               <aside
                                 className="review-note"
                                 aria-label="Independent reviewer note"
@@ -518,10 +521,10 @@ export default function App() {
                                 </strong>
                                 <p>
                                   The sample text is visibly cut off at the
-                                  right edge. The recorded model's “no obvious
-                                  clipping” comment is unreliable. The authentic
-                                  report is unchanged; human visual review
-                                  remains necessary.
+                                  right edge. Positive alignment or clipping
+                                  comments in this recording are unreliable. The
+                                  authentic report is unchanged; human visual
+                                  review remains necessary.
                                 </p>
                               </aside>
                             )}

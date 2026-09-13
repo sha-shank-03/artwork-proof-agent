@@ -1,14 +1,14 @@
 # Artwork Proof Agent
 
-An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; GPT-5.6 Luna selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
+An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; Claude Haiku 4.5 selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Demo status:** the [connected agent console](https://artwork-proof-agent.vercel.app) and isolated Railway backend use GPT-5.6 Luna. Six genuine, interactive proof recordings and downloadable PDFs work anonymously. **30/30 final workflow cases and 27 hosted browser checks passed**; one network-failed evaluation case was rerun and the original attempt retained. Source remains private pending the separate publication review. See [UI verification](docs/UI_VERIFICATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
+**Model update:** the isolated Railway backend now uses Claude Haiku 4.5. **30/30 genuine Claude workflow cases passed** without retesting failures into a perfect score. Six new recordings and proof PDFs are prepared for the [connected agent console](https://artwork-proof-agent.vercel.app). Source remains private pending the separate publication review. See [Claude migration](docs/CLAUDE_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
 
 ## Features
 
 - PNG/JPEG/PDF validation, 10 MB maximum, five PDF pages, bounded decoded dimensions, encrypted/malformed-file rejection.
 - Effective raster DPI, transparency, aspect ratio, transparent margins, and clearly labelled PDF resolution limitations.
-- Tool-driven Luna inspection, clarification checkpoints, measured/model-suggested/human-review findings, exact-version approval.
+- Tool-driven Claude inspection, clarification checkpoints, measured/model-suggested/human-review findings, exact-version approval.
 - JSON report and downloadable PDF proof, invite/session isolation, budget reservations, original synthetic samples and responsive React interface.
 - System map, integration inspector, state-aware next actions, synchronized playback and actual model-call timing/tokens/cost.
 - Reviewer brief, dark/light themes and downloadable verification history; no backend calls while browsing replays.
@@ -22,7 +22,7 @@ uv sync --frozen
 export DATABASE_URL='postgresql://YOUR_LOCAL_USER@localhost:5432/portfolio_artwork'
 export ALLOWED_ORIGIN='http://localhost:5174'
 export LIVE_ENABLED=true
-uv run python tools/with_provider.py /path/to/private.env OPENAI_API_KEY .venv/bin/python -m uvicorn app.main:app --factory --host 127.0.0.1 --port 8081 --no-access-log
+uv run python tools/with_provider.py /path/to/private.env ANTHROPIC_API_KEY .venv/bin/python -m uvicorn app.main:app --factory --host 127.0.0.1 --port 8081 --no-access-log
 ```
 
 In another terminal with the same database URL:

@@ -45,10 +45,14 @@ def build(report):
     Path("docs/evaluation-results.json").write_text(json.dumps(public,indent=2))
     history=[{k:v for k,v in json.loads(p.read_text()).items() if k!="recordings"} for p in sorted(Path("evals/results").glob("attempt-*.json"))]
     Path("docs/evaluation-history.json").write_text(json.dumps(history,indent=2))
+    Path("web/public/verification.json").write_text(json.dumps(public,indent=2))
+    Path("web/public/evaluation-history.json").write_text(json.dumps(history,indent=2))
     rows=report["results"];cost=sum(r["costMicros"] for r in rows)/1e6;latency=[r["seconds"] for r in rows]
     Path("docs/EVALUATIONS.md").write_text(f"""# Genuine live evaluation results
 
 Actual result: **{sum(bool(r['passed']) for r in rows)}/30** on commit `{report['commit']}`. Six original designs under five size/decision conditions, not thirty unrelated visual tasks.
+
+Model: `{report['model']}` via {report['provider']}. Prompt: `artwork-v3-claude`.
 
 Application-estimated model usage: **${cost:.6f}**. Median end-to-end latency **{statistics.median(latency):.2f}s**; maximum **{max(latency):.2f}s**. Polling, tool processing and automated reviewer decisions are included. These estimates are not a provider invoice.
 

@@ -1,15 +1,15 @@
 {
   "version": 1,
   "label": "wide layout",
-  "recordedAt": "2026-09-13T13:23:09.330417+00:00",
-  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "recordedAt": "2026-09-13T14:25:53.926511+00:00",
+  "commit": "47a8a764b63d587dc2d11cb01db1129fe55259ec",
   "providerVerified": true,
   "proofFile": "/replays/wide-layout.pdf",
   "run": {
-    "id": "1417c76cc0312cca30736884c8ce40bf98539f53419ece9f",
+    "id": "81c51aca305dfaedb5d1e79f564d96a9d4b372c6bedbd72c",
     "name": "wide-layout.png",
     "state": "completed",
-    "summary": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+    "summary": "Artwork inspection of 1 page at requested 3.0 \u00d7 3.0 inches. File contains a PNG image (900 \u00d7 450 pixels) featuring a beige background with a dark green rounded rectangle and white text reading \"FIELD NOTES / ORIGINAL DEMO.\" Low-resolution preview cannot certify final print accuracy, colour reproduction, or embedded raster DPI. One significant dimension mismatch identified between artwork aspect ratio and requested square print format. No alpha transparency detected.",
     "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
     "version": 1,
     "width": 3.0,
@@ -23,19 +23,19 @@
         "kind": "upload",
         "title": "Artwork received",
         "detail": "PNG / 1 page(s)",
-        "at": "2026-09-13T13:23:09.330417+00:00",
+        "at": "2026-09-13T14:25:53.926511+00:00",
         "call": null
       },
       {
         "seq": 2,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:23:10.028000+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:25:54.807293+00:00",
         "call": {
           "id": "model-1",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -46,16 +46,16 @@
         "seq": 3,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:23:10.819462+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:25:55.789404+00:00",
         "call": {
           "id": "model-1",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 648,
-          "inputTokens": 632,
-          "outputTokens": 15,
-          "costMicros": 176
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 654,
+          "inputTokens": 1488,
+          "outputTokens": 12,
+          "costMicros": 1548
         }
       },
       {
@@ -63,19 +63,19 @@
         "kind": "tool",
         "title": "inspect_measurements",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:23:10.819505+00:00",
+        "at": "2026-09-13T14:25:55.789443+00:00",
         "call": null
       },
       {
         "seq": 5,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:23:11.367351+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:25:59.926349+00:00",
         "call": {
           "id": "model-2",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -86,16 +86,16 @@
         "seq": 6,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:23:12.387324+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:26:00.895999+00:00",
         "call": {
           "id": "model-2",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 679,
-          "inputTokens": 703,
-          "outputTokens": 15,
-          "costMicros": 194
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 646,
+          "inputTokens": 1587,
+          "outputTokens": 14,
+          "costMicros": 1657
         }
       },
       {
@@ -103,19 +103,19 @@
         "kind": "tool",
         "title": "read_demo_specs",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:23:12.387362+00:00",
+        "at": "2026-09-13T14:26:00.896046+00:00",
         "call": null
       },
       {
         "seq": 8,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:23:13.081737+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:26:01.697001+00:00",
         "call": {
           "id": "model-3",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -126,16 +126,16 @@
         "seq": 9,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:23:14.124192+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:26:02.723741+00:00",
         "call": {
           "id": "model-3",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 901,
-          "inputTokens": 784,
-          "outputTokens": 18,
-          "costMicros": 218
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 700,
+          "inputTokens": 1695,
+          "outputTokens": 29,
+          "costMicros": 1840
         }
       },
       {
@@ -143,19 +143,19 @@
         "kind": "tool",
         "title": "inspect_preview",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:23:14.124253+00:00",
+        "at": "2026-09-13T14:26:02.723799+00:00",
         "call": null
       },
       {
         "seq": 11,
         "kind": "model",
         "title": "Model call started",
-        "detail": "OpenAI request after input counting and a successful spending reservation.",
-        "at": "2026-09-13T13:23:14.736792+00:00",
+        "detail": "Anthropic request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T14:26:03.453123+00:00",
         "call": {
           "id": "model-4",
           "phase": "started",
-          "model": "gpt-5.6-luna",
+          "model": "claude-haiku-4-5-20251001",
           "durationMs": null,
           "inputTokens": null,
           "outputTokens": null,
@@ -166,24 +166,24 @@
         "seq": 12,
         "kind": "model",
         "title": "Model response received",
-        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
-        "at": "2026-09-13T13:23:18.944530+00:00",
+        "detail": "Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.",
+        "at": "2026-09-13T14:26:10.994709+00:00",
         "call": {
           "id": "model-4",
           "phase": "completed",
-          "model": "gpt-5.6-luna",
-          "durationMs": 4000,
-          "inputTokens": 1349,
-          "outputTokens": 287,
-          "costMicros": 682
+          "model": "claude-haiku-4-5-20251001",
+          "durationMs": 5595,
+          "inputTokens": 2356,
+          "outputTokens": 466,
+          "costMicros": 4686
         }
       },
       {
         "seq": 13,
         "kind": "report",
         "title": "Proof package ready",
-        "detail": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
-        "at": "2026-09-13T13:23:18.944783+00:00",
+        "detail": "Artwork inspection of 1 page at requested 3.0 \u00d7 3.0 inches. File contains a PNG image (900 \u00d7 450 pixels) featuring a beige background with a dark green rounded rectangle and white text reading \"FIELD NOTES / ORIGINAL DEMO.\" Low-resolution preview cannot certify final print accuracy, colour reproduction, or embedded raster DPI. One significant dimension mismatch identified between artwork aspect ratio and requested square print format. No alpha transparency detected.",
+        "at": "2026-09-13T14:26:10.995002+00:00",
         "call": null
       },
       {
@@ -191,7 +191,7 @@
         "kind": "tool",
         "title": "submit_report",
         "detail": "Validated application tool call",
-        "at": "2026-09-13T13:23:18.944791+00:00",
+        "at": "2026-09-13T14:26:10.995014+00:00",
         "call": null
       },
       {
@@ -199,12 +199,12 @@
         "kind": "approval",
         "title": "Proof approved",
         "detail": "Human review recorded. Nothing was sent to a printer.",
-        "at": "2026-09-13T13:23:21.909791+00:00",
+        "at": "2026-09-13T14:26:14.146935+00:00",
         "call": null
       }
     ],
     "report": {
-      "summary": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+      "summary": "Artwork inspection of 1 page at requested 3.0 \u00d7 3.0 inches. File contains a PNG image (900 \u00d7 450 pixels) featuring a beige background with a dark green rounded rectangle and white text reading \"FIELD NOTES / ORIGINAL DEMO.\" Low-resolution preview cannot certify final print accuracy, colour reproduction, or embedded raster DPI. One significant dimension mismatch identified between artwork aspect ratio and requested square print format. No alpha transparency detected.",
       "findings": [
         {
           "category": "measured",
@@ -237,22 +237,22 @@
         {
           "category": "model-suggested",
           "severity": "warning",
-          "title": "Composition is strongly landscape-oriented",
-          "detail": "The visible artwork is a wide horizontal panel with substantial side-to-side emphasis, which may not fit a 3.0 \u00d7 3.0 inch square format without cropping, scaling, or added margins. Confirm the intended square treatment.",
+          "title": "Aspect ratio mismatch",
+          "detail": "Artwork is 900 \u00d7 450 pixels (2:1 horizontal ratio), but requested print size is 3.0 \u00d7 3.0 inches (square). This will result in distortion if stretched to square, or letterboxing/pillarboxing if scaled proportionally.",
           "evidence_id": "preview:page-1"
         },
         {
           "category": "model-suggested",
-          "severity": "warning",
-          "title": "Small text may need legibility check",
-          "detail": "The white line \u201cFIELD NOTES / ORIGINAL DEMO\u201d is relatively small within the artwork. Verify its final-size readability at the intended viewing distance.",
+          "severity": "info",
+          "title": "Low-resolution preview limitation",
+          "detail": "Preview shown is a low-resolution rendition. It cannot certify final print colour accuracy, halftone rendering, or embedded raster DPI performance at production resolution (300 DPI target).",
           "evidence_id": "preview:page-1"
         },
         {
-          "category": "requires-human-review",
+          "category": "model-suggested",
           "severity": "info",
-          "title": "Preview cannot certify print output",
-          "detail": "This preview is insufficient to certify final print sharpness, colour reproduction, or embedded raster DPI. Review the production file and a suitable-size proof for those checks.",
+          "title": "Demonstration file note",
+          "detail": "Artwork contains text 'ORIGINAL DEMO' and specification version is 'demo-print-v1', indicating this is a demonstration file. Confirm this is the intended final artwork.",
           "evidence_id": "preview:page-1"
         }
       ],
@@ -260,24 +260,24 @@
       "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
       "version": 1
     },
-    "reportDigest": "411a906978f150b0222ecced280cfb1d284846964f38b5f2e2b180a01b7bbd41",
+    "reportDigest": "0a9f21e5e3c2b29dcb75db66bfd7ad61d9a2994e56513d88724e43f10504bfc2",
     "receipt": {
-      "id": "7dc1d05ebd184b05b0224272f32abeb5495cdc706ce6f48f",
-      "reportDigest": "411a906978f150b0222ecced280cfb1d284846964f38b5f2e2b180a01b7bbd41",
+      "id": "df2a38c55ff2aa5674eb521b641a93e9ed8d7d2d07dbf856",
+      "reportDigest": "0a9f21e5e3c2b29dcb75db66bfd7ad61d9a2994e56513d88724e43f10504bfc2",
       "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
       "version": 1,
-      "at": 1789305801,
+      "at": 1789309574,
       "simulated": true
     },
     "turns": 4,
-    "inputTokens": 3468,
-    "outputTokens": 335,
-    "usedMicros": 1270,
+    "inputTokens": 7126,
+    "outputTokens": 521,
+    "usedMicros": 9731,
     "error": "",
-    "model": "gpt-5.6-luna",
-    "promptVersion": "artwork-v2-luna",
-    "created": 1789305789,
-    "expires": 1789910589,
-    "approvalExpires": 1789392198
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": "artwork-v3-claude",
+    "created": 1789309553,
+    "expires": 1789914353,
+    "approvalExpires": 1789395970
   }
 }
