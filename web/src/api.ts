@@ -15,7 +15,7 @@ const finding = z.object({
 export const runSchema = z.object({
   id: z.string(),
   name: z.string(),
-  state: z.string(),
+  state: z.enum(["queued", "running", "awaiting_input", "awaiting_approval", "completed", "failed", "cancelled"]),
   summary: z.string(),
   model: z.string(),
   promptVersion: z.string(),
@@ -106,13 +106,13 @@ export async function getRuns() {
   return z.array(runSchema).parse(result.data);
 }
 export async function loadReplays(): Promise<Replay[]> {
-  const index = await (await fetch("/replays/index.json")).json();
+  const index = z.object({version:z.literal(1),runs:z.array(z.object({file:z.string().regex(/^\/replays\/[a-z0-9-]+\.json$/),label:z.string().min(1).max(200)}))}).parse(await (await fetch("/replays/index.json")).json());
   return Promise.all(
     index.runs.map(async (item: { file: string; label: string }) => {
       if (!/^\/replays\/[a-z0-9-]+\.json$/.test(item.file))
         throw new Error("Invalid replay path");
-      const data = await (await fetch(item.file)).json();
-      return { ...data, label: item.label, run: runSchema.parse(data.run) };
+      const data = z.object({version:z.literal(1),recordedAt:z.string().datetime({offset:true}),commit:z.string().regex(/^[a-f0-9]{40}$/),providerVerified:z.literal(true),proofFile:z.string().regex(/^\/replays\/[a-z0-9-]+\.pdf$/),run:runSchema}).parse(await (await fetch(item.file)).json());
+      return { ...data, label: item.label };
     }),
   );
 }

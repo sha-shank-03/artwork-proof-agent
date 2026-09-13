@@ -8,7 +8,7 @@ Model configuration: `claude-haiku-4-5-20251001` only until another price config
 
 ## Hosted layout
 
-Vercel hosts `web/dist` and curated replay assets. Railway should host this backend alongside the commerce backend and a **new portfolio-only PostgreSQL instance**. Use separate databases, credentials and grants. Never reuse production application databases. Set `ALLOWED_ORIGIN` to the exact Vercel frontend origin; add the `/api` rewrite only after verifying the new backend endpoint. Store Anthropic credentials server-side only.
+Vercel hosts `web/dist`; the catalogue currently contains no genuine Claude recordings. The new `agentic-portfolio` Railway project hosts this backend alongside commerce and a **new portfolio-only PostgreSQL instance**, with separate databases, credentials and denied cross-database CONNECT privileges. The database has no public port. `ALLOWED_ORIGIN` is the exact Vercel frontend origin and the `/api` rewrite is verified. The Anthropic key is stored only in this Railway backend, not Vercel or GitHub. See [deployment commands](HOSTING.md).
 
 The combined portfolio target is $10/month additional cost, with $5 allocated to both model providers. Existing Railway Pro usage is shared and not a free dedicated allowance. Enable backend sleeping where supported; do not add uptime traffic. Baseline memory, volume and live workload must be measured before claiming the target is met. If not affordable, keep live execution local and publish only verified static replays. No plan upgrade or credit purchase is automatic.
 

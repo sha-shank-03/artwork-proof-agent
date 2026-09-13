@@ -1,0 +1,27 @@
+{
+  "baseUrl": "https://artwork-proof-agent.vercel.app",
+  "checks": {
+    "secure_httponly_session": true,
+    "isolated_png_pdf_preflight": true,
+    "spoofed_mime_rejected": true,
+    "svg_rejected": true,
+    "malformed_pdf_rejected": true,
+    "missing_dimensions_pause_without_provider": true,
+    "unapproved_proof_denied": true,
+    "restart_preserved_clarification": true,
+    "cancel_without_provider": true,
+    "live_kill_switch": true,
+    "reviewer_isolation": true,
+    "revoked_session_denied": true
+  },
+  "runId": "27af80a74f0e225f4860feda72249d18a6986f3947090fce",
+  "uploadId": "2414e4c944606b6261a2f6877f0df334f5f94b57da3578df",
+  "verifiedDate": "2026-09-13",
+  "browserChecks": {
+    "chromiumPublicShell": true,
+    "firefoxPublicShell": true,
+    "webkitPublicShell": true,
+    "mobileAndKeyboard": true
+  },
+  "claudeLiveEvaluationComplete": false
+}

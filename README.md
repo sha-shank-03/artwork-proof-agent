@@ -2,7 +2,7 @@
 
 An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; Claude selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Release status:** local deterministic and browser flows are implemented. Live Claude evaluation is blocked by insufficient Anthropic API credit; no successful Claude results or public proof replays are claimed. The 30-case real-provider runner stops on a zero-turn provider failure instead of fabricating output.
+**Release status:** the [public application shell](https://artwork-proof-agent.vercel.app) and isolated Railway backend are deployed. Hosted file checks and access controls are verified, but live Claude evaluation is blocked by insufficient Anthropic API credit. Live execution is disabled; no successful Claude results or genuine proof replays are claimed. The 30-case real-provider runner stops on a zero-turn provider failure instead of fabricating output. See [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
 
 ## Features
 

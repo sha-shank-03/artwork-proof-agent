@@ -15,7 +15,15 @@ from tools.fixtures import fixture
 from app.core import digest
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument("--limit",type=int,default=30);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument("--limit",type=int,default=30)
+    parser.add_argument("--hosted-site");parser.add_argument("--railway-project");parser.add_argument("--railway-environment");parser.add_argument("--railway-service");args=parser.parse_args()
+    selectors=[];issued=[]
+    if args.hosted_site:
+        if not args.hosted_site.startswith("https://") or not all([args.railway_project,args.railway_environment,args.railway_service]):parser.error("Hosted runs require HTTPS and exact Railway project/environment/service IDs")
+        selectors=["--project",args.railway_project,"--environment",args.railway_environment,"--service",args.railway_service]
+    origin=args.hosted_site.rstrip("/") if args.hosted_site else "http://localhost:5174"
+    api=origin+"/api" if args.hosted_site else "http://127.0.0.1:8081"
+    invite_path=Path(".local/hosted-invite.txt" if args.hosted_site else ".local/invite.txt")
     cases=json.loads(Path("evals/cases.json").read_text())[:args.limit]
     commit=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
     output=Path("evals/results");output.mkdir(parents=True,exist_ok=True)
@@ -23,14 +31,16 @@ def main():
     results=[];recordings=[]
     for i,case in enumerate(cases):
         if i%5==0:
-            subprocess.run([sys.executable,"-m","app.cli","invite"],check=True,stdout=subprocess.DEVNULL)
+            command=[sys.executable,"tools/hosted_invite.py","invite",*selectors] if args.hosted_site else [sys.executable,"-m","app.cli","invite"]
+            subprocess.run(command,check=True,stdout=subprocess.DEVNULL)
+            if args.hosted_site:issued.append(json.loads(Path(".local/hosted-invite.json").read_text())["id"])
             opener=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
         def request(path,data=None,mime="application/json",binary=False):
             body=(data if isinstance(data,bytes) else json.dumps(data).encode()) if data is not None else None
-            req=urllib.request.Request("http://127.0.0.1:8081"+path,data=body,headers={"Origin":"http://localhost:5174","Content-Type":mime})
+            req=urllib.request.Request(api+path,data=body,headers={"Origin":origin,"Content-Type":mime})
             with opener.open(req,timeout=190) as response:
                 return response.read() if binary else json.load(response)
-        if i%5==0:request("/session",{"token":Path(".local/invite.txt").read_text().strip()})
+        if i%5==0:request("/session",{"token":invite_path.read_text().strip()})
         start=time.monotonic();r={};checks={}
         try:
             raw,mime,extension=fixture(case["fixture"])
@@ -70,6 +80,8 @@ def main():
         print(case["id"],"PASS" if results[-1]["passed"] else "FAIL",flush=True)
         if r.get("state")=="failed" and r.get("turns")==0:
             print("Provider access failed before a billed call. Stop; do not repeat all cases.",flush=True);break
+    for invitation in issued:
+        subprocess.run([sys.executable,"tools/hosted_invite.py","revoke","--id",invitation,*selectors],check=True,stdout=subprocess.DEVNULL)
     return 0 if len(results)==30 and all(v["passed"] for v in results) else 1
 
 if __name__=="__main__":raise SystemExit(main())
