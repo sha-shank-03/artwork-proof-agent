@@ -27,6 +27,7 @@ import {
   type Replay,
   type Run,
 } from "./api";
+const liveAvailable = import.meta.env.DEV || import.meta.env.VITE_LIVE_AVAILABLE === "true";
 export default function App() {
   const [mode, setMode] = useState<"replay" | "live">("replay"),
     [replays, setReplays] = useState<Replay[]>([]),
@@ -52,7 +53,7 @@ export default function App() {
   const current = mode === "replay" ? replays[selected]?.run : run;
   const replay = mode === "replay" ? replays[selected] : null;
   useEffect(() => {
-    if (mode !== "live") return;
+    if (mode !== "live" || !liveAvailable) return;
     let active = true;
     getRuns().then(history => {
       if (!active) return;
@@ -199,7 +200,7 @@ export default function App() {
           {error}
         </div>
       )}
-      {mode === "live" && !authenticated ? (
+      {mode === "live" && !liveAvailable ? <section className="panel login"><LockKeyhole size={25}/><h2>Live hosting is not enabled yet.</h2><p>Claude-backed verification is pending API access and release checks. This page does not contain fabricated provider recordings.</p><button onClick={()=>setMode('replay')}>Return to proof catalogue</button></section> : mode === "live" && !authenticated ? (
         <form
           className="panel login"
           onSubmit={(e) => {

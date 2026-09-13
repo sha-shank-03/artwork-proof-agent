@@ -10,6 +10,9 @@ import psycopg
 def empty_state():
     return {"invites": {}, "sessions": {}, "runs": {}, "uploads": {}, "budgets": {}}
 
+class StorageLimitError(ValueError):
+    pass
+
 def prune(state):
     now = time.time()
     for collection in ("sessions", "uploads", "runs"):
@@ -19,14 +22,14 @@ def prune(state):
 def validate_storage(state):
     # Include persisted messages and duplicated preview bytes, not just upload size.
     if len(json.dumps(state).encode()) > 128 * 1024 * 1024:
-        raise ValueError("Global portfolio storage allowance exceeded")
+        raise StorageLimitError("Global portfolio storage allowance exceeded")
     owners = {}
     for collection in ("runs", "uploads"):
         for item in state[collection].values():
             owner = item.get("owner", "")
             owners[owner] = owners.get(owner, 0) + len(json.dumps(item).encode())
     if any(size > 25 * 1024 * 1024 for size in owners.values()):
-        raise ValueError("Reviewer storage allowance exceeded")
+        raise StorageLimitError("Reviewer storage allowance exceeded")
 
 class Store:
     def __init__(self, url=None):

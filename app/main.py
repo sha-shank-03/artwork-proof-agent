@@ -11,7 +11,8 @@ import time
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Request, Response
 from pydantic import BaseModel, ConfigDict, Field
 from .core import PROMPT_VERSION, approve, digest, event, settle, uid
-from .store import Store
+from .store import Store, StorageLimitError
+from fastapi.responses import JSONResponse
 from .worker import Worker
 from .proof import build_pdf
 from .http_limits import RequestLimits
@@ -40,6 +41,9 @@ def create_app(store=None):
         raise RuntimeError("DATABASE_URL is required outside explicit tests")
     api=FastAPI(title="Artwork Proof Agent",version="0.1.0")
     api.add_middleware(RequestLimits)
+    @api.exception_handler(StorageLimitError)
+    async def storage_limit(request,exc):
+        return JSONResponse({"detail":str(exc)},status_code=429)
     api.state.store=store;worker=Worker(store,int(os.getenv("MONTHLY_BUDGET_MICRO_USD","2500000")))
     origin=os.getenv("ALLOWED_ORIGIN","http://localhost:5174")
     def live():
