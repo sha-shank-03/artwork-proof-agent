@@ -27,7 +27,8 @@ import {
   type Replay,
   type Run,
 } from "./api";
-const liveAvailable = import.meta.env.DEV || import.meta.env.VITE_LIVE_AVAILABLE === "true";
+const liveAvailable =
+  import.meta.env.DEV || import.meta.env.VITE_LIVE_AVAILABLE === "true";
 export default function App() {
   const [mode, setMode] = useState<"replay" | "live">("replay"),
     [replays, setReplays] = useState<Replay[]>([]),
@@ -55,26 +56,46 @@ export default function App() {
   useEffect(() => {
     if (mode !== "live" || !liveAvailable) return;
     let active = true;
-    getRuns().then(history => {
-      if (!active) return;
-      setAuthenticated(true);
-      setRun(history.sort((a,b)=>b.events[0]?.at.localeCompare(a.events[0]?.at||'')||0)[0]||null);
-    }).catch(() => { if (active) setAuthenticated(false); });
-    return () => { active = false; };
+    getRuns()
+      .then((history) => {
+        if (!active) return;
+        setAuthenticated(true);
+        setRun(
+          history.sort(
+            (a, b) => b.events[0]?.at.localeCompare(a.events[0]?.at || "") || 0,
+          )[0] || null,
+        );
+      })
+      .catch(() => {
+        if (active) setAuthenticated(false);
+      });
+    return () => {
+      active = false;
+    };
   }, [mode]);
   useEffect(() => {
     if (mode !== "live" || run?.state !== "running") return;
-    let active = true, pending = false;
+    let active = true,
+      pending = false;
     const timer = setInterval(() => {
       if (document.visibilityState === "visible" && !pending) {
         pending = true;
         getRun(run.id)
-          .then(value => { if (active) setRun(value); })
-          .catch((e) => { if (active) setError(e.message); })
-          .finally(() => { pending = false; });
+          .then((value) => {
+            if (active) setRun(value);
+          })
+          .catch((e) => {
+            if (active) setError(e.message);
+          })
+          .finally(() => {
+            pending = false;
+          });
       }
     }, 1500);
-    return () => { active = false; clearInterval(timer); };
+    return () => {
+      active = false;
+      clearInterval(timer);
+    };
   }, [mode, run?.id, run?.state]);
   async function action(fn: () => Promise<void>) {
     setBusy(true);
@@ -200,7 +221,19 @@ export default function App() {
           {error}
         </div>
       )}
-      {mode === "live" && !liveAvailable ? <section className="panel login"><LockKeyhole size={25}/><h2>Live hosting is not enabled yet.</h2><p>Claude-backed verification is pending API access and release checks. This page does not contain fabricated provider recordings.</p><button onClick={()=>setMode('replay')}>Return to proof catalogue</button></section> : mode === "live" && !authenticated ? (
+      {mode === "live" && !liveAvailable ? (
+        <section className="panel login">
+          <LockKeyhole size={25} />
+          <h2>Live hosting is not enabled yet.</h2>
+          <p>
+            Claude-backed verification is pending API access and release checks.
+            This page does not contain fabricated provider recordings.
+          </p>
+          <button onClick={() => setMode("replay")}>
+            Return to proof catalogue
+          </button>
+        </section>
+      ) : mode === "live" && !authenticated ? (
         <form
           className="panel login"
           onSubmit={(e) => {
@@ -290,24 +323,46 @@ export default function App() {
                     required={!file}
                   />
                   <label htmlFor="sample">Or use original demo artwork</label>
-                  <select id="sample" defaultValue="" onChange={e=>{
-                    const name=e.target.value;if(!name)return;
-                    void action(async()=>{
-                      const extension=name==='two-page-proof'?'pdf':'png';
-                      const response=await fetch(`/fixtures/${name}.${extension}`);
-                      if(!response.ok)throw new Error('Sample could not be loaded');
-                      setFile(new File([await response.blob()],`${name}.${extension}`,{type:extension==='pdf'?'application/pdf':'image/png'}));
-                    });
-                  }}>
+                  <select
+                    id="sample"
+                    defaultValue=""
+                    onChange={(e) => {
+                      const name = e.target.value;
+                      if (!name) return;
+                      void action(async () => {
+                        const extension =
+                          name === "two-page-proof" ? "pdf" : "png";
+                        const response = await fetch(
+                          `/fixtures/${name}.${extension}`,
+                        );
+                        if (!response.ok)
+                          throw new Error("Sample could not be loaded");
+                        setFile(
+                          new File(
+                            [await response.blob()],
+                            `${name}.${extension}`,
+                            {
+                              type:
+                                extension === "pdf"
+                                  ? "application/pdf"
+                                  : "image/png",
+                            },
+                          ),
+                        );
+                      });
+                    }}
+                  >
                     <option value="">Select a sample</option>
                     <option value="clean-mark">Clean mark</option>
                     <option value="low-resolution">Low resolution</option>
                     <option value="wide-layout">Wide layout</option>
                     <option value="transparent-mark">Transparent mark</option>
-                    <option value="embedded-instructions">Untrusted embedded text</option>
+                    <option value="embedded-instructions">
+                      Untrusted embedded text
+                    </option>
                     <option value="two-page-proof">Two-page PDF</option>
                   </select>
-                  {file&&<p>Selected: {file.name}</p>}
+                  {file && <p>Selected: {file.name}</p>}
                   <p>
                     10 MB maximum. PDFs: up to 5 pages, no encryption. PNG/JPEG:
                     bounded pixel dimensions.
