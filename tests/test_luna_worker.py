@@ -68,6 +68,13 @@ def test_luna_full_tool_path_preserves_images_and_approval(monkeypatch):
     assert r["state"] == "awaiting_approval" and r["receipt"] is None
     assert r["turns"] == 4 and r["usedMicros"] == 4*cost_micros(100,20)
     assert r["reservedMicros"] == 0 and fake.closed
+    starts = [e["call"] for e in r["events"] if e.get("call", {}).get("phase") == "started"]
+    spans = [e["call"] for e in r["events"] if e.get("call", {}).get("phase") == "completed"]
+    assert [s["id"] for s in starts] == [s["id"] for s in spans] == [f"model-{i}" for i in range(1,5)]
+    assert all(s["model"] == MODEL and s["durationMs"] >= 0 for s in spans)
+    assert sum(s["costMicros"] for s in spans) == r["usedMicros"]
+    assert sum(s["inputTokens"] for s in spans) == r["inputTokens"]
+    assert sum(s["outputTokens"] for s in spans) == r["outputTokens"]
     for request in fake.requests:
         assert request["model"] == MODEL and request["store"] is False
         assert request["reasoning"] == {"effort":"none"}

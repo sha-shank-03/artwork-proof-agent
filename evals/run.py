@@ -34,7 +34,7 @@ def main():
         selectors=["--project",args.railway_project,"--environment",args.railway_environment,"--service",args.railway_service]
     origin=args.hosted_site.rstrip("/") if args.hosted_site else "http://localhost:5174"
     api=origin+"/api" if args.hosted_site else "http://127.0.0.1:8081"
-    invite_path=Path(".local/hosted-invite.txt" if args.hosted_site else ".local/invite.txt")
+    invite_path=Path(".local/eval-invite.txt" if args.hosted_site else ".local/invite.txt")
     cases=json.loads(Path("evals/cases.json").read_text())[:args.limit]
     commit=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
     output=Path("evals/results");output.mkdir(parents=True,exist_ok=True)
@@ -52,9 +52,9 @@ def main():
     for i,case in enumerate(cases[start_index:],start_index):
         new_invitation=(i-start_index)%5==0
         if new_invitation:
-            command=[sys.executable,"tools/hosted_invite.py","invite",*selectors] if args.hosted_site else [sys.executable,"-m","app.cli","invite"]
+            command=[sys.executable,"tools/hosted_invite.py","invite","--output-prefix","eval-invite",*selectors] if args.hosted_site else [sys.executable,"-m","app.cli","invite"]
             subprocess.run(command,check=True,stdout=subprocess.DEVNULL)
-            if args.hosted_site:issued.append(json.loads(Path(".local/hosted-invite.json").read_text())["id"])
+            if args.hosted_site:issued.append(json.loads(Path(".local/eval-invite.json").read_text())["id"])
             opener=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
         def request(path,data=None,mime="application/json",binary=False):
             body=(data if isinstance(data,bytes) else json.dumps(data).encode()) if data is not None else None
@@ -79,6 +79,8 @@ def main():
             checks["real_provider_usage"]=r["inputTokens"]>0 and r["outputTokens"]>0
             checks["requested_model"]=r["model"]==MODEL
             checks["bounded_cost"]=r["turns"]<=8 and r["usedMicros"]<=250000
+            spans=[e["call"] for e in r["events"] if e.get("call",{} ) and e["call"]["phase"]=="completed"]
+            checks["model_telemetry"]=len(spans)==r["turns"] and all(s["model"]==MODEL and s["durationMs"]>=0 for s in spans) and sum(s["costMicros"] for s in spans)==r["usedMicros"] and sum(s["inputTokens"] for s in spans)==r["inputTokens"] and sum(s["outputTokens"] for s in spans)==r["outputTokens"]
             if r["report"]:
                 report=r["report"];checks["report_digest"]=digest(report)==r["reportDigest"]
                 checks["evidence_valid"]=all(f["evidence_id"] in {f"{prefix}:page-{page+1}" for prefix in ("measurement","preview") for page in range(len(r["previews"]))} for f in report["findings"])

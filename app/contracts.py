@@ -1,6 +1,18 @@
 """Public response contracts; internal messages and lease credentials stay private."""
 from pydantic import BaseModel, Field
 from .core import Finding
+from typing import Literal
+from pydantic import ConfigDict
+
+class ModelCall(BaseModel):
+    model_config=ConfigDict(extra="forbid")
+    id:str=Field(pattern=r"^model-[1-8]$")
+    phase:Literal["started","completed"]
+    model:str
+    durationMs:int|None=Field(default=None,ge=0)
+    inputTokens:int|None=Field(default=None,ge=0)
+    outputTokens:int|None=Field(default=None,ge=0)
+    costMicros:int|None=Field(default=None,ge=0)
 
 class RunEvent(BaseModel):
     seq:int
@@ -8,6 +20,7 @@ class RunEvent(BaseModel):
     title:str
     detail:str
     at:str
+    call:ModelCall|None=None
 
 class ProofReport(BaseModel):
     summary:str

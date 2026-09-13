@@ -73,8 +73,12 @@ class Worker:
                 maximum=cost_micros(count.input_tokens,MAX_OUTPUT_TOKENS)+1000
                 with self.store.transaction() as state:
                     r=self.current(state,ident,lease);reserve(state,r,maximum,self.budget)
+                    call_id=f"model-{r['turns']}"
+                    event(r,"model","Model call started","OpenAI request after input counting and a successful spending reservation.")["call"]={"id":call_id,"phase":"started","model":model}
+                started=time.perf_counter()
                 response=await client.responses.create(**request,max_output_tokens=MAX_OUTPUT_TOKENS,store=False,
                                                        include=["reasoning.encrypted_content"])
+                duration_ms=max(0,round((time.perf_counter()-started)*1000))
                 content=[c.model_dump(exclude_none=True) for c in response.output]
                 with self.store.transaction() as state:
                     r=self.current(state,ident,lease)
@@ -82,6 +86,7 @@ class Worker:
                     used=cost_micros(response.usage.input_tokens,response.usage.output_tokens)
                     if used>r["reservedMicros"]:raise ValueError("Provider usage exceeded reservation")
                     settle(state,r,used);r["inputTokens"]+=response.usage.input_tokens;r["outputTokens"]+=response.usage.output_tokens
+                    event(r,"model","Model response received","Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.")["call"]={"id":call_id,"phase":"completed","model":model,"durationMs":duration_ms,"inputTokens":response.usage.input_tokens,"outputTokens":response.usage.output_tokens,"costMicros":used}
                     if response.model!=MODEL or response.status!="completed":raise ValueError("Provider response was incomplete or used an unreviewed model")
                     # Persist all output items/call IDs, not private reasoning summaries.
                     # Internal conversation state is excluded from public runs/replays.

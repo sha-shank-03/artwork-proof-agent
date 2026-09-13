@@ -13,7 +13,11 @@ parser.add_argument("--project", required=True)
 parser.add_argument("--environment", required=True)
 parser.add_argument("--service", required=True)
 parser.add_argument("--id")
+parser.add_argument("--output-prefix", default="hosted-invite",
+                    help="Ignored .local filename prefix; use a separate prefix for test invitations")
 args = parser.parse_args()
+if not re.fullmatch(r"[a-z0-9-]{1,60}", args.output_prefix):
+    parser.error("Output prefix must contain only lowercase letters, digits and hyphens")
 root = Path(__file__).resolve().parents[1]
 is_commerce = (root / "go.mod").exists()
 base = ["/app/bin/server"] if is_commerce else ["python", "-m", "app.cli"]
@@ -44,8 +48,8 @@ if args.command == "invite":
     target = root / ".local"
     target.mkdir(mode=0o700, exist_ok=True)
     for name, data in [
-        ("hosted-invite.txt", token),
-        ("hosted-invite.json", json.dumps({"id":match[1],"project":args.project,"environment":args.environment,"service":args.service})),
+        (args.output_prefix + ".txt", token),
+        (args.output_prefix + ".json", json.dumps({"id":match[1],"project":args.project,"environment":args.environment,"service":args.service})),
     ]:
         path = target / name
         if path.is_symlink():
@@ -53,7 +57,7 @@ if args.command == "invite":
         path.touch(mode=0o600, exist_ok=True)
         path.chmod(0o600)
         path.write_text(data)
-    print("Hosted invitation saved to ignored .local/hosted-invite.txt; ID " + match[1])
+    print("Hosted invitation saved to ignored .local/" + args.output_prefix + ".txt; ID " + match[1])
 else:
     if not args.id or not re.fullmatch(r"[a-f0-9]{32,100}", args.id):
         raise SystemExit("An exact invitation --id is required.")

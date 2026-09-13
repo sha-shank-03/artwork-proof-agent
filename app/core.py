@@ -29,6 +29,7 @@ def digest(value):
 def event(run, kind, title, detail=""):
     run["events"].append({"seq": len(run["events"])+1, "kind": kind, "title": title,
                           "detail": detail, "at": datetime.now(timezone.utc).isoformat()})
+    return run["events"][-1]
 def month(): return datetime.now(timezone.utc).strftime("%Y-%m")
 
 def reserve(state, run, amount, limit=2500000):
