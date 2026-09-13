@@ -1,0 +1,30 @@
+[
+  {
+    "app": "artwork-proof-agent",
+    "source": "--build",
+    "exitCode": 0,
+    "bytes": 1094,
+    "credentialMatches": 0
+  },
+  {
+    "app": "artwork-proof-agent",
+    "source": "--deployment",
+    "exitCode": 0,
+    "bytes": 585,
+    "credentialMatches": 0
+  },
+  {
+    "app": "artwork-proof-agent",
+    "source": "vercel-build",
+    "exitCode": 0,
+    "bytes": 3696,
+    "credentialMatches": 0
+  },
+  {
+    "app": "artwork-proof-agent",
+    "source": "complete-ci",
+    "exitCode": 0,
+    "bytes": 327936,
+    "credentialMatches": 0
+  }
+]

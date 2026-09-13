@@ -2,7 +2,7 @@
 
 An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; GPT-5.6 Luna selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Release status:** the [invited live application](https://artwork-proof-agent.vercel.app) and isolated Railway backend use GPT-5.6 Luna. **30/30 hosted workflow evaluations and 12/12 hosted browser checks passed.** Public replay publication is still pending; historical Claude access failures are retained, not relabelled as Luna results. See [migration verification](docs/LUNA_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
+**Demo status:** the [connected agent console](https://artwork-proof-agent.vercel.app) and isolated Railway backend use GPT-5.6 Luna. Six genuine, interactive proof recordings and downloadable PDFs work anonymously. **30/30 final workflow cases and 27 hosted browser checks passed**; one network-failed evaluation case was rerun and the original attempt retained. Source remains private pending the separate publication review. See [UI verification](docs/UI_VERIFICATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
 
 ## Features
 
@@ -10,6 +10,8 @@ An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mu
 - Effective raster DPI, transparency, aspect ratio, transparent margins, and clearly labelled PDF resolution limitations.
 - Tool-driven Luna inspection, clarification checkpoints, measured/model-suggested/human-review findings, exact-version approval.
 - JSON report and downloadable PDF proof, invite/session isolation, budget reservations, original synthetic samples and responsive React interface.
+- System map, integration inspector, state-aware next actions, synchronized playback and actual model-call timing/tokens/cost.
+- Reviewer brief, dark/light themes and downloadable verification history; no backend calls while browsing replays.
 
 ## Local setup
 
@@ -32,7 +34,7 @@ npm ci
 npm run dev
 ```
 
-Open **http://localhost:5174**. Read the invitation from ignored `.local/invite.txt` and share it only with the intended reviewer. OpenAI API usage is billed separately from a ChatGPT subscription. Never commit keys. `docker compose up --build` provides an independent local database/API alternative; live mode defaults off. Do not run a second live budget ledger alongside the hosted instance. Without a backend, the public shell still works, but an empty replay catalogue is not a completed live demo.
+Open **http://localhost:5174**. Read the invitation from ignored `.local/invite.txt` and share it only with the intended reviewer. OpenAI API usage is billed separately from a ChatGPT subscription. Never commit keys. `docker compose up --build` provides an independent local database/API alternative; live mode defaults off. Do not run a second live budget ledger alongside the hosted instance. Static replay browsing needs only `cd web && npm ci && npm run dev`, with no backend, database or provider credentials.
 
 ## Tests and generated API contract
 

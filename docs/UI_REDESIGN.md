@@ -11,7 +11,7 @@ Build a compact Run / System map / Reviewer brief console using the existing Rea
 
 No provider/model changes, new keys, plan upgrades, external tracing service, production-repository edits or GitHub visibility changes are included. Public replay and documentation navigation must not call the API. The custom React rendering pipeline is retained; this is not a chat-framework migration.
 
-Model-call views show only recorded status, duration, tokens, estimated cost and concise public summaries. No prompts, provider error bodies, credentials, raw artwork instructions or hidden model reasoning are exported. Historical recordings show unavailable timing explicitly.
+Model-call views show only recorded status, duration, tokens, estimated cost and concise public summaries. No private prompts, provider error bodies, credentials, private conversation state or hidden model reasoning are exported. Original demonstration artwork, including the intentionally untrusted-text fixture, is visible. Historical recordings show unavailable timing explicitly.
 
 Status: plan recorded; implementation and verification in progress.
 
@@ -25,4 +25,6 @@ All twelve pages of the six proof PDFs were rendered and inspected. Document lay
 
 Python: 52 tests passed locally; PostgreSQL integration runs in Linux CI. Dependency and working/history/build secret scans passed. Models, prompts, keys, budgets, hosting resources and repository visibility are unchanged.
 
-Frontend production rollout and hosted UI checks remain to be completed.
+## UI rollout complete
+
+The redesigned frontend is deployed on the existing public URL. All 27 applicable hosted browser checks passed, including real provider execution, refresh, approval and rendered call metadata. Public replay tests passed with API access blocked. See [the verification report](UI_VERIFICATION.md) for deployment IDs, exact source commits, failures, limitations and evidence. Repository publication is still a separate gate.
