@@ -1,16 +1,17 @@
-"""Publish only passing genuine Claude recordings; refuse incomplete evaluation sets."""
+"""Publish only passing genuine Luna recordings; refuse incomplete evaluation sets."""
 import json, re, statistics, sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from app.contracts import PublicRun
 from app.core import digest
 from app.proof import build_pdf
+from app.worker import MODEL
 
 def validate_gate(report):
     rows=report.get("results",[])
-    if report.get("provider")!="Anthropic" or report.get("cases")!=30 or len(rows)!=30 or sum(bool(r.get("passed")) for r in rows)<27:
+    if report.get("provider")!="OpenAI" or report.get("model")!=MODEL or report.get("cases")!=30 or len(rows)!=30 or sum(bool(r.get("passed")) for r in rows)<27:
         raise ValueError("The 30-case live evaluation gate has not passed")
-    required=("hash_bound","no_unapproved_receipt","bounded_cost","report_digest","evidence_valid","measured_and_model_separated")
+    required=("hash_bound","no_unapproved_receipt","bounded_cost","report_digest","evidence_valid","measured_and_model_separated","requested_model")
     if any(not all(r.get("checks",{}).get(k,False) for k in required) for r in rows):
         raise ValueError("A safety invariant failed")
     for row in rows:
@@ -31,7 +32,7 @@ def build(report):
                 for child in value:private(child)
         private(item)
         run=PublicRun.model_validate(item["run"]).model_dump()
-        if item.get("providerVerified") is not True or not run["inputTokens"] or not run["outputTokens"] or not run["report"] or digest(run["report"])!=run["reportDigest"]:
+        if item.get("providerVerified") is not True or run["model"]!=MODEL or not run["inputTokens"] or not run["outputTokens"] or not run["report"] or digest(run["report"])!=run["reportDigest"]:
             raise ValueError("Recording is not a verified provider report")
         if not any(r.get("runId")==run["id"] and r.get("passed") for r in report["results"]):raise ValueError("Recording lacks a passing evaluation case")
         prepared.append((name,{"version":1,"label":item["label"],"recordedAt":item["recordedAt"],"commit":item["commit"],"providerVerified":True,"proofFile":f"/replays/{name}.pdf","run":run},build_pdf(run)))
@@ -39,7 +40,7 @@ def build(report):
     directory=Path("web/public/replays");directory.mkdir(exist_ok=True,parents=True)
     for name,recording,pdf in prepared:
         (directory/f"{name}.json").write_text(json.dumps(recording,indent=2));(directory/f"{name}.pdf").write_bytes(pdf)
-    (directory/"index.json").write_text(json.dumps({"version":1,"runs":[{"label":r["label"],"file":f"/replays/{n}.json"} for n,r,_ in prepared],"notice":"Genuine recorded Claude executions, not live. Static browsing makes no backend/model calls."},indent=2))
+    (directory/"index.json").write_text(json.dumps({"version":1,"runs":[{"label":r["label"],"file":f"/replays/{n}.json"} for n,r,_ in prepared],"notice":"Genuine recorded GPT-5.6 Luna executions, not live. Static browsing makes no backend/model calls."},indent=2))
     public={k:v for k,v in report.items() if k!="recordings"}
     Path("docs/evaluation-results.json").write_text(json.dumps(public,indent=2))
     history=[{k:v for k,v in json.loads(p.read_text()).items() if k!="recordings"} for p in sorted(Path("evals/results").glob("attempt-*.json"))]

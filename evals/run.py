@@ -13,6 +13,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from pypdf import PdfReader
 from tools.fixtures import fixture
 from app.core import digest
+from app.worker import MODEL
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--limit",type=int,default=30)
@@ -56,6 +57,7 @@ def main():
             checks["approval_pause"]=r["state"]=="awaiting_approval"
             checks["no_unapproved_receipt"]=r["receipt"] is None
             checks["real_provider_usage"]=r["inputTokens"]>0 and r["outputTokens"]>0
+            checks["requested_model"]=r["model"]==MODEL
             checks["bounded_cost"]=r["turns"]<=8 and r["usedMicros"]<=250000
             if r["report"]:
                 report=r["report"];checks["report_digest"]=digest(report)==r["reportDigest"]
@@ -75,13 +77,13 @@ def main():
                 recordings.append({"fixture":case["fixture"],"label":case["fixture"].replace("-"," "),"run":r,"commit":commit,"recordedAt":r["events"][0]["at"],"providerVerified":True})
         except Exception as exc:
             results.append({"id":case["id"],"passed":False,"errorType":type(exc).__name__,"seconds":round(time.monotonic()-start,2)})
-        report={"provider":"Anthropic","commit":commit,"cases":len(results),"passed":sum(v["passed"] for v in results),"results":results,"recordings":recordings,"notice":"30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."}
+        report={"provider":"OpenAI","model":MODEL,"commit":commit,"cases":len(results),"passed":sum(v["passed"] for v in results),"results":results,"recordings":recordings,"notice":"30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."}
         (output/"latest.json").write_text(json.dumps(report,indent=2))
         print(case["id"],"PASS" if results[-1]["passed"] else "FAIL",flush=True)
         if r.get("state")=="failed" and r.get("turns")==0:
             print("Provider access failed before a billed call. Stop; do not repeat all cases.",flush=True);break
     for invitation in issued:
         subprocess.run([sys.executable,"tools/hosted_invite.py","revoke","--id",invitation,*selectors],check=True,stdout=subprocess.DEVNULL)
-    return 0 if len(results)==30 and all(v["passed"] for v in results) else 1
+    return 0 if len(results)==len(cases) and all(v["passed"] for v in results) else 1
 
 if __name__=="__main__":raise SystemExit(main())

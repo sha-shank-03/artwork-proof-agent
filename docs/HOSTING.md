@@ -52,7 +52,7 @@ Check `/api/ready` once after redeployment; it must report `liveEnabled:false`. 
 
 ## Cost and data
 
-The shared plan target is $10/month **additional** cost, of which $5 is allocated to model usage ($2.50 per provider). Initial observed idle memory was approximately 65–150 MB for PostgreSQL, 8 MB for commerce, and 73 MB for artwork; PostgreSQL volume use was about 0.9 GB. These are brief startup observations, not a monthly bill forecast. Light, mostly idle traffic appears compatible with the target, but CPU, egress, scans and browser/model workloads vary. The one-GB caps are ceilings, not reserved allocations or a $10 account-wide hard limit.
+The shared plan target is $10/month **additional** cost, of which $5 is allocated to model usage ($2.50 per application, both using OpenAI after the Luna migration). Initial observed idle memory was approximately 65–150 MB for PostgreSQL, 8 MB for commerce, and 73 MB for artwork; PostgreSQL volume use was about 0.9 GB. These are brief startup observations, not a monthly bill forecast. Light, mostly idle traffic appears compatible with the target, but CPU, egress, scans and browser/model workloads vary. The one-GB caps are ceilings, not reserved allocations or a $10 account-wide hard limit.
 
 The existing Railway Pro and Vercel Hobby plans were reused without upgrades. No provider credit was purchased. Do not set a shared workspace hard spending cap: it could shut down unrelated production applications. Review this project's usage separately. Public replay traffic makes no model or backend calls; no uptime pings or keep-alive automation was added.
 

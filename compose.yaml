@@ -15,7 +15,8 @@ services:
     ports: ["127.0.0.1:8081:8081"]
     environment:
       DATABASE_URL: postgresql://artwork:${POSTGRES_PASSWORD:-local-development-only}@db:5432/artwork
-      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: gpt-5.6-luna
       LIVE_ENABLED: ${LIVE_ENABLED:-false}
       ALLOWED_ORIGIN: http://localhost:5174
     depends_on:

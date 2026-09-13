@@ -162,7 +162,7 @@ export default function App() {
       </header>
       <section className="hero">
         <div>
-          <div className="eyebrow">Multimodal agent engineering · Claude</div>
+          <div className="eyebrow">Multimodal agent engineering · GPT-5.6 Luna</div>
           <h1>
             Inspect the details.
             <br />
@@ -180,7 +180,7 @@ export default function App() {
             Measured ≠ model-suggested
           </span>
           <p className="quiet" style={{ marginTop: 10 }}>
-            Python · Claude · React · PostgreSQL
+            Python · OpenAI · React · PostgreSQL
           </p>
         </div>
       </section>
@@ -226,7 +226,7 @@ export default function App() {
           <LockKeyhole size={25} />
           <h2>Live hosting is not enabled yet.</h2>
           <p>
-            Claude-backed verification is pending API access and release checks.
+            Luna-backed verification and genuine replay release checks are pending.
             This page does not contain fabricated provider recordings.
           </p>
           <button onClick={() => setMode("replay")}>
@@ -248,7 +248,7 @@ export default function App() {
           <LockKeyhole size={25} />
           <h2 style={{ marginTop: 15 }}>A closer look, by invitation.</h2>
           <p>
-            Use your reviewer invitation to try real Claude-powered analysis.
+            Use your reviewer invitation to try real Luna-powered analysis.
             Upload only synthetic or non-confidential artwork you own. Files
             expire after seven days; no files are sent to a printer.
           </p>
@@ -299,7 +299,7 @@ export default function App() {
                 ))}
                 {!replays.length && (
                   <div className="empty">
-                    Verified Claude recordings are being prepared. There are no
+                    Verified Luna recordings are being prepared. There are no
                     fabricated model results here.
                   </div>
                 )}
@@ -468,7 +468,7 @@ export default function App() {
                     </div>
                     <div>
                       <span>Analysis model</span>
-                      <strong>Claude</strong>
+                      <strong>GPT-5.6 Luna</strong>
                     </div>
                     <div>
                       <span>File identity</span>

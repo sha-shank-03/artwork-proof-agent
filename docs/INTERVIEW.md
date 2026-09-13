@@ -1,6 +1,6 @@
 # Walkthrough and interview preparation
 
-When provider access is available, use the original low-resolution fixture, request a three-inch print, inspect measured DPI separately from Claude's visual concerns, then approve the exact proof version. Refresh before approval to demonstrate persistence. Download the JSON report and PDF. Until live evaluation passes, demonstrate only the deterministic upload/measurement/approval tests and say clearly that live Claude validation is blocked.
+Use the original low-resolution fixture, request a three-inch print, inspect measured DPI separately from Luna's visual concerns, then approve the exact proof version. Refresh before approval to demonstrate persistence. Download the JSON report and PDF. Claim live validation only to the extent recorded in LUNA_MIGRATION.md and the actual evaluation report.
 
 **Why use tools for vision?** The model chooses which page/measurement to inspect, but it cannot invent a measured DPI or declare a file safe. Tools return actual decoded metadata and bounded previews. The final report is validated and merged with measured findings in code.
 
@@ -14,4 +14,4 @@ When provider access is available, use the original low-resolution fixture, requ
 
 **What would production require?** Stronger decoder sandboxing/fuzzing, a normalized schema/object store, durable job queue, richer print-spec validation, independent visual evaluation, enterprise auth, operational monitoring and proper document data governance.
 
-**AI-development disclosure.** Codex assisted in implementing and testing this repository. Claude is the intended runtime model, not a claim that Claude Code authored the project. Deterministic fixtures and mocked/offline checks are not represented as genuine Claude executions. Review and understand the tool loop, validation code, tests and limitations before presenting this work in interviews.
+**AI-development disclosure.** Codex assisted in implementing and testing this repository. The user requested replacing the original Claude runtime with GPT-5.6 Luna on 13 September 2026. This is not a claim that Claude Code authored the project. Deterministic fixtures and mocked/offline checks are not represented as genuine model executions. Review and understand the tool loop, validation code, tests and limitations before presenting this work in interviews.
