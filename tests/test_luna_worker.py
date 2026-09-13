@@ -132,3 +132,7 @@ def test_strict_tools_and_integer_cost_ceiling():
         assert tool["strict"] is True
         assert tool["parameters"]["additionalProperties"] is False
         assert set(tool["parameters"]["required"])==set(tool["parameters"]["properties"])
+    report=next(t for t in TOOLS if t["name"]=="submit_report")
+    fields=report["parameters"]["$defs"]["Finding"]["properties"]
+    assert fields["category"]["enum"]==["model-suggested","requires-human-review"]
+    assert fields["evidence_id"]["pattern"]==r"^preview:page-[1-5]$"

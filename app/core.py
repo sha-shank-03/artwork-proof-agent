@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
-PROMPT_VERSION = "artwork-v1"
+PROMPT_VERSION = "artwork-v2-luna"
 SPEC_VERSION = "demo-print-v1"
 
 class Finding(BaseModel):

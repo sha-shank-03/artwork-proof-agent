@@ -468,7 +468,7 @@ export default function App() {
                     </div>
                     <div>
                       <span>Analysis model</span>
-                      <strong>GPT-5.6 Luna</strong>
+                      <strong>{current.model === "gpt-5.6-luna" ? "GPT-5.6 Luna" : current.model}</strong>
                     </div>
                     <div>
                       <span>File identity</span>
