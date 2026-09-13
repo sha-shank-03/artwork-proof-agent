@@ -1,0 +1,7 @@
+.git
+.env*
+.venv
+.local
+web
+evals/results
+__pycache__
