@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-test("hosted Luna inspection requires approval and survives refresh", async ({
+test("hosted Claude inspection requires approval and survives refresh", async ({
   page,
 }) => {
   test.skip(
@@ -32,7 +32,7 @@ test("hosted Luna inspection requires approval and survives refresh", async ({
   );
   await page.getByRole("button", { name: "Analyze artwork" }).click();
   const created = await (await start).json();
-  expect(created.model).toBe("gpt-5.6-luna");
+  expect(created.model).toBe("claude-haiku-4-5-20251001");
   expect(created.receipt).toBeNull();
   await expect(page.getByRole("button", { name: "Approve proof" })).toBeVisible(
     { timeout: 150000 },
@@ -48,7 +48,7 @@ test("hosted Luna inspection requires approval and survives refresh", async ({
   await page.getByRole("button", { name: "Approve proof" }).click();
   const approved = await (await decision).json();
   expect(approved.state).toBe("completed");
-  expect(approved.model).toBe("gpt-5.6-luna");
+  expect(approved.model).toBe("claude-haiku-4-5-20251001");
   expect(approved.inputTokens).toBeGreaterThan(0);
   expect(approved.outputTokens).toBeGreaterThan(0);
   expect(approved.receipt.reportDigest).toBe(approved.reportDigest);
@@ -60,7 +60,7 @@ test("hosted Luna inspection requires approval and survives refresh", async ({
   expect(spans.length).toBe(approved.turns);
   expect(
     spans.every(
-      (e: any) => e.call.model === "gpt-5.6-luna" && e.call.durationMs >= 0,
+      (e: any) => e.call.model === "claude-haiku-4-5-20251001" && e.call.durationMs >= 0,
     ),
   ).toBe(true);
   expect(
@@ -76,7 +76,7 @@ test("hosted Luna inspection requires approval and survives refresh", async ({
   ).toBeVisible();
   expect(runtimeErrors).toEqual([]);
   await page.screenshot({
-    path: `../.local/luna-live-${test.info().project.name}.png`,
+    path: `../.local/claude-live-${test.info().project.name}.png`,
     fullPage: true,
   });
 });

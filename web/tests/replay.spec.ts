@@ -64,7 +64,7 @@ test("genuine proof playback hides future findings and never calls an API", asyn
   await expect(page.getByLabel("Independent reviewer note")).toHaveCount(0);
 });
 
-test("recorded Luna calls expose measured timing and token usage", async ({
+test("recorded Claude calls expose measured timing and token usage", async ({
   page,
 }) => {
   await page.goto("/#run");
@@ -87,7 +87,7 @@ test("recorded Luna calls expose measured timing and token usage", async ({
       .filter({ hasText: "Model response received" })
       .first();
     await event.locator("summary").click();
-    await expect(event).toContainText("gpt-5.6-luna");
+    await expect(event).toContainText("claude-haiku-4-5-20251001");
     await expect(event).toContainText(
       (spans[0].call.durationMs / 1000).toFixed(2) + " s",
     );

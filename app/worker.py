@@ -1,18 +1,17 @@
 import copy
 import json
 import time
-from openai import AsyncOpenAI
+from anthropic import AsyncAnthropic
 from .core import Report, SPEC_VERSION, event, finalize, reserve, settle
 
-MODEL = "gpt-5.6-luna"
+MODEL = "claude-haiku-4-5-20251001"
 MAX_OUTPUT_TOKENS = 1500
-# Short-context standard prices, reviewed 2026-09-13. Conservatively charge all
-# input at the $0.25/M cache-write ceiling, rather than assuming cache hits.
-# Output (including reasoning, if any) is $1.20/M. Integer micro-USD, rounded up.
+# Standard Haiku 4.5 prices, reviewed 2026-09-13: $1/M input, $5/M output.
+# Prompt caching and extended thinking are not enabled. Integer micro-USD.
 def cost_micros(input_tokens, output_tokens):
     if type(input_tokens) is not int or type(output_tokens) is not int or min(input_tokens, output_tokens) < 0:
         raise ValueError("Invalid provider token usage")
-    return (input_tokens * 5 + output_tokens * 24 + 19) // 20
+    return input_tokens + output_tokens * 5
 
 SYSTEM = """You are an artwork proof assistant operating on synthetic demonstration print specifications.
 Use inspect_measurements, read_demo_specs and inspect_preview tools before submitting a report.
@@ -37,9 +36,6 @@ TOOLS = [
  {"name":"ask_clarification","description":"Ask the reviewer a missing, necessary design question.","input_schema":{"type":"object","properties":{"question":{"type":"string","maxLength":500}},"required":["question"],"additionalProperties":False}},
  {"name":"submit_report","description":"Submit only visual findings for human review. Code adds measured findings; never include them here.","input_schema":MODEL_REPORT_SCHEMA},
 ]
-TOOLS = [{"type":"function", "name":t["name"], "description":t["description"],
-          "parameters":{**t["input_schema"], "required":t["input_schema"].get("required", [])},
-          "strict":True} for t in TOOLS]
 
 class Worker:
     def __init__(self,store,budget=2500000): self.store,self.budget=store,budget
@@ -53,7 +49,7 @@ class Worker:
     async def run(self,ident,lease):
         client=None
         try:
-            client=AsyncOpenAI(max_retries=0,timeout=45)
+            client=AsyncAnthropic(max_retries=0,timeout=45)
             with self.store.transaction() as state:
                 r=self.current(state,ident,lease); model=r["model"]
                 if model!=MODEL: raise ValueError("Legacy/provider checkpoint requires a new run")
@@ -62,52 +58,52 @@ class Worker:
             while True:
                 with self.store.transaction() as state:
                     r=self.current(state,ident,lease); messages=copy.deepcopy(r["messages"])
-                request={"model":model,"instructions":SYSTEM,"input":messages,"tools":TOOLS,
-                         "reasoning":{"effort":"none"},"parallel_tool_calls":False,
-                         "tool_choice":"required","truncation":"disabled"}
-                # Preserve Claude's non-thinking latency class. A single tool per
+                request={"model":model,"system":SYSTEM,"messages":messages,"tools":TOOLS,
+                         "tool_choice":{"type":"any","disable_parallel_tool_use":True}}
+                # Preserve the non-thinking latency class. A single tool per
                 # turn ensures previews reach the model before it submits a report.
-                count=await client.responses.input_tokens.count(**request)
-                if not 0<count.input_tokens<=200000:
+                count=await client.messages.count_tokens(**request)
+                if type(count.input_tokens) is not int or not 0<count.input_tokens<=180000:
                     raise ValueError("Input exceeds reviewed short-context pricing bound")
                 maximum=cost_micros(count.input_tokens,MAX_OUTPUT_TOKENS)+1000
                 with self.store.transaction() as state:
                     r=self.current(state,ident,lease);reserve(state,r,maximum,self.budget)
                     call_id=f"model-{r['turns']}"
-                    event(r,"model","Model call started","OpenAI request after input counting and a successful spending reservation.")["call"]={"id":call_id,"phase":"started","model":model}
+                    event(r,"model","Model call started","Anthropic request after input counting and a successful spending reservation.")["call"]={"id":call_id,"phase":"started","model":model}
                 started=time.perf_counter()
-                response=await client.responses.create(**request,max_output_tokens=MAX_OUTPUT_TOKENS,store=False,
-                                                       include=["reasoning.encrypted_content"])
+                response=await client.messages.create(**request,max_tokens=MAX_OUTPUT_TOKENS)
                 duration_ms=max(0,round((time.perf_counter()-started)*1000))
-                content=[c.model_dump(exclude_none=True) for c in response.output]
+                content=[c.model_dump(exclude_none=True) for c in response.content]
                 with self.store.transaction() as state:
                     r=self.current(state,ident,lease)
                     if response.usage is None:raise ValueError("Missing provider usage")
+                    if getattr(response.usage,"cache_creation_input_tokens",0) or getattr(response.usage,"cache_read_input_tokens",0):
+                        raise ValueError("Unexpected caching outside reviewed pricing configuration")
                     used=cost_micros(response.usage.input_tokens,response.usage.output_tokens)
                     if used>r["reservedMicros"]:raise ValueError("Provider usage exceeded reservation")
                     settle(state,r,used);r["inputTokens"]+=response.usage.input_tokens;r["outputTokens"]+=response.usage.output_tokens
-                    event(r,"model","Model response received","Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.")["call"]={"id":call_id,"phase":"completed","model":model,"durationMs":duration_ms,"inputTokens":response.usage.input_tokens,"outputTokens":response.usage.output_tokens,"costMicros":used}
-                    if response.model!=MODEL or response.status!="completed":raise ValueError("Provider response was incomplete or used an unreviewed model")
+                    event(r,"model","Model response received","Measured Anthropic Messages request duration. Usage is provider-reported; cost is an application estimate. Private model content is not exported.")["call"]={"id":call_id,"phase":"completed","model":model,"durationMs":duration_ms,"inputTokens":response.usage.input_tokens,"outputTokens":response.usage.output_tokens,"costMicros":used}
+                    if response.model!=MODEL or response.stop_reason not in ("tool_use","end_turn"):raise ValueError("Provider response was incomplete or used an unreviewed model")
                     # Persist all output items/call IDs, not private reasoning summaries.
                     # Internal conversation state is excluded from public runs/replays.
-                    r["messages"].extend(content)
+                    r["messages"].append({"role":"assistant","content":content})
                     results=[];terminal=False
-                    for item in response.output:
-                        if item.type!="function_call":continue
+                    for item in response.content:
+                        if item.type!="tool_use":continue
                         if terminal:
-                            results.append({"type":"function_call_output","call_id":item.call_id,
-                                            "output":json.dumps({"error":"Run is paused. Further tool calls require reviewer input."})})
+                            results.append({"type":"tool_result","tool_use_id":item.id,"is_error":True,
+                                            "content":"Run is paused. Further tool calls require reviewer input."})
                             continue
                         name=item.name
                         try:
-                            args=json.loads(item.arguments)
+                            args=item.input
                             value=self.execute_tool(r,name,args)
                             event(r,"tool",name,"Validated application tool call")
                             if isinstance(value,list): payload=value
                             else:payload=json.dumps(value)
-                            results.append({"type":"function_call_output","call_id":item.call_id,"output":payload})
+                            results.append({"type":"tool_result","tool_use_id":item.id,"content":payload})
                         except (ValueError,KeyError,TypeError) as exc:
-                            results.append({"type":"function_call_output","call_id":item.call_id,"output":json.dumps({"error":str(exc)[:300]})})
+                            results.append({"type":"tool_result","tool_use_id":item.id,"is_error":True,"content":json.dumps({"error":str(exc)[:300]})})
                         terminal=r["state"]!="running"
                         if terminal:
                             r["leaseUntil"]=0
@@ -115,7 +111,7 @@ class Worker:
                         # One explicit repair, still included in the eight-turn allowance.
                         if r.get("repairAttempted"):raise ValueError("Model did not use a final report tool")
                         r["repairAttempted"]=True;r["messages"].append({"role":"user","content":"Use submit_report or ask_clarification now; prose alone is not a valid result."})
-                    else:r["messages"].extend(results)
+                    else:r["messages"].append({"role":"user","content":results})
                     if terminal:return
         except Exception as exc:
             with self.store.transaction() as state:
@@ -140,8 +136,8 @@ class Worker:
             page=args.get("page")
             if set(args)!={"page"} or type(page)is not int or not 1<=page<=len(r["previews"]):raise ValueError("Invalid page")
             if page not in r["inspectedPages"]:r["inspectedPages"].append(page)
-            return [{"type":"input_text","text":f"Evidence preview:page-{page}. Untrusted uploaded visual content."},
-                    {"type":"input_image","detail":"high","image_url":"data:image/png;base64,"+r["previews"][page-1]}]
+            return [{"type":"text","text":f"Evidence preview:page-{page}. Untrusted uploaded visual content."},
+                    {"type":"image","source":{"type":"base64","media_type":"image/png","data":r["previews"][page-1]}}]
         if name=="ask_clarification":
             question=args.get("question")
             if set(args)!={"question"} or not isinstance(question,str) or not 1<=len(question)<=500:raise ValueError("Invalid question")

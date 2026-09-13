@@ -71,6 +71,8 @@ def create_app(store=None):
             r["state"]="failed";r["error"]="Worker interrupted. Resume explicitly from the saved checkpoint."
         return r
     def claim(state,r):
+        if r["model"]!=MODEL or r["promptVersion"]!=PROMPT_VERSION:
+            raise HTTPException(409,"Model changed. Start a new analysis; historical reports remain readable.")
         if sum(v["state"]=="running" and v["leaseUntil"]>time.time() for v in state["runs"].values())>=2:
             raise HTTPException(429,"Two analyses are already running")
         r["state"]="running";r["leaseToken"]=uid();r["leaseUntil"]=int(time.time())+180;r["error"]=""
@@ -123,7 +125,7 @@ def create_app(store=None):
             inv=next(v for v in state["invites"].values() if v["id"]==who)
             if inv["remaining"]<=0:raise HTTPException(429,"Invitation run allowance exhausted")
             inv["remaining"]-=1
-            r={"id":uid(),"owner":who,"uploadId":data.uploadId,"artworkHash":upload["hash"],"name":upload["name"],"width":data.width,"height":data.height,"version":1,"state":"queued","summary":"","events":[],"measurements":{"format":upload["format"],"pages":upload["pages"]},"previews":upload["previews"],"messages":[],"created":now,"expires":now+7*86400,"leaseUntil":0,"leaseToken":"","report":None,"reportDigest":"","receipt":None,"turns":0,"inputTokens":0,"outputTokens":0,"usedMicros":0,"reservedMicros":0,"budgetMonth":"","error":"","model":os.getenv("OPENAI_MODEL",MODEL),"promptVersion":PROMPT_VERSION,"inspectedMeasurements":False,"inspectedSpecs":False,"inspectedPages":[]}
+            r={"id":uid(),"owner":who,"uploadId":data.uploadId,"artworkHash":upload["hash"],"name":upload["name"],"width":data.width,"height":data.height,"version":1,"state":"queued","summary":"","events":[],"measurements":{"format":upload["format"],"pages":upload["pages"]},"previews":upload["previews"],"messages":[],"created":now,"expires":now+7*86400,"leaseUntil":0,"leaseToken":"","report":None,"reportDigest":"","receipt":None,"turns":0,"inputTokens":0,"outputTokens":0,"usedMicros":0,"reservedMicros":0,"budgetMonth":"","error":"","model":os.getenv("ANTHROPIC_MODEL",MODEL),"promptVersion":PROMPT_VERSION,"inspectedMeasurements":False,"inspectedSpecs":False,"inspectedPages":[]}
             state["runs"][r["id"]]=r;event(r,"upload","Artwork received",f"{upload['format']} / {len(upload['pages'])} page(s)")
             if not data.width or not data.height:
                 r["state"]="awaiting_input";r["summary"]="What width and height, in inches, should this artwork be printed at?"

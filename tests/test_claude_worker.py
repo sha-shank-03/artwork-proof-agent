@@ -23,7 +23,7 @@ class FakeClient:
         self.count_value = count
         self.requests = []
         self.closed = False
-        self.responses = SimpleNamespace(input_tokens=SimpleNamespace(count=self.count), create=self.create)
+        self.messages = SimpleNamespace(count_tokens=self.count, create=self.create)
 
     async def count(self, **request):
         return SimpleNamespace(input_tokens=self.count_value)
@@ -34,9 +34,8 @@ class FakeClient:
         if isinstance(call, Exception):
             raise call
         name, args = call
-        output = [Call(type="function_call", id=uid(), call_id=uid(), name=name,
-                       arguments=args if isinstance(args, str) else json.dumps(args))]
-        return SimpleNamespace(output=output, model=MODEL, status="completed",
+        output = [Call(type="tool_use", id=uid(), name=name, input=args)]
+        return SimpleNamespace(content=output, model=MODEL, stop_reason="tool_use",
                                usage=SimpleNamespace(input_tokens=100, output_tokens=20))
 
     async def close(self):
@@ -54,13 +53,13 @@ def seed():
 
 
 def execute(monkeypatch, fake, store, ident, lease):
-    monkeypatch.setattr("app.worker.AsyncOpenAI", lambda **kwargs: fake)
+    monkeypatch.setattr("app.worker.AsyncAnthropic", lambda **kwargs: fake)
     asyncio.run(Worker(store).run(ident, lease))
     with store.transaction() as state:
         return copy.deepcopy(state["runs"][ident])
 
 
-def test_luna_full_tool_path_preserves_images_and_approval(monkeypatch):
+def test_claude_full_tool_path_preserves_images_and_approval(monkeypatch):
     store, ident, lease = seed()
     fake = FakeClient([("inspect_measurements", {}), ("read_demo_specs", {}),
                        ("inspect_preview", {"page":1}), ("submit_report", model_report())])
@@ -76,16 +75,17 @@ def test_luna_full_tool_path_preserves_images_and_approval(monkeypatch):
     assert sum(s["inputTokens"] for s in spans) == r["inputTokens"]
     assert sum(s["outputTokens"] for s in spans) == r["outputTokens"]
     for request in fake.requests:
-        assert request["model"] == MODEL and request["store"] is False
-        assert request["reasoning"] == {"effort":"none"}
-        assert request["parallel_tool_calls"] is False
-        assert request["max_output_tokens"] == 1500
-    outputs = [i for i in fake.requests[-1]["input"] if i.get("type")=="function_call_output"]
-    image = outputs[-1]["output"][1]
-    assert image["type"] == "input_image" and image["detail"] == "high"
-    assert image["image_url"].startswith("data:image/png;base64,")
-    calls = {i["call_id"] for i in r["messages"] if i.get("type")=="function_call"}
-    assert all(o["call_id"] in calls for o in outputs)
+        assert request["model"] == MODEL
+        assert "thinking" not in request and "cache_control" not in request
+        assert request["tool_choice"] == {"type":"any","disable_parallel_tool_use":True}
+        assert request["max_tokens"] == 1500
+    outputs = [i for m in fake.requests[-1]["messages"] if isinstance(m["content"],list)
+               for i in m["content"] if i.get("type")=="tool_result"]
+    image = outputs[-1]["content"][1]
+    assert image["type"] == "image" and image["source"]["media_type"] == "image/png"
+    calls = {i["id"] for m in r["messages"] if isinstance(m["content"],list)
+             for i in m["content"] if i.get("type")=="tool_use"}
+    assert all(o["tool_use_id"] in calls for o in outputs)
 
 
 def test_clarification_checkpoint_resumes_with_saved_tool_outputs(monkeypatch):
@@ -100,7 +100,8 @@ def test_clarification_checkpoint_resumes_with_saved_tool_outputs(monkeypatch):
                          ("inspect_preview",{"page":1}), ("submit_report",model_report())])
     r=execute(monkeypatch, second, store, ident, lease)
     assert r["state"] == "awaiting_approval" and r["turns"]==5
-    assert any(i.get("type")=="function_call_output" for i in second.requests[0]["input"])
+    assert any(i.get("type")=="tool_result" for m in second.requests[0]["messages"]
+               if isinstance(m["content"],list) for i in m["content"])
 
 
 def test_malformed_arguments_are_repaired_without_approval(monkeypatch):
@@ -108,10 +109,10 @@ def test_malformed_arguments_are_repaired_without_approval(monkeypatch):
     fake=FakeClient([("inspect_preview","{invalid"), ("ask_clarification",{"question":"Confirm crop?"})])
     r=execute(monkeypatch,fake,store,ident,lease)
     assert r["state"]=="awaiting_input" and r["receipt"] is None
-    assert "error" in fake.requests[1]["input"][-1]["output"]
+    assert fake.requests[1]["messages"][-1]["content"][0]["is_error"]
 
 
-@pytest.mark.parametrize("count",[0,200001])
+@pytest.mark.parametrize("count",[0,180001,True,-1])
 def test_unreviewed_context_stops_before_paid_call(monkeypatch,count):
     store,ident,lease=seed();fake=FakeClient([],count=count)
     r=execute(monkeypatch,fake,store,ident,lease)
@@ -126,20 +127,19 @@ def test_uncertain_provider_failure_keeps_conservative_budget(monkeypatch):
     with store.transaction() as state:assert state["budgets"][month()]["reserved"]==0
 
 
-def test_legacy_claude_run_is_not_silently_converted(monkeypatch):
+def test_legacy_luna_run_is_not_silently_converted(monkeypatch):
     store,ident,lease=seed()
-    with store.transaction() as state:state["runs"][ident]["model"]="claude-haiku-4-5-20251001"
+    with store.transaction() as state:state["runs"][ident]["model"]="gpt-5.6-luna"
     fake=FakeClient([]);r=execute(monkeypatch,fake,store,ident,lease)
     assert r["state"]=="failed" and r["turns"]==0 and not fake.requests
 
 
-def test_strict_tools_and_integer_cost_ceiling():
-    assert cost_micros(1,0)==1 and cost_micros(1000000,1000000)==1450000
+def test_bounded_tool_schemas_and_integer_cost_ceiling():
+    assert cost_micros(1,0)==1 and cost_micros(1000000,1000000)==6000000
     for tool in TOOLS:
-        assert tool["strict"] is True
-        assert tool["parameters"]["additionalProperties"] is False
-        assert set(tool["parameters"]["required"])==set(tool["parameters"]["properties"])
+        assert tool["input_schema"]["additionalProperties"] is False
+        assert set(tool["input_schema"].get("required",[]))==set(tool["input_schema"]["properties"])
     report=next(t for t in TOOLS if t["name"]=="submit_report")
-    fields=report["parameters"]["$defs"]["Finding"]["properties"]
+    fields=report["input_schema"]["$defs"]["Finding"]["properties"]
     assert fields["category"]["enum"]==["model-suggested","requires-human-review"]
     assert fields["evidence_id"]["pattern"]==r"^preview:page-[1-5]$"

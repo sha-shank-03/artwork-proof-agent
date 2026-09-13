@@ -18,7 +18,7 @@ from app.core import digest
 from app.worker import MODEL
 
 def resume_results(report, cases, commit):
-    if report.get("provider")!="OpenAI" or report.get("model")!=MODEL or report.get("commit")!=commit:
+    if report.get("provider")!="Anthropic" or report.get("model")!=MODEL or report.get("commit")!=commit:
         raise ValueError("Resume requires the same provider, model and source commit")
     rows=report.get("results",[])
     if [r.get("id") for r in rows]!=[c["id"] for c in cases[:len(rows)]] or not all(r.get("passed") for r in rows):
@@ -44,7 +44,7 @@ def main():
     if args.resume and args.rerun_failed:parser.error("Choose resume or rerun-failed, not both")
     if args.rerun_failed:
         saved=json.loads((output/"latest.json").read_text())
-        if saved.get("provider")!="OpenAI" or saved.get("model")!=MODEL or saved.get("commit")!=commit or [r.get("id") for r in saved["results"]]!=[c["id"] for c in cases]:
+        if saved.get("provider")!="Anthropic" or saved.get("model")!=MODEL or saved.get("commit")!=commit or [r.get("id") for r in saved["results"]]!=[c["id"] for c in cases]:
             raise ValueError("Rerun requires the complete same-source/provider/model evaluation set")
         results=saved["results"];recordings=saved["recordings"]
         retry_notice={"priorPassed":saved["passed"],"priorCases":saved["cases"],"rerunCaseIds":[r["id"] for r in results if not r["passed"]],"method":"Only failed cases rerun; original attempt retained in evaluation history."}
@@ -117,7 +117,7 @@ def main():
             row={"id":case["id"],"passed":False,"errorType":type(exc).__name__,"seconds":round(time.monotonic()-start,2)}
         if args.rerun_failed:results[i]=row
         else:results.append(row)
-        report={"provider":"OpenAI","model":MODEL,"commit":commit,"cases":len(results),"passed":sum(v["passed"] for v in results),"results":results,"recordings":recordings,"notice":"30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."}
+        report={"provider":"Anthropic","model":MODEL,"commit":commit,"cases":len(results),"passed":sum(v["passed"] for v in results),"results":results,"recordings":recordings,"notice":"30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."}
         if retry_notice:report["retryNotice"]=retry_notice
         (output/"latest.json").write_text(json.dumps(report,indent=2))
         print(case["id"],"PASS" if row["passed"] else "FAIL",flush=True)

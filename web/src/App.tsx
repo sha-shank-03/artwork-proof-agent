@@ -260,7 +260,7 @@ export default function App() {
               <LockKeyhole size={25} />
               <h2 style={{ marginTop: 15 }}>A closer look, by invitation.</h2>
               <p>
-                Use your reviewer invitation to try real Luna-powered analysis.
+                Use your reviewer invitation to try real Claude-powered analysis.
                 Upload only synthetic or non-confidential artwork you own. Files
                 expire after seven days; no files are sent to a printer.
               </p>
@@ -317,7 +317,7 @@ export default function App() {
                     ))}
                     {!replays.length && (
                       <div className="empty">
-                        Verified Luna recordings are being prepared. There are
+                        Verified Claude recordings are being prepared. There are
                         no fabricated model results here.
                       </div>
                     )}
@@ -484,8 +484,8 @@ export default function App() {
                         <div>
                           <span>Analysis model</span>
                           <strong>
-                            {current.model === "gpt-5.6-luna"
-                              ? "GPT-5.6 Luna"
+                            {current.model === "claude-haiku-4-5-20251001"
+                              ? "Claude Haiku 4.5"
                               : current.model}
                           </strong>
                         </div>

@@ -199,7 +199,7 @@ function nodesFor(app: AppKind, model: string): NodeInfo[] {
       id: "agent",
       title: "Python agent",
       tag: "Orchestration",
-      sub: artwork ? "Bounded Responses tool loop" : "OpenAI Agents SDK",
+      sub: artwork ? "Bounded Claude tool loop" : "OpenAI Agents SDK",
       input: "Run-scoped input and reviewer clarifications.",
       output: "Typed tool requests, checkpoints and validated findings.",
       control:
@@ -296,7 +296,7 @@ export function SystemMap({
   run?: ConsoleRun | null;
 }) {
   const model =
-      run?.model || (app === "artwork" ? "gpt-5.6-luna" : "gpt-4.1-mini"),
+      run?.model || (app === "artwork" ? "claude-haiku-4-5-20251001" : "gpt-5.6-luna"),
     nodes = nodesFor(app, model);
   const [selected, setSelected] = useState("llm"),
     [paths, setPaths] = useState<{ d: string; active: boolean }[]>([]);
@@ -937,7 +937,7 @@ export function ReviewerBrief({
               <>
                 <li>FastAPI, Python, React/TypeScript and PostgreSQL.</li>
                 <li>
-                  GPT-5.6 Luna Responses loop with typed tool schemas and
+                  Claude Haiku Messages loop with typed tool schemas and
                   bounded preview input.
                 </li>
                 <li>
@@ -952,7 +952,7 @@ export function ReviewerBrief({
               <>
                 <li>Go/GraphQL, Python, React/TypeScript and PostgreSQL.</li>
                 <li>
-                  OpenAI Agents SDK with typed tools and native approval
+                  GPT-5.6 Luna via OpenAI Agents SDK with typed tools and native approval
                   interruptions.
                 </li>
                 <li>
