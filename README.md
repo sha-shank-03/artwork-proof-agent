@@ -2,7 +2,7 @@
 
 An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; GPT-5.6 Luna selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Release status:** the [public application shell](https://artwork-proof-agent.vercel.app) and isolated Railway backend are deployed. The user requested a migration from Claude to GPT-5.6 Luna on 13 September 2026. The 30-case provider evaluation and publication gates still apply; historical Claude access failures are retained, not relabelled as Luna results. See [migration verification](docs/LUNA_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
+**Release status:** the [invited live application](https://artwork-proof-agent.vercel.app) and isolated Railway backend use GPT-5.6 Luna. **30/30 hosted workflow evaluations and 12/12 hosted browser checks passed.** Public replay publication is still pending; historical Claude access failures are retained, not relabelled as Luna results. See [migration verification](docs/LUNA_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
 
 ## Features
 

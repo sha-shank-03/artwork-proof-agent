@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import shlex
 import subprocess
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("command", choices=["invite", "revoke"])
@@ -17,21 +18,27 @@ root = Path(__file__).resolve().parents[1]
 is_commerce = (root / "go.mod").exists()
 base = ["/app/bin/server"] if is_commerce else ["python", "-m", "app.cli"]
 
-def remote(command):
-    result = subprocess.run(
-        ["railway", "ssh", "--project", args.project, "--environment", args.environment,
-         "--service", args.service, "--", shlex.join(command)],
-        capture_output=True, text=True, timeout=45)
-    if result.returncode:
-        raise SystemExit("Hosted invitation operation failed; remote output suppressed.")
-    return result.stdout.strip()
+def remote(command, attempts=1):
+    # Only callers performing a read may request retries. Never blindly repeat issuance.
+    for attempt in range(attempts):
+        result = subprocess.run(
+            ["railway", "ssh", "--project", args.project, "--environment", args.environment,
+             "--service", args.service, "--", shlex.join(command)],
+            capture_output=True, text=True, timeout=45)
+        if result.returncode==0:return result.stdout.strip()
+        if attempt+1<attempts:time.sleep(1)
+    raise SystemExit("Hosted invitation operation failed; remote output suppressed.")
 
 if args.command == "invite":
     info = remote(base + (["-invite"] if is_commerce else ["invite"]))
     match = re.search(r"Invitation ([a-f0-9]+) saved", info)
     if not match:
         raise SystemExit("Unexpected invitation response; output suppressed.")
-    token = remote(["cat", "/app/.local/invite.txt"])
+    # A transient SSH read failure must not cause another invitation to be issued.
+    try:token = remote(["cat", "/app/.local/invite.txt"],attempts=3)
+    except (SystemExit,subprocess.TimeoutExpired):
+        print("Created invitation needs cleanup: "+match[1])
+        raise
     if not re.fullmatch(r"[a-f0-9]{32,100}", token):
         raise SystemExit("Unexpected token format; output suppressed.")
     target = root / ".local"

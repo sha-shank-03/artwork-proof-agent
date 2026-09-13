@@ -21,9 +21,19 @@ This is a provider/transport migration, not just a model-string replacement. The
 
 ## Verification
 
-Pending hosted verification. Deterministic transport tests cover image/call-ID replay, clarification continuation, malformed arguments, input bounds, uncertain usage, legacy-checkpoint rejection, strict schemas and integer pricing. Model metadata lookup is prohibited by the existing key's `api.model.read` scope; actual Luna token counting succeeds. No key permissions were broadened.
+**Railway migration verified.** Runtime inspection confirmed `gpt-5.6-luna`, the existing OpenAI key present, `LIVE_ENABLED=true`, and no remaining Anthropic key/model variables. Backend deployment `f2129d4b-664b-4199-9e10-9f3e1c483558` runs the verified worker from `1fe66948fa8c6d1f0e7401d54dbb517f0a938c2e`. The frontend production deployment is `dpl_AJnY8QyVTL85he5xqzpueGEuUqgq` at https://artwork-proof-agent.vercel.app. Commerce was not changed.
+
+Actual hosted evaluation: **30/30 passed**, 114,170 input / 8,944 output tokens, **$0.039310** conservative set cost; median 11.99 seconds and maximum 17.70 seconds. See [per-case evidence](evaluation-results.json) and [methodology/history](EVALUATIONS.md). The six genuine recordings remain in private evaluation output until final replay/PDF publication review.
+
+Local Python suite: **47 passed**, one PostgreSQL-only check skipped locally; PostgreSQL and Docker passed the source CI. **12/12 hosted browser checks passed** on the corrected production frontend: public no-backend browsing, mobile/keyboard access, delayed-auth regression and real Luna analysis/refresh/approval, each in Chromium, Firefox and WebKit. A genuine two-page proof report was rendered and visually inspected; this is not a review of all six future public proof packages. Dependency audits and working-tree/history/build/CI/Railway-log credential scans passed.
+
+Deterministic transport tests cover image/call-ID replay, clarification continuation, malformed arguments, input bounds, uncertain usage, legacy-checkpoint rejection, strict schemas and integer pricing. Model metadata lookup is prohibited by the existing key's `api.model.read` scope; actual Luna requests succeed. No key permissions were broadened. Provider files on the user's Mac were not changed, and no purchase or plan upgrade was made.
 
 First hosted baseline on `118edb0`: `clean-1` failed safely after eight turns, with 14,383 input / 1,487 output tokens and $0.005383 conservative cost. Luna completed all inspections but repeatedly included `measured` findings in its report. The shared public report schema incorrectly advertised that category as model input, despite the validator forbidding it. Fixed by narrowing the model-only tool schema to `model-suggested` / `requires-human-review` and preview citations, while leaving the public merged schema and server-side safety checks intact. A single prompt sentence explains that code adds measured findings. No extra turns or weakened validation.
+
+Operational findings: a Railway SSH token-read interruption paused the evaluation after 20 passing cases. Exact test invitations were revoked and the same set resumed without repeating those cases; the runner now checks provider/model/commit and the passing prefix. Browser verification also exposed a pre-existing login race: a late unauthenticated history response could overwrite successful sign-in. An authentication epoch now ignores stale results. The deterministic regression failed against the old hosted build and passed in all three browsers after the fix; all three live approval tests then passed. No backend authorization was weakened.
+
+Remaining original-release work: render/review all six public proof packages, publish genuine replay assets, run the final publication review, then make/tag the portfolio repositories public. Both repositories remain private; the completed provider migration is not claimed as completion of that larger release.
 
 ## Official sources
 

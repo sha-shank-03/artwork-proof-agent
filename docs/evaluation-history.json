@@ -1,0 +1,91 @@
+[
+  {
+    "provider": "Anthropic",
+    "commit": "5977b81a4630a1c52df8e4df018b65ea4210f550",
+    "cases": 1,
+    "passed": 0,
+    "results": [
+      {
+        "id": "clean-1",
+        "passed": false,
+        "checks": {
+          "hash_bound": true,
+          "approval_pause": false,
+          "no_unapproved_receipt": true,
+          "real_provider_usage": false,
+          "bounded_cost": true
+        },
+        "runId": "3886590d69a2fa07b303842677beb25145b4783aff87a176",
+        "state": "failed",
+        "costMicros": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "seconds": 1.1
+      }
+    ],
+    "notice": "30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."
+  },
+  {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-luna",
+    "commit": "118edb042a0ddd91179d3aa265fb35342945efc5",
+    "cases": 1,
+    "passed": 0,
+    "results": [
+      {
+        "id": "clean-1",
+        "passed": false,
+        "checks": {
+          "hash_bound": true,
+          "approval_pause": false,
+          "no_unapproved_receipt": true,
+          "real_provider_usage": true,
+          "requested_model": true,
+          "bounded_cost": true
+        },
+        "runId": "9b99d7013cb279bbe0482c05a3c948f95382cedb530769d3",
+        "state": "failed",
+        "costMicros": 5383,
+        "inputTokens": 14383,
+        "outputTokens": 1487,
+        "seconds": 30.66
+      }
+    ],
+    "notice": "30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."
+  },
+  {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-luna",
+    "commit": "1fe66948fa8c6d1f0e7401d54dbb517f0a938c2e",
+    "cases": 1,
+    "passed": 1,
+    "results": [
+      {
+        "id": "clean-1",
+        "passed": true,
+        "checks": {
+          "hash_bound": true,
+          "approval_pause": true,
+          "no_unapproved_receipt": true,
+          "real_provider_usage": true,
+          "requested_model": true,
+          "bounded_cost": true,
+          "report_digest": true,
+          "evidence_valid": true,
+          "all_pages_inspected": true,
+          "measured_and_model_separated": true,
+          "proof_pdf": true,
+          "decision_resolved": true,
+          "idempotent_receipt": true
+        },
+        "runId": "94823bbb3f61056d082e062dbea2bb28c4a2503e76750767",
+        "state": "completed",
+        "costMicros": 1325,
+        "inputTokens": 3955,
+        "outputTokens": 279,
+        "seconds": 12.89
+      }
+    ],
+    "notice": "30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."
+  }
+]

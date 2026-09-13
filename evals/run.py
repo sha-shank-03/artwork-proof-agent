@@ -1,5 +1,6 @@
 """Real-provider evaluation only. No simulated model output fallback."""
 import argparse
+import atexit
 import http.cookiejar
 import io
 import json
@@ -15,8 +16,17 @@ from tools.fixtures import fixture
 from app.core import digest
 from app.worker import MODEL
 
+def resume_results(report, cases, commit):
+    if report.get("provider")!="OpenAI" or report.get("model")!=MODEL or report.get("commit")!=commit:
+        raise ValueError("Resume requires the same provider, model and source commit")
+    rows=report.get("results",[])
+    if [r.get("id") for r in rows]!=[c["id"] for c in cases[:len(rows)]] or not all(r.get("passed") for r in rows):
+        raise ValueError("Resume requires an ordered, passing prefix; failed cases need a new evaluation")
+    return rows,report.get("recordings",[])
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--limit",type=int,default=30)
+    parser.add_argument("--resume",action="store_true",help="Continue a saved passing prefix without repeating model calls")
     parser.add_argument("--hosted-site");parser.add_argument("--railway-project");parser.add_argument("--railway-environment");parser.add_argument("--railway-service");args=parser.parse_args()
     selectors=[];issued=[]
     if args.hosted_site:
@@ -28,10 +38,20 @@ def main():
     cases=json.loads(Path("evals/cases.json").read_text())[:args.limit]
     commit=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
     output=Path("evals/results");output.mkdir(parents=True,exist_ok=True)
-    if (output/"latest.json").exists():(output/"latest.json").rename(output/f"attempt-{time.time_ns()}.json")
     results=[];recordings=[]
-    for i,case in enumerate(cases):
-        if i%5==0:
+    if args.resume:
+        results,recordings=resume_results(json.loads((output/"latest.json").read_text()),cases,commit)
+    elif (output/"latest.json").exists():(output/"latest.json").rename(output/f"attempt-{time.time_ns()}.json")
+    def cleanup():
+        for invitation in issued[:]:
+            result=subprocess.run([sys.executable,"tools/hosted_invite.py","revoke","--id",invitation,*selectors],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+            if result.returncode==0:issued.remove(invitation)
+            else:print("Invitation cleanup requires retry for ID "+invitation,file=sys.stderr)
+    atexit.register(cleanup)
+    start_index=len(results)
+    for i,case in enumerate(cases[start_index:],start_index):
+        new_invitation=(i-start_index)%5==0
+        if new_invitation:
             command=[sys.executable,"tools/hosted_invite.py","invite",*selectors] if args.hosted_site else [sys.executable,"-m","app.cli","invite"]
             subprocess.run(command,check=True,stdout=subprocess.DEVNULL)
             if args.hosted_site:issued.append(json.loads(Path(".local/hosted-invite.json").read_text())["id"])
@@ -41,7 +61,7 @@ def main():
             req=urllib.request.Request(api+path,data=body,headers={"Origin":origin,"Content-Type":mime})
             with opener.open(req,timeout=190) as response:
                 return response.read() if binary else json.load(response)
-        if i%5==0:request("/session",{"token":invite_path.read_text().strip()})
+        if new_invitation:request("/session",{"token":invite_path.read_text().strip()})
         start=time.monotonic();r={};checks={}
         try:
             raw,mime,extension=fixture(case["fixture"])
@@ -82,8 +102,7 @@ def main():
         print(case["id"],"PASS" if results[-1]["passed"] else "FAIL",flush=True)
         if r.get("state")=="failed" and r.get("turns")==0:
             print("Provider access failed before a billed call. Stop; do not repeat all cases.",flush=True);break
-    for invitation in issued:
-        subprocess.run([sys.executable,"tools/hosted_invite.py","revoke","--id",invitation,*selectors],check=True,stdout=subprocess.DEVNULL)
+    cleanup()
     return 0 if len(results)==len(cases) and all(v["passed"] for v in results) else 1
 
 if __name__=="__main__":raise SystemExit(main())

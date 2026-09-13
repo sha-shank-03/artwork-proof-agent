@@ -49,4 +49,4 @@ else:
     for ident in (metadata["id"],json.loads((root/".local/hosted-invite.json").read_text())["id"]):
         subprocess.run([sys.executable,"tools/hosted_invite.py","revoke","--id",ident,*selectors],cwd=root,stdout=subprocess.DEVNULL,check=True)
     call("/runs",expected=401);check("revoked_session_denied",True)
-    print("Hosted file/auth/recovery smoke complete; no Claude evaluation is claimed.")
+    print("Hosted file/auth/recovery smoke complete; no model evaluation is claimed.")

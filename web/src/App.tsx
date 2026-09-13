@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
   Check,
@@ -30,6 +30,7 @@ import {
 const liveAvailable =
   import.meta.env.DEV || import.meta.env.VITE_LIVE_AVAILABLE === "true";
 export default function App() {
+  const authEpoch = useRef(0);
   const [mode, setMode] = useState<"replay" | "live">("replay"),
     [replays, setReplays] = useState<Replay[]>([]),
     [selected, setSelected] = useState(0),
@@ -56,9 +57,10 @@ export default function App() {
   useEffect(() => {
     if (mode !== "live" || !liveAvailable) return;
     let active = true;
+    const epoch = authEpoch.current;
     getRuns()
       .then((history) => {
-        if (!active) return;
+        if (!active || epoch !== authEpoch.current) return;
         setAuthenticated(true);
         setRun(
           history.sort(
@@ -67,7 +69,7 @@ export default function App() {
         );
       })
       .catch(() => {
-        if (active) setAuthenticated(false);
+        if (active && epoch === authEpoch.current) setAuthenticated(false);
       });
     return () => {
       active = false;
@@ -226,7 +228,7 @@ export default function App() {
           <LockKeyhole size={25} />
           <h2>Live hosting is not enabled yet.</h2>
           <p>
-            Luna-backed verification and genuine replay release checks are pending.
+            Public proof recordings are awaiting final replay release checks.
             This page does not contain fabricated provider recordings.
           </p>
           <button onClick={() => setMode("replay")}>
@@ -239,6 +241,8 @@ export default function App() {
           onSubmit={(e) => {
             e.preventDefault();
             void action(async () => {
+              // Ignore any unauthenticated history request started before this login.
+              authEpoch.current += 1;
               await request("/session", { token });
               setToken("");
               setAuthenticated(true);
