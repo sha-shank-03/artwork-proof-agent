@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-13",
+  "scope": "Railway build and last 2000 runtime log lines; complete current Vercel build log. Credential signatures and exact approved provider/Railway secrets checked in memory; no raw logs committed.",
+  "railwayDeployment": "963f501d-5526-4fe9-bff2-3e751f3b8f4a",
+  "vercelDeployment": "dpl_QF7KeLkh4oujxiCcEhxNTVgQhevx",
+  "results": [
+    {"source": "railway-build", "bytes": 904, "credentialMatches": 0},
+    {"source": "railway-runtime", "bytes": 1125, "credentialMatches": 0},
+    {"source": "vercel-build", "bytes": 3696, "credentialMatches": 0}
+  ]
+}
