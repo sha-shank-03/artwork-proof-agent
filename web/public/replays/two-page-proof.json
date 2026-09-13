@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "label": "two page proof",
+  "recordedAt": "2026-09-13T13:27:47.316413+00:00",
+  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "providerVerified": true,
+  "proofFile": "/replays/two-page-proof.pdf",
+  "run": {
+    "id": "6b11b380f655c2c81c4d23a4eb15c7546d337b6cec07a67c",
+    "name": "two-page-proof.pdf",
+    "state": "completed",
+    "summary": "Both supplied pages were visually inspected. The previews show simple, centered white text on a dark green background with no obvious clipping or overlap. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded PDF raster DPI.",
+    "artworkHash": "3ca3f07594e3995d180f6a43563821537c25ab356149e60ecd8e60f2b759bd8e",
+    "version": 1,
+    "width": 3.0,
+    "height": 3.0,
+    "previews": [
+      "iVBORw0KGgoAAAANSUhEUgAAAbAAAAGwCAYAAADITjAqAAAaxklEQVR4nO3dd2BV9d3H8c+592Yv9pIVEmYwSFgqylBxKy1aS4uiVbt8tFK1rkdtaZ2tCmptXY9Fqy11gYuKA0FBkZlACBAIIyArQMi4CWTc8/wRuBKybiCJ/db36z+Sc+7Kued97+/8zsFpd2qKKwAAjPF82w8AAIDjQcAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmETAAAAmETAAgEkEDABgEgEDAJhEwAAAJhEwAIBJBAwAYBIBAwCYRMAAACYRMACASQQMAGASAQMAmOT7th/Af6tW8XEakJQon88b0vLl5RValb1R/pJSJXbtoq6dOspxqi9TWRlQeUWFivwl2rEnTwVFxY1+XDHRUerUrq2iIyOUl39AefvzVVkZqHedAUmJatemlSSpyF+izOwclVdU1FguIjxMqX17KyoyQq4rbdiaq115+6qtHyrXlbI3b9XufftDWn70sDRdd/l4eTwepa9drydenlnrY5RU5+tbl/yCQq3OzlF8bIwG9k6Sz+eV60q5O3Zq645dkhr/93ZdaffefcrekitJCvP5NLBPkuJiouW6Ut7+fK3btCWk26rrvisqKlXk92v33v3Kyz8g13VDe8LH6Ni2jfok9pDjVN1mVs5mHSgsqnXZvok91KFtGzmOtC+/QFk5m+u938ZujyeyLe0vKAy+xqEqKT2oVes3qqy8vNrPPR6P0gb01ZjhQ5Tco5siw8O1v6BQO/bkaUXWOi1akaFDZeV13CqaCgFrJql9k/XiA/cpIS42pOXz9udr0m/uVfrabF156QW6cdIV8njq/oJcUVGpLV/v0OsffKwX3nhbhcX+OpeNj43RpIvP14Rzxyqld5LCfFV/dtd1daCwSJ8tW6kZs97TohUZNXY2Xq9Ht18/WReNOUOSVOwv0U33/0nvzV9Y437at2mtJ+/5jZK7d1VlZaXufOxp/f2d96utH6rKykrd8vA0/eO9uQ0u6/F4NP7s0Tr/zNPkuq7S165XRWVlrcs6jhPS63u0z5et1ISbbteApETNeOi3ap0Qr0AgoMf+9qr++MLLkhr/93ZdV/94b65ueXiaAoGAEuJi9fAtNyotpZ9c19VbH36qG37/iAKB+j9chHLfgUBAe/bna9HyDL363gdatCIjpNs94uzThunxO38tr9erQCCgl2a/r3um/7XWnfqNk67QDy8cJ8dxNHfhYl179+9rLHe82+Ox22KojmxLHy76Kvgah2rDllz9YMpd+nr3nuDPkrp31QNTbtDoYWm1fmBxXVfrNm3R1D8/r08WL23UY0XjMIRolM/nVXKPbrrzZ9foyf+9TfGxMbUulzagn9796zRN/dXPdUr/vsGdhVS1M2+dEK/xZ4/Wv6Y9qEduu0lxMbXfzhGxMdH61VUT1al92yZ9PieifetWGtSvjxzHUZG/RF+tWnPc3zb+G3k8HnVq11aXnXeWZj7+gB6/89dq2yrhuG9rwrixGjM87bjWb+rtsaWd1LGD/nLfHTrr1KF1ftt2HEf9kxL1l9/dqXGnj2jhR/jdwjewFuC6rtbmbNGWr3fUuUxhsb/WYZnd+/YrPWu9Kg9/YvZ6PEqIj1NKcqLiYmLkOI7GnjpUo4el6d1PP6+2bkpyLz0z9S4ldu1S7bEU+UtU5PerVXycYqKiJEnhYWGaPP5Chfl8uvvxp1V66FCdj/XkPsm67rLxeui5GQ1+kg8EXGVuyFFUZES1n3fv3ElJ3bvKcRyVlZdr1foN1b5FBlxXO/P21XvbR/Tu2V09unSSJOXu3KXszVtDWk+SDpWVaenqrHq/wa7ZuCnk25OqPvGnr8vW7r11D3+6rqvV2RubPLSBQECr1m/Qjj175fV6FRsdpfZtWimx60kK8/kUHhamH110rqIiI3TLw9PkLylt9H3Ex8boV1dN1Mqs9crLPxDyeie6PTbltuS6rrbv2qPV2Rvrfcw78/bq4FHvhe+PG6PUvr3lOI5c19WajZv0xtxPtGHrNrVNSND4s0cHv5m1SYjX/0z6gZasXnNcw/1oGAFrAa7r6rUPPtLTr77e4LLOMQdmMrNz9NN7H6gRlCEp/fW3B+9T5w7tFBkersH9++q9+QuDO8SYqEjdfv1k9Typs6SqHdvC5en64wt/15LVVd9QYqIi9f1xY3XbtVfqpI4d5PV6NeHcsfoqI1Mz53xY52P0+byadMn5mrd4qb5MX93gc3/0xVdq/PzmyRN1989/IsdxVFxSqt899by+WpXZ4OtzLMdxNPzkAYePHblKX5vdqJ1qYbFfU59+Xulrsxt933WpDAT07My3NOvj+U12m6EKBFy98Mbb+tecj6r9vE/P7nr41ht1xpBT5PF4dOGokVqwZHlIQ7THchxHaSn9dM2ES/Toi6+EFOGm2B5PdFtq17pVtX9/mb5KN93/aMjDqRHhYRqRmhL85pW+NltX3fFb7d77TRzfmbdAf77vdl00+gw5jqN+vXqqd49uWpa5NqT7QOMwhGjUus1btDF3m6SqHUqbVgnV4peW0l8j0wYFPykuWLpCP7vvQX21KjO4w/GXHtQr7/xbN0x9JDhZIjoyUhMvOrfBYzntWrfSlKt/FPIxn+YSHRmhEYMGyuPxqKy8XItWNu74zndF9pZc3f7oU9q0/WtJUmREuK64YNxx//3CfD5NHn+h0gaEdjypubfHluDzehUVESmp6oPZ7n37dKCwsNoy/tKDev2DT/Rl+motWLJCC5en13k8FieOgBkVFRGh2Oiq2VSu66qguDi4I3AcR2OGpwVnWxWXlOi5f83SvgMFtd7W4oxMzf54fnD9lOReSknuVeuy5RUVCgQCchxHZww5RRMvPLepn1qjdOvcSX0Te0iS9uzL16p19Q8JfZdt2va1Plu6Mvh3Tu7RTT27dG7UbVRWVqqiomqH3LFdW025eqJioqPqXac5t8eWVHqoTLk7d8l13aqh+xFD9eQ9v9HZpw5TdGRkcLk5CxZp/A236vKb79D199zfpN/uUR1DiC2kW6eOOu2Uk2v93b4DBcHp1A3xeDxK7NpF1152qQYkJ0qSDpaVaelRExeiIiKUkpwUnGW3efvOesf6A4GAFixZoUkXn6/YmGjFxUSrf1Kivli5qtpyruvqy5WrlBAXq0H9+ig8LEw/veJ7+nzZSmXlbA7p8Te1Qf16q32b1lXHGTdt0fZduxu1fpjPp5TkXoqKiKjxO9d1lZO7vVFDkpLkcTy6eOyZ6turZ53LbNy6TW999GmLfls8cnyssjIgn8+r1vFxSureVRnrN4R8Gzv27NWKrHW6eMwZ8nq9GjN8qH5w3jmaMevdOtdpru3xRPVPStQdP52sukZAi0tKNPP9D7X38N8/EAho9ifzdfGYM9Q6IV4R4eGaMG6sJowbq2J/iTLWb9CiFRmat3iZVq5dz0hACyBgLcDj8ei6y8frusvH1/r79+cv1HX3/KHW819GDRus1e/OlFT1STYiPEzhYWHB4ULXdbVgyQotWLoyuE5MVKTatooP/nvHnj3Kr+O8nSO27tipIn+JYmOi5TiOunfuWON4nCTl5R/Qy2/P0fS7blFsTLS6d+6kG6+8Qrc+PL3B16GpeTwenXZKqsJ8PgUCAS1OX13v5JPatIqP0/S7b631d5WVlfr1Q9P0z/cbd5zI5/Pq0rNG1bvM3IWL9c68z1TWwju5/IIilVdUyOfzyuvx1Dgu1JDKQED/98bbSureVQN7JykyIlw/nzhBi1ZkKGfb9lrXacrtsakmvTiOo5P7JOvkPsl1LrMrb68+/mJJMGCStHB5hh6f8aru+Ok1ij3qm2dsTLRGpg3SyLRBuvUnk7Rm42ZNm/Gq5nz2BSFrRgwh/ocL8/mUEBerhLhYxcfGKCI8PBiW8ooKzf5kgW5/9EkV+b+ZdRUWFqaoyG/G6ov9pQ2Ow5cePKSSQwclVb2542Njaw2YJH206Cu9Pe+z4FDKBaNG6oJRp8tRiGcGN5H2bVprUL+qGWGFxX4ty8xq0fu36FBZmSoPbwuO4yg8PKzRt7FjT56eeuU1+UurZjD26tpFN/z4ckWGh9e6fHNvjy0pEAjomZlv6Ue33K25n39Z4xw3SfJ6vUrtm6y//u4uTZk8UV4vu9nmwjewFuC6rtZv3hq8asOxMtZtUCBQ+yfLgqJibd+9Rwmxsercvq28Xq9c19UXK1fp1kemKye35qfeykCg2g4iIiK8watOhIeHVdsBHTx0KBioYx0sK9PTr76uEYMGKrl7V8VGR+nGK6/QnY/9uf47aWJ9E7urW6eOkqQtX+/Uhq3bGn0bh8rKtHzNOhX5S2r8znUD2n7UCayhKq+o0BtzP9HanC11LrN1x85v5eB+ZES4vN6qWXRHYnI8/r1gkcadNlyXnXfW4RPJR2leHSftNuX22FRc19XKrPXBD2K18ZeWVptheLTFGZlanJGpxK5ddM5pw3V6WqqGpw5U+9atgu+ZyIhw/WLiZVqyOksLl6c32WPHNwhYC3BdVzPnfBjSNPpjLctcq5/cNVUHy8o0auhgPfKbm5TUratOH5yqqTf+TLc8PE179udXW6e4pET7Dg97OI6jDm1aKy4mps7L/0hV59IcOWnUdV1t373n8Bu79j3Nhq25enbmW/rDzb9QZES4BiQl6trLLpU3xKtbnCjHcTQidWBw+vzyNWvrnBRQn8Jiv3771LNNeqDddV19unjZtzKNviFtEuKDJw+XV1Rqf0HjXzNJKj10SE+98i8NSx2gHl06Ky4mRjdPnlhjW5SaentsOhtzt+mZmW+e0BDf5u079Pzrs/X867MV5vPptMEn65c/ulxjhg2Rz+dVq/g4XTDqdALWTPhua8SRqce3PDRNu/L2ynEcjRs5QrdfP1kRxwwDlZQe1NpNW4Jv+MRuJ1U7efRYjuNoeGpKcEzfX1qqtSFMynh97seav2SZXNeV11t13Kdrpw4n8CxDFx0VqRGpVdPnDx4q05fpq7n6RgO8Xo/SUvoHh7TyCwqP61vrEVk5m/X8a7ODw2gDeydp9LCaV+hoqe2xuZ06aKCemXqXZj/9qOY894QG9etT7fflFRX6bOlK3Xz/o1qzMUdS1XPp0bnTt/FwvxMImDFfpq/Ws6/NUnlFhTwejy4772ydf+bp1ZZxXVefLV0RvMpCu1YJ+uEF46pdtudoyd276XvnjAnOEtu4dbtWrW94Orq/pFTTX5oZHGYJ8/nqvI+m1r1zJ/Xp2V2StGvvvgavqAAptW9vnTViaHAyxPKstdqyve6rw4Ri5pwPtXB5evBDzNETjI5oqe2xucXFxOi8kadqZNogDe7fV2OGp9U6xF4ZCFS7kLSvhd4T30UEzBjXdfXqO//W8jXr5LquYqOjdNOVV9S4NuHijEwtzcyS67ryeDz68cXn67brrqxxzk6/Xj316B03K6nbSZKqPkXO+nh+tZlX9VmRtU4vzX6/ziu/N5dT+vVRuzat5LqusjZu0o49eS16/5bExcRowrix+st9dwS3kwOFRXp59pxGz9o8VkFRsaa/9M8GTzVoqe2xOa3ZuEm5O6tO0/D5vLrusvEaO2JItWXCfD5NvOhcpSQnSap6v27a9nWLP9bvCj4aGJRfWKQZs95Vat9kRUdGKiU5SVddemG1y/oUFvv1xMszNbB3ktq3aa2oyAj9+uofa9IlFyhj3QYVl5SoS4f2GnT4vz+Rqt5si1ZkaGYjpo27rquXZr2n0cOHaERqSovMFPN6PTp9cKp8h6+O/sXKVf9R/3VFmM+nP91+s/4w5Zf1Lrdx6zb9/L4Ha/yXMY7j6JKzztQ5pw+vc91AIKA7H39ab304r9rPvV6PHphyg+694Xp5PR5FRkQo6qiJG1LVDL8n/j5TC5auOI5nV9NXq9bolXfm6FdXTqzzArcttT2GynEcXTJ2lEYPH1LvcgcPHdIdf3pKnyxeqp15e/Xmh/PUp+c18vm86tyhnWY89Dsty8xS9pZchYX5dEq/vkpJTgy+3vsOFOideQua/PGjCgEz6qNFX2nZ6iydOXRw8NqEH3z+hVZn5wSX+WLlKt375DN6YMoNanv4UlMd27bRuSNrXiHbdV0tzsjUbY9Mb/AcnWPl5R/QEy/9U89MvatFLvnTvk3r4AVV8wuLtHzNuma/z8ZwHKfq1IcGlssvKKwWlqOFh1Wd71eXyspKhdcyNFXffbuuq9ydu/TQczM066P5TXZ+UiAQ0Itvvqsxw4bU+1+VtNT2GKqoyIgaFwY+VsnBg8FTDVzX1YxZ7+rkPkm69KxR8ng8ioqM0JlDB+vMoYNrrFtcUqppM/6hJas5vaO5MIRoVGGxXy+++a78pVXnynTp0F4/u2JCtWVc19Wbc+fph1Pu0vvzF6r0YM3hItd1tW3nbj347N806bZ765zq35AFS1fotX9/3CInbQ5ISgxOFsnJ3V7nCbTfdYFAQP7SUuVs2663PvpUNz/wmMZO/qXenDuvyf9Ou/fu0/SX/1ntfMRjteT22FwKi/2a8tDjeuT5l7R1x85aJw6VV1Ro4fJ0XX3nb/X867M5kbkZOe1OTWHq1ndE+9atNPTkAerWqaO8Xq/2FxQoJ3e7MtZtaPFjWCdiUL8+Gj0sTY4jrc3ZrI++WMIMRIOsb48ej0eD+vXWoL59FBcTrUK/Xzv35ClzA8dkWwoBAwCYxBAiAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAw6f8B2QDK/QfQHeMAAAAASUVORK5CYII=",
+      "iVBORw0KGgoAAAANSUhEUgAAAbAAAAGwCAYAAADITjAqAAAhrUlEQVR4nO3dd3xW9d3/8fe5RvZOSNghJKwwBZmOunDVLVSlVq1yV+vt7WrV21ptrbU/62idraN1WylWcCsutFhARCHsDbIhEAhk58o5vz8SjoRcCYmmhc/jfj0fD/8wua5zzZzXOef7PQcna1R/TwAAGBM41E8AAIBvg4ABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMCl0qJ/A/xVpKckqzM9TKBRs8rva2ohKSvdox67dKindI8/zWr3ccCikgb0LlJQYL0nauatUS1avbdMyuuRk6+SjRqpffp4yUlNUUrpHK9et15wFi7Vgxaqoy4oJhzWwd4ESE+LkedLGrdu0duPmJrdzHEeF+XnKTE/1f7a3vEKLVqxWbSRy0OcWDAb0PxdfoCMHFMrzXD039W19OGtO1NuGQyEN6J2v5MSERj93XU8VlVUqKS3Vpm3FB33cvK6d1bVjjhznoE9PklRX52r52q+1Y9duSVJhfp6yMtL833uetLV4p1Z+vb7JfbPS09QnL1fB4DfbkjU1tVqwfJUqqqqafUzHcZSVlqqsjHR5nqdtO3Zq1569rXvCUTT3/XRdT67rqryiUlt3lmj7zpKo34fm3nvPk+rq6lRdU6vde/Zow9btqqmtbdNzC4dCysnKUHpKssoqKrVtR0mL7017L6ulv91oamsjWrBilcorKr/Vc0TrEbD/kEF9CvT03XcoNTmp2du4rqstxTv07j9n6snJU6MG4UADexfoxft+ow4Z6ZKk5Wu/1oU3/kIbt24/6H2zM9J10xU/0gWnn6z4uNgmv49E6jRr/gLd/fgz+nLx0ka/y0pP04O/uFF9e/aQ67p65MXJuvvxp5us3M4de7zu/fn/+K+7dG+Zbv3DY5q3ZPlBn58kdczK0rhTTlSfvFyVlO7Roy++0uxtU5OTdM+N12ho/77N3qasvELzl63Q1A+ma+qHn2pveXmj3zuOo4vPOk3X/PAHCgRad4CiqrpGV995j96cPkPBYEA3T7xE3z/u6Ea3+XTOV7r01l83Wan94LSxuuPqKxQMfrNy3LJ9h8Zdd4tWrGsavF653TVx/NkaO2akuuR08J+j67pau2mzps2Ypb+88ro2bN3Wque+T2u+n57naXvJLn3wr8/16It/1+oNm/zftea9l6TKqmp9tWSZnpr8mt6dMVOu60a9XSAQ0Emjh+uSc87QqMEDGj2v6poazV+6Qq9M+0ivvPvhQQP0XZfVmvdmf8Ulu/TDm25v9Xcc3x6HEA8jgUBAXXKyNXH8OZryyH0aPWRgi7d3HEcnjh6uzLRv9m56dOmk0UMGHfSxunXM0V9/d4cuPfeMqPGSpFAoqGOOPEIv3X+Xzht7fNtejKSTRo/QXddd5f/hl5VX6Dd/+ov+Me2jVi+jMD9PXbI7SJLWbtykVes3tPl57C8pMUFHDxui+2+5XlMfvVdDC1te4baXgtyu/uvYJyYc1vCB/VoVymAwoMvPP0vvPvWQLj//LHXrlNPofoFAQPnduurqCeM17a+PaPypJ8lp7S5kKzmOo5zMDF181ml68f7fqjA/r83LiI+L1VFDB+vxO2/VFeefFfU5Zqal6tHbb9Jz99ypU44e1SQcsTExGjl4gO676VpNefRe9e3Zo9nHa89l4fDDHtghEInUad7S5Sou2SVJCgQcJcTFqUfXzuqak61AIKCuHbN1y39dqkv/99cq3VsWdTkZqSk6cfTwRiuymHBY3//eUXrj409VXRP9UE1CXJx+efUVGjmovxzHqT8EtbNEb3/ymVat36CM1FSNHTNCA3sXKBgMKjMtVXdee6U2by/W7KJFrXqNIwb11703Xavshj3Diqoq3fPUc3rxjXdbfXjTcRyNGNRfCfFx8jxPXy5eppLSPa26ryRt3l6somUrJUmJ8XFKTU5SXtcuSklKlOM4Gty3tx771S2aeNtdWrxqTdRllJVXaM7Cxaqqrmn2cWojEW3dsbPF55KZlqbC/LxGe1U5mRnqm9ejVaG55Ozv69fX/KTRxkYkUqeSPXtUF6lTVkaawqH6P+cOGen6/c+vked5bdpY2Md1Xc1fukJbd+xUIOAoJhxWx6wsFeR2VUw4LEnK79ZFE8efo5vue0h1dY33ojzP0+JVa7R+81b/Z+FwSF2ys9WrRzeFQyHFxcbo0nPP0LszZjY6WpCYEK97b7pWZx5/TKP3paq6RiWlpYqPjVVqcpICgYAcx9HQwr568je/0OW33aVVXzfeuGnPZe3/2pauXqd1m5o/OrKnrFy7v8PhXLQeATsEqmtr9PALk/TejFmNfh4OhXTDZRN0/aUXKRwKqU9ervK7ddVXS5ZFXc4R/fqod4/ukurHGRzHUSAQ0LD+fdU3r4eKlq+Mer/jRg7TyUeN8uO1YPkqXfmr32n1+o3+bR587mXdPPESXT1hXP24QWaGfnLBeSpatlKV1dUtvr5++Xn64603qFunHEn1K4w/PPOS/vKP15o9ZBRNcmKChg8sVCAQUGVVtWbNW9Cmsb0vFy/TxF/+ttFjpiQl6rpLLtSVF5yn2JgY5XfromsvuVDX3/1A1Ne1raREP//9Q20+JCfVr+zKKiqUGB+v2Jiwhg/qr9c//qf/Gnr36K6crAxJUnllpWLCYT9C+xvQK1/X/uhCP14VVVV6burbenLyFH/l361jjq666Hz96KzTFR8Xq+TERP3s8otVtGxl1LG3ltS5rp6YPFVT3v+40c/HHDFIf/rVLeqSky3HcXREYR9lpadr2wHxdl1XL781TU9Ontro547j6OoJ43TbVZcrHAqpY1amenbr0ihgF55+sk49ZrQfnA1btum+v76gNz7+VOWVVXIcR6MGD9DNEy/RmCMGKRAIqG/PHrrxsgn62T0PNvoM23NZ+3iep8nvfaDHXmr+UDb+cziEeBipjUT02Zfz/XGSmHC42ePugUBApxw9SkkJCfI8T9PnfKmla9ZJqt8CP37UkVG37MOhkM447mglxsdJqp9Q8f+eeKZRvCSpprZWj7z4d31etEi1kYhWrFuvDVu2KjY2psXXkNu5ox76xc/UK7e7v5zH/vaK/vzyq0221A8mr0tnFeR2kyRtLi7WopWr23T/aPaUlevevzyvt6Z/Js/z5DiOvjd8qAb16fWdlx3NinXrVbq3rH6Pr08v//N0HEdD+vVWYny8XNfVguWrou4xO46jc8cep87ZWZLqvyMPPvuyfv3ok41W/Bu2btPtDz2uh1+Y5E9SyevSSWefeGy7HUr8fMEizdxvIyItOVkJzRx+jsbzPM2ct8DfO4mNiVFq0jff76z0NI0/9UR/L29r8Q5dfec9evntaSqvrPKXMWv+Qv3X7Xfrsy/n+5/hCaOGN/oM23NZOHwRsMNIOBTScSOGKSmhfiZXWUVFk63bfbrmZOuooYPlOI6qa2r1ynsfafrsuXJdV8FgUGPHjFRalPhlZ2ZocN9e/kpt0crVmnvABI19SveW6frfPaBBZ12koydM1K8eebLFQyM5WRn6w//eoCH9estxHNVGIvrLP17XH599qc0zzyRpSGEfZaSmNBy2WavN23e0eRnRVNfU6rWPPvEH7NOSk3REYe92WfaBNm0r1sZt9aHp0bWzcjt1lCTFxcRoaP/68a/K6motWL6yfsreATLTUnX00CH+YeIlq9bob2+9F3VP1nVdvfDGu1q6ep0kKRgM6oRRw6N+D74Nz1OjGZzBQCDqHmNLkhMT/KjURmpVXvnNpJbCgjwVdK/fYHFdV1M//FRzFi6Jupwdu3brib9P8Tf20lOSdcLobzba2nNZOHxxCPEQCIdCOmHUcHXJyZYkBRxHOVmZOvbIIzSwd4FCoaBqIxG99uEnWtnMsfhRQwaoe+f6leGGLVv1xYLF2r6zRD86+3SlJiepX34PDS3sq49mf9Hofp06ZCozLU2S/DDsKSs/cPG+r/cbx2hJcmKC7rnxGh1z5BH+H/6C5Sv18POTmh2La0k4FNKYIwYpFAyqrs7Vv74q+lYRbM7q9Zu0e89eJcbHKxAIaFCfXgoEAk0OUaanpOjKC89TWTNTol3X1QczP292xlnp3jItW7NOA3rlKyM1Rf179VTR8pXq2CHTP/y7Y9fuJnvA+3TMylTnnPrJH57naXbRIm1vGDuNZvvOEs0uWqiBvfPlOI66dcxWpw5Z32mK/T4De+Vr1OCB/udbVlHh780cTHxsrI4o7KMbL/uhUpISJUmbt+9oNCbYN6+HkhLqTwepqKzSjLnzWjzkXLRspdZu2qyBvQsUCAQ0oFeB4mJiVFld3a7LOlC3jjnNTrDaubs06uxR/HsQsEMgJhzWj887s9nfl1VU6pEXJunPL78a9Zyl2JiwTjt2jGLCYX+ltrm4WHsrKrRszTqNHDxASQkJOu3YMZo+58tGf7jpKSmKbdgC9jxPm7fvaNO4UjSO42j8qScqMT6+0VZrYX5PnXzUKL389rQ2LzMnK0MDe9WvhHft2aOvFrfvlOSKqip/699xHGWkpio2HFZVTePJGhmpKbrygvOaXU5dXZ2279zVbMA8z9PcRUt17knHKxQMasSgAZr0zgfqk5erDg3niq3ZsMk/h+xAHTLSlRBXf7jXdV2tWLe+xc/L8zwtX7PO3xNPiI9XTlamlqxe2+x9DhRwHF127hk6+aiRkqRQMKiOWZnqX9BTSQ3neXmep/nLVmj7zpKm9w8E9MufXqGbJ14iqX5PLTY2ptHeWnVNjV54/R1t2lYsqf4z6Jyd5X9/9pZXaP2Wljeedu3Zq41bt2tg7wJJUk5mupIS4lVVU9NuyzowYIFAQFeMO1tXjDs76nLe/uQzXfHLu9p8uBzfDgE7DCXGx2nCmadq3aYtmvrhJ01WWAXdu2lYYT85jqPyykp9MPNz1dW5Kt1bpk/mfOlPfDhq2BB175SjdZu2+PeNjQk3Oueoprb52XWt5TiOkhPrt6o9z5PneQoEAoqPi9U1F4/X7KKFrTqnbX+FBT3VqWHa+eoNm7Rm46aD3KNtIpGIqqq/2aMLh4IKBNv/iLrneVq8co1Ky8qUmZaqAb16qkN6mob176f42Fh/xl91TfTPISEuzl/x17muysorDvqYe8srVNcQsHAo5I93tlYwGDzoKRxbi3fq+dfejrqB5TiO4uNimz09o6R0jx56fpKemfKm/912HEcpSUl+dCqrq1VZ1fJkoUhdnfaWl/tjV/FxsYqJiWnXZeHwRsAOgdpIRO9/NltfN2wVBgMBJcTFqXN2Bx05oJ9Sk5OU27mT7rv5OtVGInpz+oxG9//eiGH+ictrN27WVw1b/57nafrnX+ry889Sh4x0de+Uo6OHDWkUsKrqGtXV1fn/H9uOf6Su6+rN6TO0eOUa/fyKixUTDqugezddfdE43fbgn1t9CNBxHI0aNEAJcfUr+LkLlzR7KsG3FQqFFBcb9v+/srpGtbVNV8bFJbv07NS3tLe5cHie5ixo+dSCdZu3aOPW7cpMS1W3Th1VWNBTQwv7KBAIqKKqSvOXrYg2/CVJqq2LqK5hD9pxHH/8qCXxcbEKOPUxrnNd1bTiiietVV1To8+LFun+p19s9pSK+j37YpXuLVenDplKS0mW4ziqqa3VE5Om6IFnX2pyQrfneY2+HzHhcKOrk0TjOFJCfJwfqpraiCJ1de26rGivbfnar5s9tF60bKVc97sd0UDrEbBDoKa2VpPeeb/JNHqp/sTdv959uwpyuyklKVE/Pu9MfTLnK/+KEanJSTr5qJH+ZW16dOmsN/70gH//YDDgjzGEQyGdduxRmvL+dH/Cwq49e1VVU6OkxISGE1Mz/en00eRkZqiqpuagAfE8T+/NmKVb7n9EruvqeyOG+lOTzzv5BH00+4uorzealKREHdmwF1lWUalZRQu/82HOAyXGx/mTZTzP087du6OusPaUl+vlt6Z9q2n0+5TsLtWyNes0qE+BUhITddKYEcrv3lVS/fjX8rVfq2fXLlHvW1yyS5VVVUpKiFcwEFD3zh1b/Lwcx1HvHt0VCDTsfVRV+ecbtlZtJKLHX35VcxYuludJnucqUlen3XvKtHrDxoN+F1zX1Z/+9g89OXmqEuPjdMW4c3TjjycoMT5eE8efo917y/TY3yY3OszmeZ42bN3m7wElxsepY1Zmi3vuGSkp6towjizVv89lFRXtuqwDeZ6nSe+8zzT6wwSzEA8zS9es0/TPv/RXUHlduyh7v+vq9S/oqf4FPf3/T0qIV89uXfz/cjt38veq9k3V3v/qAhu3bvNn8zmOo375PfwV+YGCwYDu+O+Jmj/1Jb38h7t1ydmnK7FhYHx/nufp0y++0s9//6B27i7Vrj179cTfp/grgOTEBF13yYXKycxo1XuQ17Wzv4Lfsr1YS5o5yfi76Jefp/SUFEn11zKcv3RFm85Ra4s619XcRUtVV+cqGAxo/CknKrvhvVi7YbO2Fjc/u3LztmJtKa6fiRoIBDRiYP2J3c1JTU7SkQMK/VmLm7cXa+OWtsd30ao1em/GLE37bJbe/9fn+nj2XH21ZFmb94TLK6v06EuT9fDz9dP74+Nidf2lF+rM445pctsVa9eromFSSEpSooYN6Nfisnv16K4eXTpLqo/molVr/Pu357Jw+CJgh7lQMKBww2Ejx3F0ytGj/D2s1shKS9VJY0b4h0aKd+3W3EVL/EAO7F2gkYP6R73vgIJ8HT1siJISE3TS6BG69NwzlRQfPWBFy1Zqx+5S/2effP6lPpg5x98KHtK3jy4994xWXTZpaGFfpack159kvWKVtu1oOlHgu0hJStQFp49VXMM5bVuKd2jW/IXt+hgHWrxqtUrL6s8HS09NUTgUqh//WrZCFS2MzxTv2q3Z++2BDu3fR8cNH9bs7U89erQG9qmfiOC6rmbMnd/oczkUXNfVX199Q//8Yp48z1NyYqJuuOyHym2YRbvPguUrtaZhLykYDOq8scera8fsaItUfGysfnjmqd9cpqyiUh/P+sJ/n9pzWTh8EbDDSOfsDrrqwvN17tjj/ODsKS/3x19ysjJ07PChCgQCcl1XT06eqv7f/4EKTx/f6L/BZ0/QezNm+pMpxo4ZoayG6yW6rqtX3//Yn/WWkpSoO6/9iYYPLGz0XPK7d9VvrrtKnTrUn0BbV1enaZ/NanEK9/4qq6v1xKQp/nlsoVBQl5zzfQ0fUNji/WLCYX/6fKSuTjO/KmrVVetbIxgMaFj/fnr09pt1wsj683wikTq99uEn//apz19v2tLkAsvVNbWat2R5iytK13U15f3p2tYw2y85MVG/vf6nOu3YMY1mfAYCAZ039njd9tPL/VmL23aU6PWPPz0sVsSle8v08AuT/On8fXvmauL4cxqNTW0v2aXXPvzE/7wH9MrXH/73Bn9vfJ+UpETdeuWPdc5Jx/mHU2cXLfLHgtt7WTh8MQZ2CCTExenxO29VJFI/5hIIOIqLjW1yUqjneZo1b6G2NBxiGj6gUD271Y+V7C2vaDEo73w6UyeMGl4/kSK3u4YN6OePQc1dtFTPTHlTN1w2QeFQSL175Oq1x+7XwhWr9PXmrUpNSvInk+yzaOUavfzWtDatDOcvW6FX3vtIV08Yp2AwqOyMdF1/2UW68o7fNXvuWcesTPVvmD6/c3ep5i399iuSsWNGasEbL8txHMWGw0qIj2v0Hruuq49mzdEjL/692cOHuZ066f2nH/UnUkTjeZ7+8d5HuvOxp5q9zY79xsH2hWfHrt1avu7rg76OeUuX64XX3/EvMda1Y7ae+d0dWrV+ox/evnm56tmtiz/DtDYS0bNT3/SvBXk4mLtoqaZ9NksXnn6yAoGAxp1yot759F/+3q/neZr09jSdOHq4xhwxSI7j6PiRR+rj5/6somUrtXl7sVKSEjWkb29lpaf57+O2HTv1yAuTGv3LAu25LBy+CNghUD+w3PRQ3P48z9NXS5bp0Zcmy3VdhUMhnXrMaMXH1k9NXrV+gxavbH5saNb8BVq/ZZsKundVYnycTjt2jD/d3nVdPfbSK0pOTNQV485STDismHBYw/r307D+TccK1m7crF/88bE2T2RwXVfPv/62Tj56lPrk5cpxHB0zbIguOG2snnrltaj3KSzIU6cOmfWv8esNWrepdSdSRxMXG6O42OjjbmXlFXrhjXd1/9MvtHgidygUVFZ6WouPU39YLPo44j5uwzjY+Sef4E/AWbtxk79xcrD7PvbSZGWlp+nis05TOBRSMBhUn7xc9cnLbXL7mtpaPTV5qh772yuHxd7XPjW1tXr+tbd14ugRys5IV2Zaqq6eMK7Rv51VvGu3br7vYT16+83+FV0S4uKanda/bWeJbnng0agzIttzWTg8EbD/kEikThWVVQpGGQPy5CkSqVNtXZ32lJVr9fqN+nDmHE354GN/5dqjS2eNHDxAjuPIdV3984t5LV6ZfcPWbZo9f6Hyu3WR4zgac8Rg5XXt4l9lu6KqSnc+9qTmLlqia390oQb06tno/LB9t3njo3/qgWdebDQVvy3Wbdqip199Q3ddd5ViwmHFxsToJxecp8++KtLSA06udRxHo4cM9M+Pml20KOpMsLbyPE+1kYhKdpdq+dr1mjmvSFM//KTN56Z9V/vGwTLTUuW6roqWrWz1RIHyyird9sc/aXbRIv33hPHqX5DX5POqjURUtGyFHnxukj6Y+fm/bVLKdzFv6XK9/clnuuzcM+Q4jo4dPlSnH3uUXnnvQ/82K9at10U/u01XXnCeJpx5qrIz0ptc1mlvebmmzZitB559qdkrx7f3snD4cbJG9T98NtFwSDiOo1653TS44XCK57nasGW7vli4uNVjXu0hGAzozOOOUW6XTqpzXU2bMbvNV1L/v2DfVPlBfXqpQ0a6amtrtb1klxYsX/kfj/K/W3xsrIb0663eeblKSojX3rJybd6+Q3MXL23zP1nSnsvC4YGAAQBMYhYiAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAwiYABAEwiYAAAkwgYAMAkAgYAMImAAQBMImAAAJMIGADAJAIGADCJgAEATCJgAACTCBgAwCQCBgAw6f8Dq6R2PvzhJXQAAAAASUVORK5CYII="
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "kind": "upload",
+        "title": "Artwork received",
+        "detail": "PDF / 2 page(s)",
+        "at": "2026-09-13T13:27:47.316413+00:00",
+        "call": null
+      },
+      {
+        "seq": 2,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:27:48.307035+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 3,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:27:49.202480+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 670,
+          "inputTokens": 632,
+          "outputTokens": 15,
+          "costMicros": 176
+        }
+      },
+      {
+        "seq": 4,
+        "kind": "tool",
+        "title": "inspect_measurements",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:27:49.202525+00:00",
+        "call": null
+      },
+      {
+        "seq": 5,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:27:49.785389+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 6,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:27:50.789080+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 832,
+          "inputTokens": 704,
+          "outputTokens": 15,
+          "costMicros": 194
+        }
+      },
+      {
+        "seq": 7,
+        "kind": "tool",
+        "title": "read_demo_specs",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:27:50.789123+00:00",
+        "call": null
+      },
+      {
+        "seq": 8,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:27:51.264230+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 9,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:27:52.193438+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 751,
+          "inputTokens": 785,
+          "outputTokens": 18,
+          "costMicros": 218
+        }
+      },
+      {
+        "seq": 10,
+        "kind": "tool",
+        "title": "inspect_preview",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:27:52.193504+00:00",
+        "call": null
+      },
+      {
+        "seq": 11,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:27:53.764097+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 12,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:27:54.901552+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 883,
+          "inputTokens": 1063,
+          "outputTokens": 18,
+          "costMicros": 288
+        }
+      },
+      {
+        "seq": 13,
+        "kind": "tool",
+        "title": "inspect_preview",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:27:54.901617+00:00",
+        "call": null
+      },
+      {
+        "seq": 14,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:27:55.648414+00:00",
+        "call": {
+          "id": "model-5",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 15,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:27:59.650762+00:00",
+        "call": {
+          "id": "model-5",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 3837,
+          "inputTokens": 1341,
+          "outputTokens": 256,
+          "costMicros": 643
+        }
+      },
+      {
+        "seq": 16,
+        "kind": "report",
+        "title": "Proof package ready",
+        "detail": "Both supplied pages were visually inspected. The previews show simple, centered white text on a dark green background with no obvious clipping or overlap. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded PDF raster DPI.",
+        "at": "2026-09-13T13:27:59.651001+00:00",
+        "call": null
+      },
+      {
+        "seq": 17,
+        "kind": "tool",
+        "title": "submit_report",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:27:59.651007+00:00",
+        "call": null
+      },
+      {
+        "seq": 18,
+        "kind": "approval",
+        "title": "Proof approved",
+        "detail": "Human review recorded. Nothing was sent to a printer.",
+        "at": "2026-09-13T13:28:02.287362+00:00",
+        "call": null
+      }
+    ],
+    "report": {
+      "summary": "Both supplied pages were visually inspected. The previews show simple, centered white text on a dark green background with no obvious clipping or overlap. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded PDF raster DPI.",
+      "findings": [
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Page 1 dimensions",
+          "detail": "216.0 x 216.0 PDF points. Preview pixel count is not source print resolution.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "requires-human-review",
+          "severity": "warning",
+          "title": "PDF print resolution",
+          "detail": "Vector and embedded raster content require specialist prepress review; a rendered preview cannot certify effective source DPI.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Page 2 dimensions",
+          "detail": "216.0 x 216.0 PDF points. Preview pixel count is not source print resolution.",
+          "evidence_id": "measurement:page-2"
+        },
+        {
+          "category": "requires-human-review",
+          "severity": "warning",
+          "title": "PDF print resolution",
+          "detail": "Vector and embedded raster content require specialist prepress review; a rendered preview cannot certify effective source DPI.",
+          "evidence_id": "measurement:page-2"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "info",
+          "title": "Page 1 appears visually clean",
+          "detail": "\u201cFRONT / FIELD NOTES\u201d appears centered with consistent spacing and strong contrast against the dark green background; no obvious clipping or overlap is visible in the preview.",
+          "evidence_id": "preview:page-1"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "info",
+          "title": "Page 2 appears visually clean",
+          "detail": "\u201cBACK / DEMO PROOF\u201d appears centered with consistent spacing and strong contrast against the dark green background; no obvious clipping or overlap is visible in the preview.",
+          "evidence_id": "preview:page-2"
+        },
+        {
+          "category": "requires-human-review",
+          "severity": "warning",
+          "title": "Print fidelity not certifiable from preview",
+          "detail": "Please verify final-size output for colour reproduction, fine edge quality, and any embedded PDF raster resolution; these cannot be certified from the low-resolution previews.",
+          "evidence_id": "preview:page-1"
+        }
+      ],
+      "specVersion": "demo-print-v1",
+      "artworkHash": "3ca3f07594e3995d180f6a43563821537c25ab356149e60ecd8e60f2b759bd8e",
+      "version": 1
+    },
+    "reportDigest": "c86a6ef750681289cb4498ecf084547e09d83edce6e83426a1efd09e9d417370",
+    "receipt": {
+      "id": "a91abe55a76e66fbdcc93d44ae2331b2bf2474f8cfcb1022",
+      "reportDigest": "c86a6ef750681289cb4498ecf084547e09d83edce6e83426a1efd09e9d417370",
+      "artworkHash": "3ca3f07594e3995d180f6a43563821537c25ab356149e60ecd8e60f2b759bd8e",
+      "version": 1,
+      "at": 1789306082,
+      "simulated": true
+    },
+    "turns": 5,
+    "inputTokens": 4525,
+    "outputTokens": 322,
+    "usedMicros": 1519,
+    "error": "",
+    "model": "gpt-5.6-luna",
+    "promptVersion": "artwork-v2-luna",
+    "created": 1789306067,
+    "expires": 1789910867,
+    "approvalExpires": 1789392479
+  }
+}

@@ -283,6 +283,26 @@ export interface components {
             /** Detail */
             detail?: components["schemas"]["ValidationError"][];
         };
+        /** ModelCall */
+        ModelCall: {
+            /** Id */
+            id: string;
+            /**
+             * Phase
+             * @enum {string}
+             */
+            phase: "started" | "completed";
+            /** Model */
+            model: string;
+            /** Durationms */
+            durationMs?: number | null;
+            /** Inputtokens */
+            inputTokens?: number | null;
+            /** Outputtokens */
+            outputTokens?: number | null;
+            /** Costmicros */
+            costMicros?: number | null;
+        };
         /** ProofReport */
         ProofReport: {
             /** Summary */
@@ -370,6 +390,7 @@ export interface components {
             detail: string;
             /** At */
             at: string;
+            call?: components["schemas"]["ModelCall"] | null;
         };
         /** SessionInput */
         SessionInput: {

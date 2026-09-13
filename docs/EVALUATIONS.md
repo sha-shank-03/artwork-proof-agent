@@ -1,13 +1,15 @@
-# Genuine Luna evaluation results
+# Genuine live evaluation results
 
-Actual result: **30/30** workflow cases through OpenAI `gpt-5.6-luna`, prompt `artwork-v2-luna`, backend source commit `1fe66948fa8c6d1f0e7401d54dbb517f0a938c2e` on 13 September 2026. All defined safety checks passed. Six original designs under five size/decision conditions, not thirty unrelated visual tasks.
+## UI telemetry refresh - 13 September 2026
 
-Conservative application-accounted set cost: **$0.039310**; **114170 input / 8944 output tokens**. Median end-to-end latency **11.98s**; maximum **17.70s**. Tool processing, polling and automated reviewer decisions are included. Input is estimated at the cache-write ceiling, so this is not an exact provider invoice.
+All twelve pages of the six exported proof PDFs were rendered and visually inspected. Layout, image aspect ratios and pagination passed. This is document QA, not validation of every model statement: the low-resolution recording misses visibly truncated text in one finding. That limitation is annotated separately in the UI and reviewer guide without changing the original report or digest.
 
-Cases cover clean, low-resolution, wide, transparent, embedded-instruction and two-page PDF artwork, including missing dimensions, approval/rejection and idempotent receipts. Graders verify real provider usage, requested model, hash/report binding, valid evidence, all-page inspection, measured/model separation, proof PDF generation and spending bounds. They do not certify visual accuracy or production print readiness.
+The refreshed set initially passed 29/30; one harness request failed with URLError. Only that failed case was rerun, and the final per-case outcome is 30/30. The original attempt and exact rerun IDs are retained in evaluation-history.json and the retryNotice field of evaluation-results.json. No failed attempt was silently relabelled.
 
-An SSH invitation-read interruption occurred after 20 passing cases. Those rows were retained and the same backend/model/commit evaluation resumed for the final 10; no completed case was replayed or replaced. The runner now validates the saved prefix before resuming. Test invitations were cleaned up separately.
+Final recorded-case model usage totals $0.039116. This excludes any unobserved usage from the network-failed attempt; the database spending ledger retains reservations/settlements. Model-call duration and token/cost metadata were graded against persisted run totals. Public recordings now carry genuine per-call telemetry.
 
-Earlier Anthropic access failure, the first Luna schema failure and a successful corrected smoke case remain in [evaluation history](evaluation-history.json). The first Luna failure exposed a too-broad tool schema; it was fixed without relaxing server validation or increasing the eight-turn cap.
+Actual result: **30/30** on commit `e3011b10929f39961bfb3bcc01bbc4bbdf9d1639`. Six original designs under five size/decision conditions, not thirty unrelated visual tasks.
 
-The public replay catalogue remains unpublished until six proof packages receive visual review and the final portfolio publication checks are complete. This report verifies the Railway provider migration, not the entire original portfolio release.
+Application-estimated model usage: **$0.039116**. Median end-to-end latency **14.52s**; maximum **22.71s**. Polling, tool processing and automated reviewer decisions are included. These estimates are not a provider invoice.
+
+Grading checks real provider usage, hash/report binding, evidence validity, page inspection, measured/model separation, approval, proof PDF generation, quotas and idempotency. Visual accuracy still needs human review. Demo specifications are not commercial print certification. Earlier access failures and per-case outcomes are preserved in evaluation-history.json and evaluation-results.json. Generated proof PDFs must still be visually reviewed before release.

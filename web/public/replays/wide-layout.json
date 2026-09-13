@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "label": "wide layout",
+  "recordedAt": "2026-09-13T13:23:09.330417+00:00",
+  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "providerVerified": true,
+  "proofFile": "/replays/wide-layout.pdf",
+  "run": {
+    "id": "1417c76cc0312cca30736884c8ce40bf98539f53419ece9f",
+    "name": "wide-layout.png",
+    "state": "completed",
+    "summary": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+    "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
+    "version": 1,
+    "width": 3.0,
+    "height": 3.0,
+    "previews": [
+      "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"
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "kind": "upload",
+        "title": "Artwork received",
+        "detail": "PNG / 1 page(s)",
+        "at": "2026-09-13T13:23:09.330417+00:00",
+        "call": null
+      },
+      {
+        "seq": 2,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:23:10.028000+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 3,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:23:10.819462+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 648,
+          "inputTokens": 632,
+          "outputTokens": 15,
+          "costMicros": 176
+        }
+      },
+      {
+        "seq": 4,
+        "kind": "tool",
+        "title": "inspect_measurements",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:23:10.819505+00:00",
+        "call": null
+      },
+      {
+        "seq": 5,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:23:11.367351+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 6,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:23:12.387324+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 679,
+          "inputTokens": 703,
+          "outputTokens": 15,
+          "costMicros": 194
+        }
+      },
+      {
+        "seq": 7,
+        "kind": "tool",
+        "title": "read_demo_specs",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:23:12.387362+00:00",
+        "call": null
+      },
+      {
+        "seq": 8,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:23:13.081737+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 9,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:23:14.124192+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 901,
+          "inputTokens": 784,
+          "outputTokens": 18,
+          "costMicros": 218
+        }
+      },
+      {
+        "seq": 10,
+        "kind": "tool",
+        "title": "inspect_preview",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:23:14.124253+00:00",
+        "call": null
+      },
+      {
+        "seq": 11,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:23:14.736792+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 12,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:23:18.944530+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 4000,
+          "inputTokens": 1349,
+          "outputTokens": 287,
+          "costMicros": 682
+        }
+      },
+      {
+        "seq": 13,
+        "kind": "report",
+        "title": "Proof package ready",
+        "detail": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+        "at": "2026-09-13T13:23:18.944783+00:00",
+        "call": null
+      },
+      {
+        "seq": 14,
+        "kind": "tool",
+        "title": "submit_report",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:23:18.944791+00:00",
+        "call": null
+      },
+      {
+        "seq": 15,
+        "kind": "approval",
+        "title": "Proof approved",
+        "detail": "Human review recorded. Nothing was sent to a printer.",
+        "at": "2026-09-13T13:23:21.909791+00:00",
+        "call": null
+      }
+    ],
+    "report": {
+      "summary": "The single-page preview shows a wide horizontal artwork with a large dark-green rounded rectangle on a pale background and small white text. The requested 3.0 \u00d7 3.0 inch square format appears visually inconsistent with the displayed landscape composition. Low-resolution previews cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+      "findings": [
+        {
+          "category": "measured",
+          "severity": "warning",
+          "title": "Effective resolution",
+          "detail": "150.0 DPI at 3 x 3 inches; demonstration target is 300 DPI.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Transparency",
+          "detail": "No transparent pixels detected; background colour is not inferred.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Transparent margins",
+          "detail": "Left/top/right/bottom pixel margins: [0, 0, 0, 0]. These are not certified bleed measurements.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "warning",
+          "title": "Aspect-ratio mismatch",
+          "detail": "Artwork and requested print size differ by over 2%; fitting may add margins or crop content.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "warning",
+          "title": "Composition is strongly landscape-oriented",
+          "detail": "The visible artwork is a wide horizontal panel with substantial side-to-side emphasis, which may not fit a 3.0 \u00d7 3.0 inch square format without cropping, scaling, or added margins. Confirm the intended square treatment.",
+          "evidence_id": "preview:page-1"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "warning",
+          "title": "Small text may need legibility check",
+          "detail": "The white line \u201cFIELD NOTES / ORIGINAL DEMO\u201d is relatively small within the artwork. Verify its final-size readability at the intended viewing distance.",
+          "evidence_id": "preview:page-1"
+        },
+        {
+          "category": "requires-human-review",
+          "severity": "info",
+          "title": "Preview cannot certify print output",
+          "detail": "This preview is insufficient to certify final print sharpness, colour reproduction, or embedded raster DPI. Review the production file and a suitable-size proof for those checks.",
+          "evidence_id": "preview:page-1"
+        }
+      ],
+      "specVersion": "demo-print-v1",
+      "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
+      "version": 1
+    },
+    "reportDigest": "411a906978f150b0222ecced280cfb1d284846964f38b5f2e2b180a01b7bbd41",
+    "receipt": {
+      "id": "7dc1d05ebd184b05b0224272f32abeb5495cdc706ce6f48f",
+      "reportDigest": "411a906978f150b0222ecced280cfb1d284846964f38b5f2e2b180a01b7bbd41",
+      "artworkHash": "45542d1da7da8b8a9d298ad5b8ec1bd241fc676e4b0f75643b92c00bae8e530f",
+      "version": 1,
+      "at": 1789305801,
+      "simulated": true
+    },
+    "turns": 4,
+    "inputTokens": 3468,
+    "outputTokens": 335,
+    "usedMicros": 1270,
+    "error": "",
+    "model": "gpt-5.6-luna",
+    "promptVersion": "artwork-v2-luna",
+    "created": 1789305789,
+    "expires": 1789910589,
+    "approvalExpires": 1789392198
+  }
+}

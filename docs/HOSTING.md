@@ -41,6 +41,8 @@ uv run python tools/hosted_invite.py revoke --id INVITATION_ID --project PROJECT
 
 The bearer token is saved to ignored, mode-0600 `.local/hosted-invite.txt`, with non-secret metadata in `.local/hosted-invite.json`. Share the token privately, not in an issue, URL or replay. The default invitation permits five starts over seven days. Revocation invalidates existing sessions as well as new token exchanges. The helper uses SSH and the application's own invite/revoke command; no public database endpoint is needed.
 
+Use `--output-prefix console-test-invite` for temporary UI-test invitations. Hosted evaluation uses the separate `.local/eval-invite.*` files and revokes its own invitations; neither path overwrites the reviewer invitation. Never blindly repeat invitation issuance after an uncertain network result. Read-only evaluation fetches may retry; mutations do not.
+
 Disable new model execution:
 
 ```sh

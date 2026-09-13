@@ -15,7 +15,15 @@ const finding = z.object({
 export const runSchema = z.object({
   id: z.string(),
   name: z.string(),
-  state: z.enum(["queued", "running", "awaiting_input", "awaiting_approval", "completed", "failed", "cancelled"]),
+  state: z.enum([
+    "queued",
+    "running",
+    "awaiting_input",
+    "awaiting_approval",
+    "completed",
+    "failed",
+    "cancelled",
+  ]),
   summary: z.string(),
   model: z.string(),
   promptVersion: z.string(),
@@ -31,6 +39,17 @@ export const runSchema = z.object({
       title: z.string(),
       detail: z.string(),
       at: z.string(),
+      call: z
+        .object({
+          id: z.string(),
+          phase: z.enum(["started", "completed"]),
+          model: z.string(),
+          durationMs: z.number().nonnegative().nullish(),
+          inputTokens: z.number().int().nonnegative().nullish(),
+          outputTokens: z.number().int().nonnegative().nullish(),
+          costMicros: z.number().nonnegative().nullish(),
+        })
+        .nullish(),
     }),
   ),
   report: z
@@ -53,6 +72,8 @@ export const runSchema = z.object({
   error: z.string(),
   turns: z.number(),
   usedMicros: z.number(),
+  inputTokens: z.number().int().nonnegative().optional(),
+  outputTokens: z.number().int().nonnegative().optional(),
 });
 export type Run = z.infer<typeof runSchema>;
 export type Replay = {
@@ -106,12 +127,31 @@ export async function getRuns() {
   return z.array(runSchema).parse(result.data);
 }
 export async function loadReplays(): Promise<Replay[]> {
-  const index = z.object({version:z.literal(1),runs:z.array(z.object({file:z.string().regex(/^\/replays\/[a-z0-9-]+\.json$/),label:z.string().min(1).max(200)}))}).parse(await (await fetch("/replays/index.json")).json());
+  const index = z
+    .object({
+      version: z.literal(1),
+      runs: z.array(
+        z.object({
+          file: z.string().regex(/^\/replays\/[a-z0-9-]+\.json$/),
+          label: z.string().min(1).max(200),
+        }),
+      ),
+    })
+    .parse(await (await fetch("/replays/index.json")).json());
   return Promise.all(
     index.runs.map(async (item: { file: string; label: string }) => {
       if (!/^\/replays\/[a-z0-9-]+\.json$/.test(item.file))
         throw new Error("Invalid replay path");
-      const data = z.object({version:z.literal(1),recordedAt:z.string().datetime({offset:true}),commit:z.string().regex(/^[a-f0-9]{40}$/),providerVerified:z.literal(true),proofFile:z.string().regex(/^\/replays\/[a-z0-9-]+\.pdf$/),run:runSchema}).parse(await (await fetch(item.file)).json());
+      const data = z
+        .object({
+          version: z.literal(1),
+          recordedAt: z.string().datetime({ offset: true }),
+          commit: z.string().regex(/^[a-f0-9]{40}$/),
+          providerVerified: z.literal(true),
+          proofFile: z.string().regex(/^\/replays\/[a-z0-9-]+\.pdf$/),
+          run: runSchema,
+        })
+        .parse(await (await fetch(item.file)).json());
       return { ...data, label: item.label };
     }),
   );

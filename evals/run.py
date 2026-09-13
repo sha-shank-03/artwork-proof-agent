@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+import urllib.error
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from pypdf import PdfReader
@@ -27,6 +28,7 @@ def resume_results(report, cases, commit):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--limit",type=int,default=30)
     parser.add_argument("--resume",action="store_true",help="Continue a saved passing prefix without repeating model calls")
+    parser.add_argument("--rerun-failed",action="store_true",help="Retain the full prior attempt and rerun only failed cases on the same source commit")
     parser.add_argument("--hosted-site");parser.add_argument("--railway-project");parser.add_argument("--railway-environment");parser.add_argument("--railway-service");args=parser.parse_args()
     selectors=[];issued=[]
     if args.hosted_site:
@@ -38,8 +40,16 @@ def main():
     cases=json.loads(Path("evals/cases.json").read_text())[:args.limit]
     commit=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
     output=Path("evals/results");output.mkdir(parents=True,exist_ok=True)
-    results=[];recordings=[]
-    if args.resume:
+    results=[];recordings=[];retry_notice=None
+    if args.resume and args.rerun_failed:parser.error("Choose resume or rerun-failed, not both")
+    if args.rerun_failed:
+        saved=json.loads((output/"latest.json").read_text())
+        if saved.get("provider")!="OpenAI" or saved.get("model")!=MODEL or saved.get("commit")!=commit or [r.get("id") for r in saved["results"]]!=[c["id"] for c in cases]:
+            raise ValueError("Rerun requires the complete same-source/provider/model evaluation set")
+        results=saved["results"];recordings=saved["recordings"]
+        retry_notice={"priorPassed":saved["passed"],"priorCases":saved["cases"],"rerunCaseIds":[r["id"] for r in results if not r["passed"]],"method":"Only failed cases rerun; original attempt retained in evaluation history."}
+        (output/"latest.json").rename(output/f"attempt-{time.time_ns()}.json")
+    elif args.resume:
         results,recordings=resume_results(json.loads((output/"latest.json").read_text()),cases,commit)
     elif (output/"latest.json").exists():(output/"latest.json").rename(output/f"attempt-{time.time_ns()}.json")
     def cleanup():
@@ -49,8 +59,9 @@ def main():
             else:print("Invitation cleanup requires retry for ID "+invitation,file=sys.stderr)
     atexit.register(cleanup)
     start_index=len(results)
-    for i,case in enumerate(cases[start_index:],start_index):
-        new_invitation=(i-start_index)%5==0
+    work=[(i,c) for i,c in enumerate(cases) if not results[i]["passed"]] if args.rerun_failed else list(enumerate(cases[start_index:],start_index))
+    for work_index,(i,case) in enumerate(work):
+        new_invitation=work_index%5==0
         if new_invitation:
             command=[sys.executable,"tools/hosted_invite.py","invite","--output-prefix","eval-invite",*selectors] if args.hosted_site else [sys.executable,"-m","app.cli","invite"]
             subprocess.run(command,check=True,stdout=subprocess.DEVNULL)
@@ -59,8 +70,13 @@ def main():
         def request(path,data=None,mime="application/json",binary=False):
             body=(data if isinstance(data,bytes) else json.dumps(data).encode()) if data is not None else None
             req=urllib.request.Request(api+path,data=body,headers={"Origin":origin,"Content-Type":mime})
-            with opener.open(req,timeout=190) as response:
-                return response.read() if binary else json.load(response)
+            for attempt in range(3 if data is None else 1):
+                try:
+                    with opener.open(req,timeout=190) as response:
+                        return response.read() if binary else json.load(response)
+                except (urllib.error.URLError,TimeoutError) as exc:
+                    if data is not None or attempt==2 or isinstance(exc,urllib.error.HTTPError) and exc.code<500:raise
+                    time.sleep(1)
         if new_invitation:request("/session",{"token":invite_path.read_text().strip()})
         start=time.monotonic();r={};checks={}
         try:
@@ -94,14 +110,17 @@ def main():
                     duplicate=request(f"/runs/{r['id']}/approve",{"digest":r["reportDigest"]})
                     checks["idempotent_receipt"]=r["receipt"]["id"]==duplicate["receipt"]["id"]
             passed=all(checks.values())
-            results.append({"id":case["id"],"passed":passed,"checks":checks,"runId":r["id"],"state":r["state"],"costMicros":r["usedMicros"],"inputTokens":r["inputTokens"],"outputTokens":r["outputTokens"],"seconds":round(time.monotonic()-start,2)})
+            row={"id":case["id"],"passed":passed,"checks":checks,"runId":r["id"],"state":r["state"],"costMicros":r["usedMicros"],"inputTokens":r["inputTokens"],"outputTokens":r["outputTokens"],"seconds":round(time.monotonic()-start,2)}
             if passed and case["fixture"] not in [v["fixture"] for v in recordings]:
                 recordings.append({"fixture":case["fixture"],"label":case["fixture"].replace("-"," "),"run":r,"commit":commit,"recordedAt":r["events"][0]["at"],"providerVerified":True})
         except Exception as exc:
-            results.append({"id":case["id"],"passed":False,"errorType":type(exc).__name__,"seconds":round(time.monotonic()-start,2)})
+            row={"id":case["id"],"passed":False,"errorType":type(exc).__name__,"seconds":round(time.monotonic()-start,2)}
+        if args.rerun_failed:results[i]=row
+        else:results.append(row)
         report={"provider":"OpenAI","model":MODEL,"commit":commit,"cases":len(results),"passed":sum(v["passed"] for v in results),"results":results,"recordings":recordings,"notice":"30 executions: six original designs across five size/approval conditions. Deterministic graders do not certify visual accuracy."}
+        if retry_notice:report["retryNotice"]=retry_notice
         (output/"latest.json").write_text(json.dumps(report,indent=2))
-        print(case["id"],"PASS" if results[-1]["passed"] else "FAIL",flush=True)
+        print(case["id"],"PASS" if row["passed"] else "FAIL",flush=True)
         if r.get("state")=="failed" and r.get("turns")==0:
             print("Provider access failed before a billed call. Stop; do not repeat all cases.",flush=True);break
     cleanup()

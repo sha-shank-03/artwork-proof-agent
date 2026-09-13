@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "label": "clean mark",
+  "recordedAt": "2026-09-13T13:20:27.420906+00:00",
+  "commit": "e3011b10929f39961bfb3bcc01bbc4bbdf9d1639",
+  "providerVerified": true,
+  "proofFile": "/replays/clean-mark.pdf",
+  "run": {
+    "id": "c0bb89f81d249a8301d089b09ae3164d357d97d36aa3f04b",
+    "name": "clean-mark.png",
+    "state": "completed",
+    "summary": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+    "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
+    "version": 1,
+    "width": 3.0,
+    "height": 3.0,
+    "previews": [
+      "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IJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAS6xWZDh9TMy/6z/vZdZ2/sTQEAoEEDN/YGsGE8duX3G152x5Oen8A3P+6ciy6uS6+7aYOtrz0tPV9TU1M9u3JlPfH0gpr+wMy68qZb6/Lrf18rVq7s1HqnTru93vLJL7S7bFvbPnHsvnX6sUfUpAP2q+22flkNHjiw5i1YWHc/9Ke6+ubb6kdTr6+Vq1Y19PM1onnfdvb30WzM7rvWO19zQk0+cEzttO3WtWr1mvrT3Cdq6rTb6+v/+4t66pmFHd62Yw89qIYOHly/uGFaw4/p7P6ran0frFq9upYsW173zppd1952V33zsqtq8bLlLT62rd/trjuMrLNPOLaOPfQV9fLtRtaWmw+rRUuW1QOPzKlrb7ur/vvKa+qJ+c+0uW1tjaPueP1VVU0+cEz9+KILqqpq6fJna/83vreWr1jR5fU2ojvGaVffW6qq5jw5r8a99dx2H3/uG15TH3vHWev+f0OMbQDobQRhH3f3g7Nq7rz5m+z6OvJ8/fv3q2FDhtTuO21fJx8xoU4+YkJ9+C1n1Af/8as17Y//1+F1Hzfh4Np/9G71x4f+1OHHbj5saH35r8+pV08eX1VVzyxaXPfNml3LV6yoXbYfWccfdkgdf9gh9edveE2978KL684ZD73g8VOn3d7qNlU1vp878/t4/xmn1MfecVYN6N+/Zj/+ZE275/7adqvhtefLd6r9Ru1Sbzr+6HrTBRfV3Q/O6tB6Xz15fM2d93T94f8ebHfZru6/9b14HwwaOKB2HrltTRy7b00cu2+9+cRj6m2f+se6d9bshn+W885+ff3FWa+twYMG1fyFi+v+hx+p/v3716gdt6/xY/au8WP2rvedfnJ96Ev/UT/77c0Nr3d9XXn9re+0ow6vqqo1TU212dAhdez4A+sXN9zSpXV2VHeM0668t+w0cps6YM/da/oDM9tc7oRJh7a7ru58bQJAbyAI+7ivXHJ5l48CbMj1dfb5xu4xqi5455vqqEMOqEsu/Fi99VP/VNf94a6G1/vA7Dm15y471blvXDup64ghgwfVjy/6eB209x71xPxn6hNf+25dccO0WrV69bpl9h21S33ufW+ryQeOqZ98/oI682/+rm5fL5RaOzLUfNSj0f3c0d/HyUdMqL9919m1fMWKeteFF9cvb75t3b/ttsN2dfGH31/jx+xd3/nUh2rKez5US150ZK01gwYOrOMmHFyXTL2+mpqa2ly2O/bf+lrbB/uN2qW+9YnzatSO29dXzz+3jjnno+1uW1XVP/3le+rsE46uZxYtrvO++B912XU3vWDbjptwcH32fW+tUTtuX//20T+vJcuW169vuaPd9a6vK6+/9Q0cMKBOnjyhmpqa6tuXX13ves0JdeqUiT0ehN0xTjv73jLnyXm108ht6sRJ49oMwpEjtqpD9tmjZs55vHbfafsWl+nu1yYA9Aa+Q0ivdPeDs+rsCy6qn/7mhho8aFD920c/UCNHbNXw4791+dW1dPmzdeqUiTV65x069NwXvPNNddDee9RTzyys0z706brsty8Mhqqq+2bNrrM+fmH98ubbavNhQ+vfPvrntdnQIR16ng3h/WecUlVV37jsly+IwaqqP819ot79uS/WoqXLasdtt66zXnVUw+s96pADasvNhtUVDZwu2lP7795Zs+tvv/adqqraZ7eX15jdd233MW87+bg6+4Sja/Gy5XXG+X9XP7nmdy/ZtqnTbq+zL7ioFixeUgP6969/OPddNXDAgA5tW1def+s78uADasTwLeq2+x6o//r51KqqetWEg2vI4EGdXmd36uo4bURzjJ/YztG/4w8bV/369aup0/7Q6jK9eWwDQGcJQnqtNU1N9ZGLv1lPzl9QWw/fst77ulc3/Nj5CxfVd3/x6+rfr1994MzXNPy4Hbfdut5+yquqquoT//6dmjnn8VaXXbV6dZ33L1+vBYuX1Kgdt683n3hMw8+zoTRH0aw5c1v89yfmP1M33HlPVVUdc+iBDa/35MkT6umFi+r3d9/X5nI9vf/WP0Vxl+1HtrnsFsOGrvt+2UX/+cM2T+WcOefx+tbPrq6qtacrHnHQ/h3ars6+/l7stKMnVVXVFTdMqxmzH62HHp1bmw8bWseMa/x3t6F1ZZw24vd//L9asHhJjdl91zZ/xydOGldVVb/6fcuna/f2sQ0AnSUI6dWWLFte37vqmqqqOvO4KR167Nd+ekWtWLmyznzlEbXjtls39Jizjj+qBg4YUHPnPd3Qd8eeXriofjT1+qqqevOJx3Zo+zaEFSvXXgTjwL1Gt7rMeV/89zr8XX9VH7n4mw2tc0D//nXCxHF15Y231uo1a9pctqf334ABz7/FzV+0uM1lzzzuyBq++Wb1zKLF9d0rr2l33T+99oZauGRpLVyytPYb1f7RxxfrzOtvfUMGD1p3VOyK3609Mnv1c0d9T51yWIfXtyF1ZZy2Z/Xq1esdJRzX4jKbDR1SUw4aWwuXLK2b7763xWV6+9gGgM4ShPR619x6Z1VVbTfiZe0eBVrf3Hnz64e/+m0NGjiwzjn9lIYeM+mA/aqq6trbprcbP89v3x1Vtfa0xRHDt2h4+zaEG+78Y1VVnX3iMXXaUZNaXGb+wsU1c87jNefJeQ2t8/BXjKkRw7do6HtrPb3/Dn/FmKqqWrB4Sd3TzsVbjjrkgOee786Grlz7wOw5tc8Z7659znh3ffUnP+/QdlV17vW3vleOP6i23GxY3TVjZs1+/MmqqnWnAR8/cVwNHrRpnDbarLPjtBHNP/cJE1s+bfToca+oIYMH1dRpt9fKVatbXKa3j20A6CxBSK/34COPrfvv3XbYrkOP/ddLflar16ypPzvpmNp6+JbtLr/XLjtXVdU9Mx9u+DnuW+/qls2P31g+960f1LwFC2tA//711fPPrd989fP14becUZMO2K8GDezcNaZePXl8LVyytK6/4+52l+3J/bf/6N3qM+95SzU1NdUnv/7dWrR0WZvLjx29W1VVTe/g1VW7oqOvv/U1X13057/7/bq/u+We+2v+wsW1xbChdcy4V3TrtnZVV8Zpe6655Y5asXJlHTZ2n3rZli8Ns+YjqVfeeGur6+jtYxsAOstVRvu4D5x5ap1+7BGt/ntb90HrzPr+99ob66e/uaFD6+yqRUuXrvvv4Vts1qHHPjz3ybr02hvr9GOPqPe87qS66L9+1ObyI56bbC5YvKTh51j/VMURLUxWu6Kjv4+HHp1bx5/78frEu8+uU6dMrH1H7VL7jtqlzjv79bV42fL62W9vrq9ccnk99Ohjra5zff369asTJx363JGX9u/JtiH234v3wYD+/WuHbbeufXd7eT3wyJx6x2f++SUX0GnJ1lutDbKnFyxqeNu6qqOvv2abDxtax004qKrqBRfyWb1mTf36ltvrjFdOqVOnHNbQz91T2hunXXlvWbxsef329rvruAkH13ETDq4f//r6df82oH//Om78wfXsipX1m9vubHX9m9rYBoCeIgj7uLF7jKqxe4zqsfVtjHtyDRzw/Mu4+TtyHfHlH15Wrz9mcr3j1OPrK5dc3u6RpKpq6PYFzy/b4U1qWGd+H3OenFfvu/Di+tTXv1cnHX5oHXnwATX5wDG15WbD6uwTjq4zXzmlPvON79U3Lruq3ec/dL+9aodtRtTPf9f4zeirunf/tbUPVqxcVXfOaPvedM0G9G/7hIljDj2wvv/Zj7b4b125yXtnXn8nTBxXw4YMqXtmPlwPPfrCCwRddfNtdcYrp9SrDjukBg0cuMncPL29cdrV95Zf3HBLHTfh4Dpx4rgXBOGE/fepEcO3qKt//4eGbqOyqYxtAOgpgrCP68pEtSfW1x222er5U+3mL+z40Z37H360fnnzbXXipEPr7ae8qi7+0c9aXXb+osW1wzYjWjwtrTVbr/fdovYubNJRXfl9zJ33dH378qvr25dfXYMHDapXH35onf/2N9ZuO2xXn33fW+uRJ56sq25q+wjTyZMn1LJnn61rb2vsHpAbYv+9eB/079evxu23V33xvPfW/qN3qy+e99466+MXNrBtS2r7rV+27kjhiz31zMKaOu35K1SOGL5ljdt3z4Z/jtZ05PXXrPl00TG777ru3pUvNnzzzerocQe0elXNntbeOO3qe8tVN99aX1jz7nXfF3x2xdrvgTZfaOYX7dwSZVMb2wDQU3yHkF5v/+e++7V6zZq6d73v9HTEF39waVVV/b/TTmrzHm4zZj9aVdXQPe2a7ffcsk1NTesev6lZsXJlXXrdTXXyX36inpj/TFVVvf+MU9t93EmHj69rbrmzlj37bEPP0xP7b01TU91yz/313gsvrqampjrqkANavRH5+h58ZE5VVe3fyrZNf2BmveWT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IJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQgBAAACCUIAQAAQglCAACAUIIQAAAglCAEAAAIJQgBAABCCUIAAIBQghAAACCUIAQAAAglCAEAAEIJQgAAgFCCEAAAIJQg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"
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "kind": "upload",
+        "title": "Artwork received",
+        "detail": "PNG / 1 page(s)",
+        "at": "2026-09-13T13:20:27.420906+00:00",
+        "call": null
+      },
+      {
+        "seq": 2,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:20:28.791599+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 3,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:20:29.740336+00:00",
+        "call": {
+          "id": "model-1",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 800,
+          "inputTokens": 632,
+          "outputTokens": 15,
+          "costMicros": 176
+        }
+      },
+      {
+        "seq": 4,
+        "kind": "tool",
+        "title": "inspect_measurements",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:20:29.740380+00:00",
+        "call": null
+      },
+      {
+        "seq": 5,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:20:30.161463+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 6,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:20:31.065624+00:00",
+        "call": {
+          "id": "model-2",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 788,
+          "inputTokens": 703,
+          "outputTokens": 15,
+          "costMicros": 194
+        }
+      },
+      {
+        "seq": 7,
+        "kind": "tool",
+        "title": "read_demo_specs",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:20:31.065679+00:00",
+        "call": null
+      },
+      {
+        "seq": 8,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:20:31.454483+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 9,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:20:32.435062+00:00",
+        "call": {
+          "id": "model-3",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 825,
+          "inputTokens": 784,
+          "outputTokens": 18,
+          "costMicros": 218
+        }
+      },
+      {
+        "seq": 10,
+        "kind": "tool",
+        "title": "inspect_preview",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:20:32.435118+00:00",
+        "call": null
+      },
+      {
+        "seq": 11,
+        "kind": "model",
+        "title": "Model call started",
+        "detail": "OpenAI request after input counting and a successful spending reservation.",
+        "at": "2026-09-13T13:20:33.217238+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "started",
+          "model": "gpt-5.6-luna",
+          "durationMs": null,
+          "inputTokens": null,
+          "outputTokens": null,
+          "costMicros": null
+        }
+      },
+      {
+        "seq": 12,
+        "kind": "model",
+        "title": "Model response received",
+        "detail": "Measured Responses request duration. Usage is provider-reported; cost is a conservative application estimate. Private model content is not exported.",
+        "at": "2026-09-13T13:20:39.371386+00:00",
+        "call": {
+          "id": "model-4",
+          "phase": "completed",
+          "model": "gpt-5.6-luna",
+          "durationMs": 6012,
+          "inputTokens": 1836,
+          "outputTokens": 251,
+          "costMicros": 761
+        }
+      },
+      {
+        "seq": 13,
+        "kind": "report",
+        "title": "Proof package ready",
+        "detail": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+        "at": "2026-09-13T13:20:39.371665+00:00",
+        "call": null
+      },
+      {
+        "seq": 14,
+        "kind": "tool",
+        "title": "submit_report",
+        "detail": "Validated application tool call",
+        "at": "2026-09-13T13:20:39.371672+00:00",
+        "call": null
+      },
+      {
+        "seq": 15,
+        "kind": "approval",
+        "title": "Proof approved",
+        "detail": "Human review recorded. Nothing was sent to a printer.",
+        "at": "2026-09-13T13:20:41.464231+00:00",
+        "call": null
+      }
+    ],
+    "report": {
+      "summary": "Artwork is visually simple and appears centered, with a dark green rounded-square field on a light background and a single line of text. The low-resolution preview supports only a visual check; it cannot certify print accuracy, colour reproduction, or embedded raster DPI.",
+      "findings": [
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Effective resolution",
+          "detail": "300.0 DPI at 3 x 3 inches; demonstration target is 300 DPI.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Transparency",
+          "detail": "No transparent pixels detected; background colour is not inferred.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "measured",
+          "severity": "info",
+          "title": "Transparent margins",
+          "detail": "Left/top/right/bottom pixel margins: [0, 0, 0, 0]. These are not certified bleed measurements.",
+          "evidence_id": "measurement:page-1"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "info",
+          "title": "Overall composition appears clean",
+          "detail": "The rounded dark-green square is visually centered within the page, with consistent-looking margins and smooth rounded corners.",
+          "evidence_id": "preview:page-1"
+        },
+        {
+          "category": "model-suggested",
+          "severity": "warning",
+          "title": "Text placement merits review",
+          "detail": "The line \u201cFIELD NOTES / ORIGINAL DEMO\u201d sits toward the left side of the green field and appears vertically around the middle; confirm this intentional alignment and hierarchy against the approved design.",
+          "evidence_id": "preview:page-1"
+        },
+        {
+          "category": "requires-human-review",
+          "severity": "warning",
+          "title": "Preview limitations",
+          "detail": "This preview is low resolution and cannot certify final print sharpness, colour reproduction, edge quality, or embedded PDF raster DPI. Review the source/output at production resolution before release.",
+          "evidence_id": "preview:page-1"
+        }
+      ],
+      "specVersion": "demo-print-v1",
+      "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
+      "version": 1
+    },
+    "reportDigest": "d492534663d627e86a78ac9d56fbc9cd8db938b8d1d7b56d0d990f7435cd79ce",
+    "receipt": {
+      "id": "dad250b8220b34e38eea918b2e5fffdefd74e9f4a211eb1f",
+      "reportDigest": "d492534663d627e86a78ac9d56fbc9cd8db938b8d1d7b56d0d990f7435cd79ce",
+      "artworkHash": "56804dabfd7359f2e7e85d4604a6162e234c3ddad8e5018693445ebe5731b7dc",
+      "version": 1,
+      "at": 1789305641,
+      "simulated": true
+    },
+    "turns": 4,
+    "inputTokens": 3955,
+    "outputTokens": 299,
+    "usedMicros": 1349,
+    "error": "",
+    "model": "gpt-5.6-luna",
+    "promptVersion": "artwork-v2-luna",
+    "created": 1789305627,
+    "expires": 1789910427,
+    "approvalExpires": 1789392039
+  }
+}

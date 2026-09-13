@@ -10,7 +10,7 @@ test('late unauthenticated history response cannot overwrite a successful login'
   requested();await delayed;await route.fulfill({status:401,json:{detail:'Invitation required'}});
  });
  await page.route('**/api/session',route=>route.fulfill({status:200,json:{ok:true}}));
- await page.goto('/');await page.getByRole('tab',{name:'Invited live access'}).click();
+ await page.goto('/#run');await page.getByRole('tab',{name:'Invited live access'}).click();
  await started;
  await page.getByLabel('Invitation token').fill('test-only-invitation-not-a-live-secret');
  await page.getByRole('button',{name:'Open proof workspace'}).click();
