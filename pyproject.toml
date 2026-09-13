@@ -1,0 +1,9 @@
+[project]
+name = "artwork-proof-agent"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["anthropic>=0.69", "fastapi>=0.116", "uvicorn>=0.35", "psycopg[binary]>=3.2", "pillow>=11.3", "pypdf>=6", "pypdfium2>=4.30", "reportlab>=4.4", "python-multipart>=0.0.20", "python-dotenv>=1.1"]
+[dependency-groups]
+dev = ["pytest>=8.4", "httpx>=0.28", "pip-audit>=2.9"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
