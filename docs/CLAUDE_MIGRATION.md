@@ -55,4 +55,18 @@ No Vercel/GitHub key, database credential, budget, resource or visibility change
 Railway deployment: `963f501d-5526-4fe9-bff2-3e751f3b8f4a`.
 Backend/evaluation source: `47a8a764b63d587dc2d11cb01db1129fe55259ec`.
 Vercel production deployment: `dpl_8FSSJWfG3BsqfgwkSdwAH2Cj4Sh4`.
-Hosted browser/CI checks are recorded in the final handoff below when complete.
+Hosted browser checks: **27/27 applicable checks passed**. Genuine Claude
+inspection, refresh before approval and token/duration telemetry were verified
+in Chromium, Firefox and WebKit. Three local-only preflight checks were skipped
+in this hosted invocation. The public graph was inspected with no browser errors.
+All 16 checked static assets matched reviewed bytes, including all six PDFs.
+
+Temporary evaluation/browser invitations were revoked. The existing reviewer
+invitation metadata and private file permissions remain unchanged.
+Frontend/replay source: `480b0fbb18fd38f09c36db9b48e0b1000f69e16f`.
+[Linux CI](https://github.com/sha-shank-03/artwork-proof-agent/actions/runs/34763361510)
+passed, including PostgreSQL, schema, browser, dependency, secret and Docker checks.
+
+Railway build/runtime logs, Vercel build logs and complete CI logs have zero
+credential matches. See model-log-audit.json and RELEASE_STATUS.md. Subsequent
+handoff commits are documentation-only and do not change the verified runtime.

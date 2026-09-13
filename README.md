@@ -2,7 +2,7 @@
 
 An independent portfolio demonstration by Shashank, unaffiliated with Sticker Mule. Python performs measured artwork checks; Claude Haiku 4.5 selects inspection tools and proposes visual findings; a human approves a specific artwork hash and report version. Nothing is sent to a printer and original artwork is never modified.
 
-**Model update:** the isolated Railway backend now uses Claude Haiku 4.5. **30/30 genuine Claude workflow cases passed** without retesting failures into a perfect score. Six new recordings and proof PDFs are prepared for the [connected agent console](https://artwork-proof-agent.vercel.app). Source remains private pending the separate publication review. See [Claude migration](docs/CLAUDE_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
+**Model update:** the isolated Railway backend now uses Claude Haiku 4.5. **30/30 genuine Claude workflow cases and 27 hosted browser checks passed**. Six new recordings and proof PDFs are deployed on the [connected agent console](https://artwork-proof-agent.vercel.app). Source remains private pending the separate publication review. See [Claude migration](docs/CLAUDE_MIGRATION.md), [current status](docs/RELEASE_STATUS.md) and [hosted operations](docs/HOSTING.md).
 
 ## Features
 
